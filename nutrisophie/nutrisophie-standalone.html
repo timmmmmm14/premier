@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriSophie – Nutrithérapeute en biologie nutritionnelle & micronutrition</title>
+  <meta name="description" content="Sophie, nutrithérapeute spécialisée en biologie nutritionnelle et micronutrition. Consultations individuelles, plans alimentaires personnalisés et coaching en ligne." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+/* ===================================================
+   NUTRISOPHIE — Stylesheet
+   =================================================== */
+
+/* --- Variables --- */
+:root {
+  --pink:    #E8197D;
+  --pink-light: #FCE4F1;
+  --pink-dark: #C01368;
+  --blue:    #A8D4E6;
+  --blue-light: #D6EEF6;
+  --green:   #7AB648;
+  --green-light: #EAF4DF;
+  --coral:   #F07850;
+  --coral-light: #FDE8DF;
+  --bg:      #F7F9FC;
+  --bg-blue: #EEF5FA;
+  --bg-green:#F0F7EC;
+  --white:   #ffffff;
+  --text:    #2D2D2D;
+  --text-light: #6B7280;
+  --border:  #E5EBF0;
+
+  --font: 'Nunito', sans-serif;
+  --radius-sm: 0.5rem;
+  --radius:    1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow:    0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+
+  --transition: all 0.3s ease;
+  --container: 1180px;
+  --header-h: 72px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+input, textarea, select, button { font-family: var(--font); }
+
+/* --- Container --- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Sections --- */
+.section { position: relative; padding: 5rem 0 4rem; }
+.section__header { text-align: center; max-width: 680px; margin: 0 auto 3.5rem; }
+.section__eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 0.75rem;
+}
+.section__title {
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.section__subtitle {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.75;
+}
+.section__wave { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
+.section__wave svg { width: 100%; height: 60px; }
+.section__wave--bg svg { height: 60px; }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn--lg { padding: 0.85rem 2rem; font-size: 1rem; }
+.btn--full { width: 100%; justify-content: center; }
+.btn--primary {
+  background: var(--pink);
+  color: var(--white);
+  border-color: var(--pink);
+}
+.btn--primary:hover { background: var(--pink-dark); border-color: var(--pink-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,25,125,0.3); }
+.btn--outline {
+  background: transparent;
+  color: var(--pink);
+  border-color: var(--pink);
+}
+.btn--outline:hover { background: var(--pink-light); transform: translateY(-2px); }
+.btn--pink { background: var(--pink-light); color: var(--pink); border-color: var(--pink-light); }
+.btn--pink:hover { background: var(--pink); color: white; }
+.btn--green { background: var(--green-light); color: var(--green); border-color: var(--green-light); }
+.btn--green:hover { background: var(--green); color: white; }
+.btn--blue { background: var(--blue-light); color: #3A7FA0; border-color: var(--blue-light); }
+.btn--blue:hover { background: var(--blue); color: white; }
+
+/* --- Badge & Tags --- */
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  background: var(--pink-light);
+  color: var(--pink);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.tag--pink   { background: var(--pink-light); color: var(--pink-dark); }
+.tag--blue   { background: var(--blue-light); color: #3A7FA0; }
+.tag--green  { background: var(--green-light); color: #4A7A25; }
+.tag--coral  { background: var(--coral-light); color: #B04A28; }
+
+/* ===================================================
+   HEADER / NAV
+   =================================================== */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  background: rgba(247,249,252,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  z-index: 1000;
+  transition: var(--transition);
+}
+.header.scrolled {
+  border-bottom-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: var(--header-h);
+}
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text);
+  flex-shrink: 0;
+}
+.nav__logo span { color: var(--pink); }
+.nav__logo-icon { width: 36px; height: 36px; }
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+.nav__link {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-light);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.nav__link:hover, .nav__link.active { color: var(--pink); background: var(--pink-light); }
+.nav__cta { margin-left: 0.75rem; }
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: auto;
+}
+.nav__toggle span {
+  display: block;
+  width: 24px; height: 2.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+.nav__toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav__toggle.open span:nth-child(2) { opacity: 0; }
+.nav__toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ===================================================
+   HERO
+   =================================================== */
+.hero {
+  background: var(--white);
+  padding-top: calc(var(--header-h) + 3rem);
+  padding-bottom: 6rem;
+  overflow: hidden;
+}
+.hero__deco {
+  position: absolute;
+  pointer-events: none;
+}
+.hero__deco--tl { top: -40px; left: -60px; width: 320px; opacity: 0.7; }
+.hero__deco--br { bottom: 40px; right: -80px; width: 300px; opacity: 0.6; }
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 78vh;
+}
+.hero__content { z-index: 1; }
+.hero__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+.hero__title em {
+  font-style: italic;
+  color: var(--pink);
+}
+.hero__text {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hero__illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__blob {
+  width: 100%;
+  max-width: 480px;
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* ===================================================
+   À PROPOS
+   =================================================== */
+.apropos {
+  background: var(--bg-blue);
+  padding-bottom: 7rem;
+}
+.apropos__container {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+.apropos__image-wrap { position: relative; }
+.apropos__photo-frame {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 340px;
+}
+.apropos__photo-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border: 4px solid var(--white);
+}
+.apropos__photo-placeholder svg { width: 100%; height: 100%; }
+
+.apropos__deco-flower {
+  position: absolute;
+  bottom: -20px; right: -20px;
+  width: 80px; height: 80px;
+  background: var(--white);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  animation: spin-slow 20s linear infinite;
+}
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.apropos__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 3px solid var(--pink);
+}
+.stat-card__number { display: block; font-size: 1.6rem; font-weight: 800; color: var(--pink); }
+.stat-card__label  { display: block; font-size: 0.8rem; color: var(--text-light); font-weight: 600; margin-top: 0.15rem; }
+
+.apropos__subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--pink);
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+.apropos__text {
+  color: var(--text-light);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.apropos__philosophy {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--green);
+}
+.apropos__philosophy-icon svg { width: 40px; height: 40px; flex-shrink: 0; }
+.apropos__quote {
+  font-size: 0.98rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+}
+.apropos__quote em { color: var(--pink); font-style: italic; }
+
+.apropos__specialites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.specialite-tag {
+  padding: 0.35rem 0.85rem;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: var(--transition);
+}
+.specialite-tag:hover { border-color: var(--pink); color: var(--pink); background: var(--pink-light); }
+
+/* ===================================================
+   SERVICES
+   =================================================== */
+.services { background: var(--white); padding-bottom: 7rem; }
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.service-card {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1.5px solid var(--border);
+  transition: var(--transition);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.service-card--featured {
+  background: var(--white);
+  border-color: var(--pink);
+  box-shadow: var(--shadow);
+  transform: translateY(-8px);
+}
+.service-card--featured:hover { transform: translateY(-14px); }
+
+.service-card__badge {
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--pink);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 1rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.service-card__icon svg { width: 52px; height: 52px; }
+
+.service-card__title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.3;
+}
+.service-card__text {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  flex-grow: 1;
+}
+.service-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.service-card__list li {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 600;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.service-card__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 800;
+}
+.service-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.service-card__duration {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+.services__note {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--green-light);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  margin-top: 2.5rem;
+  font-size: 0.92rem;
+  color: #3A6020;
+}
+.services__note svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+/* ===================================================
+   TÉMOIGNAGES
+   =================================================== */
+.temoignages {
+  background: var(--bg-green);
+  padding-bottom: 7rem;
+  overflow: hidden;
+}
+.temoignages__deco-leaf {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  pointer-events: none;
+}
+.temoignages__deco-leaf--left  { left: -60px; }
+.temoignages__deco-leaf--right { right: -60px; transform: translateY(-50%) scaleX(-1); }
+.temoignages__deco-leaf svg { width: 100%; }
+
+.temoignages__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.temoignage-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--border);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.temoignage-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.temoignage-card--featured {
+  border-color: var(--coral);
+  box-shadow: var(--shadow);
+  transform: translateY(-6px);
+}
+.temoignage-card--featured:hover { transform: translateY(-10px); }
+
+.temoignage-card__stars { font-size: 1rem; letter-spacing: 0.1em; }
+.temoignage-card__quote {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.8;
+  font-style: italic;
+  flex-grow: 1;
+}
+.temoignage-card__quote::before { content: '"'; font-size: 2rem; color: var(--pink); line-height: 0; vertical-align: -0.5rem; margin-right: 0.1rem; }
+
+.temoignage-card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.temoignage-card__avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  flex-shrink: 0;
+}
+.temoignage-card__author strong { display: block; font-size: 0.92rem; color: var(--text); }
+.temoignage-card__author span   { font-size: 0.8rem; color: var(--text-light); }
+
+.temoignage-card__tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  background: var(--bg);
+  color: var(--text-light);
+}
+.temoignages__cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+.temoignages__cta p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+/* ===================================================
+   CONTACT
+   =================================================== */
+.contact { background: var(--white); overflow: hidden; }
+.contact__deco {
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.contact__container {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+.contact__intro {
+  font-size: 0.98rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.contact__details { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact__detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+.contact__detail-icon {
+  width: 40px; height: 40px;
+  background: var(--pink-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact__detail-icon svg { width: 18px; height: 18px; }
+.contact__detail-item strong { display: block; font-size: 0.88rem; color: var(--text); margin-bottom: 0.1rem; }
+.contact__detail-item a, .contact__detail-item span {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+.contact__detail-item a:hover { color: var(--pink); }
+
+/* --- Form --- */
+.contact__form-wrap { position: relative; }
+.contact__form {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  border: 1.5px solid var(--border);
+}
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form__group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.1rem; }
+.form__group label { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.form__group input,
+.form__group select,
+.form__group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: var(--transition);
+  outline: none;
+  resize: vertical;
+}
+.form__group input:focus,
+.form__group select:focus,
+.form__group textarea:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(232,25,125,0.1);
+}
+.form__group input::placeholder,
+.form__group textarea::placeholder { color: #B0B8C1; }
+.form__group select { cursor: pointer; }
+
+.form__group--checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+.form__group--checkbox input[type="checkbox"] {
+  width: 18px; height: 18px;
+  min-width: 18px;
+  accent-color: var(--pink);
+  cursor: pointer;
+  margin-top: 2px;
+}
+.form__group--checkbox label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-light);
+  line-height: 1.5;
+  cursor: pointer;
+}
+.form__notice {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+.btn--full svg { width: 18px; height: 18px; }
+
+.form__success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--green-light);
+}
+.form__success svg { width: 64px; height: 64px; }
+.form__success h3 { font-size: 1.4rem; font-weight: 800; color: var(--green); }
+.form__success p  { font-size: 0.95rem; color: var(--text-light); }
+.form__success.visible { display: flex; }
+
+/* ===================================================
+   FOOTER
+   =================================================== */
+.footer {
+  background: #1A1E26;
+  color: rgba(255,255,255,0.7);
+  padding-top: 4rem;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer__logo { color: white !important; }
+.footer__logo span { color: var(--pink) !important; }
+.footer__tagline {
+  font-size: 0.88rem;
+  margin-top: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+}
+.footer__links h4, .footer__contact h4 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: white;
+  margin-bottom: 1rem;
+}
+.footer__links ul { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer__links a { font-size: 0.88rem; color: rgba(255,255,255,0.55); transition: var(--transition); }
+.footer__links a:hover { color: var(--pink); }
+.footer__contact { display: flex; flex-direction: column; gap: 0.5rem; }
+.footer__contact a { font-size: 0.88rem; color: rgba(255,255,255,0.55); transition: var(--transition); }
+.footer__contact a:hover { color: var(--pink); }
+.footer__social { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
+.footer__social-link {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  transition: var(--transition);
+}
+.footer__social-link:hover { background: var(--pink); color: white; }
+.footer__social-link svg { width: 16px; height: 16px; }
+
+.footer__bottom {
+  padding: 1.25rem 0;
+}
+.footer__bottom .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.footer__bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+
+/* ===================================================
+   SCROLL TO TOP
+   =================================================== */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--pink);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(232,25,125,0.35);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+  pointer-events: none;
+  z-index: 999;
+}
+.scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.scroll-top:hover { background: var(--pink-dark); transform: translateY(-3px); }
+.scroll-top svg { width: 20px; height: 20px; }
+
+/* ===================================================
+   ANIMATIONS
+   =================================================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in--delay { transition-delay: 0.18s; }
+
+[data-delay="150"] { transition-delay: 0.15s; }
+[data-delay="300"] { transition-delay: 0.3s; }
+
+/* ===================================================
+   RESPONSIVE — Tablet (≤1024px)
+   =================================================== */
+@media (max-width: 1024px) {
+  .hero__container { gap: 2rem; }
+  .apropos__container { gap: 2.5rem; }
+  .services__grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .service-card--featured { transform: none; }
+  .service-card--featured:hover { transform: translateY(-6px); }
+  .temoignages__grid { grid-template-columns: 1fr 1fr; }
+  .temoignage-card--featured { transform: none; }
+  .footer__container { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===================================================
+   RESPONSIVE — Mobile (≤768px)
+   =================================================== */
+@media (max-width: 768px) {
+  :root { --header-h: 64px; }
+
+  /* Nav */
+  .nav__menu {
+    position: fixed;
+    top: var(--header-h);
+    left: 0; right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    gap: 0.25rem;
+    box-shadow: var(--shadow);
+    transform: translateY(-110%);
+    transition: transform 0.35s ease;
+    z-index: 999;
+  }
+  .nav__menu.open { transform: translateY(0); }
+  .nav__link { padding: 0.75rem 1rem; font-size: 1rem; border-radius: var(--radius); }
+  .nav__cta  { display: none; }
+  .nav__toggle { display: flex; }
+
+  /* Hero */
+  .hero {
+    padding-top: calc(var(--header-h) + 2rem);
+    padding-bottom: 5rem;
+  }
+  .hero__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+    min-height: auto;
+  }
+  .hero__text { margin: 0 auto 2rem; }
+  .hero__actions { justify-content: center; }
+  .hero__tags { justify-content: center; }
+  .hero__illustration { order: -1; }
+  .hero__blob { max-width: 280px; }
+
+  /* À propos */
+  .apropos__container { grid-template-columns: 1fr; text-align: center; }
+  .apropos__image-wrap { display: flex; flex-direction: column; align-items: center; }
+  .apropos__photo-frame { max-width: 240px; }
+  .apropos__philosophy { text-align: left; }
+  .apropos__specialites { justify-content: center; }
+
+  /* Services */
+  .services__grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* Témoignages */
+  .temoignages__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  /* Contact */
+  .contact__container { grid-template-columns: 1fr; gap: 2rem; }
+  .form__row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer__container { grid-template-columns: 1fr; gap: 2rem; }
+  .footer__bottom .container { justify-content: center; text-align: center; }
+
+  /* Misc */
+  .temoignages__deco-leaf { display: none; }
+  .section { padding: 3.5rem 0 3rem; }
+}
+
+@media (max-width: 480px) {
+  .hero__title { font-size: 1.75rem; }
+  .btn--lg { padding: 0.75rem 1.5rem; font-size: 0.95rem; }
+  .section__title { font-size: 1.6rem; }
+  .contact__form { padding: 1.5rem; }
+  .scroll-top { bottom: 1.25rem; right: 1.25rem; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#accueil" class="nav__logo">
+        <svg class="nav__logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity="0.85" transform="rotate(0 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity="0.75" transform="rotate(60 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#7AB648" opacity="0.75" transform="rotate(120 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity="0.6" transform="rotate(180 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#A8D4E6" opacity="0.75" transform="rotate(240 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity="0.6" transform="rotate(300 22 22)"/>
+          <circle cx="22" cy="22" r="6" fill="#F8F4F0"/>
+          <circle cx="22" cy="22" r="3.5" fill="#E8197D"/>
+        </svg>
+        <span>NutriSophie</span>
+      </a>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#accueil" class="nav__link">Accueil</a></li>
+        <li><a href="#apropos" class="nav__link">À propos</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#temoignages" class="nav__link">Témoignages</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn--primary nav__cta">Prendre RDV</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero section" id="accueil">
+      <div class="hero__deco hero__deco--tl">
+        <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="55" fill="#A8D4E6" opacity="0.18"/><circle cx="60" cy="60" r="35" fill="#A8D4E6" opacity="0.15"/></svg>
+      </div>
+      <div class="hero__deco hero__deco--br">
+        <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" fill="#E8197D" opacity="0.08"/></svg>
+      </div>
+
+      <div class="container hero__container">
+        <div class="hero__content fade-in">
+          <span class="badge">Nutrithérapeute certifiée</span>
+          <h1 class="hero__title">
+            Ta santé passe<br/>
+            <em>aussi par la nutrition…</em>
+          </h1>
+          <p class="hero__text">
+            Biologie nutritionnelle, micronutrition, accompagnement sur-mesure.
+            Je vous aide à retrouver votre équilibre de santé grâce à une alimentation
+            ciblée et adaptée à <strong>votre</strong> corps.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary btn--lg">Prendre rendez-vous</a>
+            <a href="#services" class="btn btn--outline btn--lg">Découvrir mes services</a>
+          </div>
+          <div class="hero__tags">
+            <span class="tag tag--green">🌿 Maladies chroniques</span>
+            <span class="tag tag--blue">💧 Troubles digestifs</span>
+            <span class="tag tag--coral">⚡ Sport & Performance</span>
+            <span class="tag tag--pink">💤 Fatigue & Énergie</span>
+          </div>
+        </div>
+
+        <div class="hero__illustration fade-in fade-in--delay">
+          <div class="hero__blob">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M320,200 C320,280 265,340 200,340 C135,340 80,280 80,200 C80,120 135,60 200,60 C265,60 320,120 320,200 Z" fill="#EEF5FA"/>
+              <!-- Fleur centrale -->
+              <g transform="translate(200,185)">
+                <ellipse cx="0" cy="-38" rx="14" ry="22" fill="#E8197D" opacity="0.7"/>
+                <ellipse cx="0" cy="-38" rx="14" ry="22" fill="#E8197D" opacity="0.7" transform="rotate(60)"/>
+                <ellipse cx="0" cy="-38" rx="14" ry="22" fill="#F07850" opacity="0.65" transform="rotate(120)"/>
+                <ellipse cx="0" cy="-38" rx="14" ry="22" fill="#E8197D" opacity="0.55" transform="rotate(180)"/>
+                <ellipse cx="0" cy="-38" rx="14" ry="22" fill="#A8D4E6" opacity="0.7" transform="rotate(240)"/>
+                <ellipse cx="0" cy="-38" rx="14" ry="22" fill="#F07850" opacity="0.55" transform="rotate(300)"/>
+                <circle r="16" fill="white"/>
+                <circle r="9" fill="#E8197D"/>
+              </g>
+              <!-- Feuilles -->
+              <path d="M120,240 Q140,200 160,220 Q140,250 120,240Z" fill="#7AB648" opacity="0.7"/>
+              <path d="M270,260 Q290,220 310,245 Q285,268 270,260Z" fill="#7AB648" opacity="0.6"/>
+              <path d="M150,130 Q165,105 185,120 Q168,138 150,130Z" fill="#7AB648" opacity="0.5"/>
+              <!-- Soleil décoratif -->
+              <g transform="translate(300,110)">
+                <circle r="18" fill="#F07850" opacity="0.3"/>
+                <circle r="12" fill="#F07850" opacity="0.5"/>
+                <line x1="0" y1="-26" x2="0" y2="-32" stroke="#F07850" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="0" y1="-26" x2="0" y2="-32" stroke="#F07850" stroke-width="2.5" stroke-linecap="round" opacity="0.6" transform="rotate(45)"/>
+                <line x1="0" y1="-26" x2="0" y2="-32" stroke="#F07850" stroke-width="2.5" stroke-linecap="round" opacity="0.6" transform="rotate(90)"/>
+                <line x1="0" y1="-26" x2="0" y2="-32" stroke="#F07850" stroke-width="2.5" stroke-linecap="round" opacity="0.6" transform="rotate(135)"/>
+                <line x1="0" y1="-26" x2="0" y2="-32" stroke="#F07850" stroke-width="2.5" stroke-linecap="round" opacity="0.6" transform="rotate(180)"/>
+                <line x1="0" y1="-26" x2="0" y2="-32" stroke="#F07850" stroke-width="2.5" stroke-linecap="round" opacity="0.6" transform="rotate(225)"/>
+                <line x1="0" y1="-26" x2="0" y2="-32" stroke="#F07850" stroke-width="2.5" stroke-linecap="round" opacity="0.6" transform="rotate(270)"/>
+                <line x1="0" y1="-26" x2="0" y2="-32" stroke="#F07850" stroke-width="2.5" stroke-linecap="round" opacity="0.6" transform="rotate(315)"/>
+              </g>
+              <!-- Petit nuage -->
+              <g transform="translate(95,155)" opacity="0.45">
+                <circle cx="0" cy="0" r="10" fill="#A8D4E6"/>
+                <circle cx="14" cy="-4" r="13" fill="#A8D4E6"/>
+                <circle cx="28" cy="0" r="10" fill="#A8D4E6"/>
+                <rect x="-10" y="0" width="48" height="12" rx="6" fill="#A8D4E6"/>
+              </g>
+              <!-- Petits points décoratifs -->
+              <circle cx="310" cy="200" r="4" fill="#E8197D" opacity="0.3"/>
+              <circle cx="320" cy="215" r="2.5" fill="#E8197D" opacity="0.25"/>
+              <circle cx="90" cy="180" r="3" fill="#7AB648" opacity="0.35"/>
+              <circle cx="78" cy="193" r="2" fill="#7AB648" opacity="0.3"/>
+              <circle cx="200" cy="310" r="5" fill="#A8D4E6" opacity="0.4"/>
+              <circle cx="215" cy="322" r="3" fill="#A8D4E6" opacity="0.3"/>
+              <!-- Texte décoratif en bas -->
+              <text x="200" y="345" text-anchor="middle" font-family="Nunito" font-size="11" fill="#E8197D" opacity="0.55" font-style="italic">biologie nutritionnelle</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vague de transition -->
+      <div class="section__wave">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#EEF5FA"/></svg>
+      </div>
+    </section>
+
+    <!-- ===== À PROPOS ===== -->
+    <section class="apropos section" id="apropos">
+      <div class="container apropos__container">
+        <div class="apropos__image-wrap fade-in">
+          <div class="apropos__photo-frame">
+            <div class="apropos__photo-placeholder">
+              <svg viewBox="0 0 200 200" fill="none">
+                <circle cx="100" cy="100" r="100" fill="#F0EBE8"/>
+                <circle cx="100" cy="82" r="32" fill="#D4C5BE"/>
+                <path d="M40,180 Q40,135 100,135 Q160,135 160,180 Z" fill="#D4C5BE"/>
+                <text x="100" y="198" text-anchor="middle" font-family="Nunito" font-size="11" fill="#9E8880">Sophie</text>
+              </svg>
+            </div>
+            <div class="apropos__deco-flower">
+              <svg viewBox="0 0 80 80" fill="none">
+                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#E8197D" opacity="0.7"/>
+                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#F07850" opacity="0.6" transform="rotate(60 40 40)"/>
+                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#7AB648" opacity="0.6" transform="rotate(120 40 40)"/>
+                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#E8197D" opacity="0.5" transform="rotate(180 40 40)"/>
+                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#A8D4E6" opacity="0.65" transform="rotate(240 40 40)"/>
+                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#F07850" opacity="0.5" transform="rotate(300 40 40)"/>
+                <circle cx="40" cy="40" r="11" fill="white"/>
+                <circle cx="40" cy="40" r="6.5" fill="#E8197D"/>
+              </svg>
+            </div>
+          </div>
+          <div class="apropos__stats">
+            <div class="stat-card">
+              <span class="stat-card__number">+200</span>
+              <span class="stat-card__label">patients accompagnés</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number">8 ans</span>
+              <span class="stat-card__label">d'expérience</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="apropos__content fade-in fade-in--delay">
+          <span class="section__eyebrow">À propos</span>
+          <h2 class="section__title">Bonjour, je suis Sophie 👋</h2>
+          <h3 class="apropos__subtitle">Nutrithérapeute spécialisée en biologie nutritionnelle & micronutrition</h3>
+          <p class="apropos__text">
+            Mon parcours vers la nutrithérapie est né d'une expérience personnelle.
+            Après avoir moi-même souffert d'une fatigue chronique invalidante et de troubles digestifs
+            persistants, j'ai découvert le pouvoir transformateur d'une alimentation ciblée et adaptée
+            à ma biologie unique. Cette révélation a changé ma vie — et aujourd'hui,
+            c'est ma mission de vous accompagner sur ce même chemin.
+          </p>
+          <p class="apropos__text">
+            Diplômée en biologie nutritionnelle et micronutrition, je travaille avec deux publics
+            très différents mais unis par un même besoin : <strong>comprendre ce dont leur corps a
+            réellement besoin</strong>. Des personnes souffrant de maladies chroniques (fibromyalgie,
+            hypothyroïdie, maladies auto-immunes, troubles intestinaux) aux sportifs cherchant
+            à maximiser leurs performances et leur récupération.
+          </p>
+
+          <div class="apropos__philosophy">
+            <div class="apropos__philosophy-icon">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M20,5 Q32,12 32,22 Q32,33 20,37 Q8,33 8,22 Q8,12 20,5Z" fill="#7AB648" opacity="0.15"/><path d="M20,8 Q30,14 30,22 Q30,31 20,35 Q10,31 10,22 Q10,14 20,8Z" fill="#7AB648" opacity="0.2"/><path d="M15,22 L19,26 L26,17" stroke="#7AB648" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <blockquote class="apropos__quote">
+              "La nutrition n'est pas une question de régime strict, mais de comprendre
+              ce dont <em>votre</em> corps a besoin pour fonctionner à son plein potentiel."
+            </blockquote>
+          </div>
+
+          <div class="apropos__specialites">
+            <span class="specialite-tag">🔬 Bilan de micronutriments</span>
+            <span class="specialite-tag">🧬 Biologie nutritionnelle</span>
+            <span class="specialite-tag">🌿 Médecine fonctionnelle</span>
+            <span class="specialite-tag">⚡ Nutrition sportive</span>
+            <span class="specialite-tag">🦠 Santé intestinale</span>
+            <span class="specialite-tag">🧠 Neuro-nutrition</span>
+          </div>
+
+          <a href="#contact" class="btn btn--primary">Réserver une consultation</a>
+        </div>
+      </div>
+
+      <!-- Vague -->
+      <div class="section__wave">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#ffffff"/></svg>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Mes services</span>
+          <h2 class="section__title">Comment puis-je vous aider ?</h2>
+          <p class="section__subtitle">
+            Chaque accompagnement est unique, adapté à votre histoire, vos symptômes et vos objectifs.
+            Voici les trois formes d'accompagnement que je propose.
+          </p>
+        </div>
+
+        <div class="services__grid">
+
+          <div class="service-card fade-in" data-delay="0">
+            <div class="service-card__icon service-card__icon--pink">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="22" fill="#E8197D" opacity="0.12"/>
+                <circle cx="24" cy="18" r="8" fill="#E8197D" opacity="0.7"/>
+                <path d="M10,40 Q10,30 24,30 Q38,30 38,40" fill="#E8197D" opacity="0.5"/>
+                <path d="M32,22 Q36,18 38,22" stroke="#E8197D" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Consultations individuelles</h3>
+            <p class="service-card__text">
+              Une première consultation approfondie de 90 minutes pour établir un bilan complet :
+              anamnèse détaillée, analyse de vos habitudes alimentaires, symptômes, antécédents
+              médicaux et objectifs de santé. Suivie de consultations de suivi régulières.
+            </p>
+            <ul class="service-card__list">
+              <li>Bilan nutritionnel complet</li>
+              <li>Analyse des carences micronutritionnelles</li>
+              <li>Protocole alimentaire personnalisé</li>
+              <li>Suivi sur 3, 6 ou 12 mois</li>
+            </ul>
+            <div class="service-card__footer">
+              <span class="service-card__duration">⏱ 90 min (1ère séance)</span>
+              <a href="#contact" class="btn btn--pink">Réserver</a>
+            </div>
+          </div>
+
+          <div class="service-card service-card--featured fade-in" data-delay="150">
+            <div class="service-card__badge">⭐ Populaire</div>
+            <div class="service-card__icon service-card__icon--green">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="22" fill="#7AB648" opacity="0.12"/>
+                <rect x="12" y="14" width="24" height="28" rx="3" fill="#7AB648" opacity="0.2"/>
+                <line x1="17" y1="21" x2="31" y2="21" stroke="#7AB648" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="17" y1="27" x2="31" y2="27" stroke="#7AB648" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="17" y1="33" x2="25" y2="33" stroke="#7AB648" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M28,8 L28,18 M24,12 L32,12" stroke="#7AB648" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Plans alimentaires personnalisés</h3>
+            <p class="service-card__text">
+              Des menus hebdomadaires 100 % sur-mesure, pensés pour vos contraintes (intolérances,
+              allergies, préférences), vos objectifs (perte de poids, énergie, anti-inflammatoire,
+              performance sportive) et votre mode de vie.
+            </p>
+            <ul class="service-card__list">
+              <li>Menus semaine complets et variés</li>
+              <li>Listes de courses incluses</li>
+              <li>Recettes simples et savoureuses</li>
+              <li>Adaptés à vos intolérances</li>
+            </ul>
+            <div class="service-card__footer">
+              <span class="service-card__duration">📅 Plan mensuel évolutif</span>
+              <a href="#contact" class="btn btn--primary">Réserver</a>
+            </div>
+          </div>
+
+          <div class="service-card fade-in" data-delay="300">
+            <div class="service-card__icon service-card__icon--blue">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="22" fill="#A8D4E6" opacity="0.25"/>
+                <rect x="10" y="16" width="28" height="20" rx="4" fill="#A8D4E6" opacity="0.4"/>
+                <circle cx="24" cy="26" r="5" fill="#A8D4E6" opacity="0.8"/>
+                <path d="M10,12 L38,12" stroke="#A8D4E6" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                <circle cx="16" cy="12" r="2.5" fill="#A8D4E6"/>
+                <circle cx="32" cy="12" r="2.5" fill="#A8D4E6"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Coaching en ligne</h3>
+            <p class="service-card__text">
+              Vous habitez loin ou préférez la flexibilité du digital ? Mon programme de coaching
+              en ligne vous offre le même niveau d'accompagnement que les séances en cabinet,
+              depuis le confort de votre domicile, partout dans le monde.
+            </p>
+            <ul class="service-card__list">
+              <li>Séances vidéo en visioconférence</li>
+              <li>Messagerie dédiée entre séances</li>
+              <li>Accès à votre espace client personnel</li>
+              <li>Ressources & fiches pratiques incluses</li>
+            </ul>
+            <div class="service-card__footer">
+              <span class="service-card__duration">💻 100% en ligne</span>
+              <a href="#contact" class="btn btn--blue">Réserver</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="services__note fade-in">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#7AB648" stroke-width="1.5"/><path d="M10,6 L10,11" stroke="#7AB648" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14" r="1" fill="#7AB648"/></svg>
+          <p>Toutes les consultations peuvent se faire <strong>en cabinet ou en visioconférence</strong>.
+          Un devis personnalisé vous sera proposé lors du premier contact.</p>
+        </div>
+      </div>
+
+      <div class="section__wave section__wave--bg">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,40 C360,10 1080,60 1440,20 L1440,60 L0,60 Z" fill="#F0F7EC"/></svg>
+      </div>
+    </section>
+
+    <!-- ===== TÉMOIGNAGES ===== -->
+    <section class="temoignages section" id="temoignages">
+      <div class="temoignages__deco-leaf temoignages__deco-leaf--left">
+        <svg viewBox="0 0 120 180" fill="none"><path d="M60,170 Q10,120 15,70 Q20,20 60,5 Q100,20 105,70 Q110,120 60,170Z" fill="#7AB648" opacity="0.08"/></svg>
+      </div>
+      <div class="temoignages__deco-leaf temoignages__deco-leaf--right">
+        <svg viewBox="0 0 120 180" fill="none"><path d="M60,170 Q10,120 15,70 Q20,20 60,5 Q100,20 105,70 Q110,120 60,170Z" fill="#E8197D" opacity="0.06"/></svg>
+      </div>
+
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Témoignages</span>
+          <h2 class="section__title">Ils ont transformé leur santé</h2>
+          <p class="section__subtitle">
+            Découvrez les expériences de patients qui ont repris leur santé en main
+            grâce à un accompagnement nutritionnel personnalisé.
+          </p>
+        </div>
+
+        <div class="temoignages__grid">
+
+          <div class="temoignage-card fade-in" data-delay="0">
+            <div class="temoignage-card__stars">⭐⭐⭐⭐⭐</div>
+            <blockquote class="temoignage-card__quote">
+              "Après 3 ans de fibromyalgie et d'épuisement total, j'avais perdu espoir.
+              En 4 mois avec Sophie, ma fatigue a diminué de 60 % et mes douleurs sont
+              beaucoup plus supportables. Son approche par la micronutrition a vraiment
+              changé ma vie. Je recommande à 100 %."
+            </blockquote>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar" style="background: linear-gradient(135deg, #E8197D22, #E8197D44);">
+                <span>M</span>
+              </div>
+              <div>
+                <strong>Marie, 43 ans</strong>
+                <span>Fibromyalgie &amp; fatigue chronique</span>
+              </div>
+            </div>
+            <div class="temoignage-card__tag">🏥 Maladie chronique</div>
+          </div>
+
+          <div class="temoignage-card temoignage-card--featured fade-in" data-delay="150">
+            <div class="temoignage-card__stars">⭐⭐⭐⭐⭐</div>
+            <blockquote class="temoignage-card__quote">
+              "En tant que crossfiteur compétiteur, je cherchais à franchir un palier
+              dans mes performances. Sophie a analysé mes carences et revu toute mon
+              alimentation autour de mes entraînements. Résultat : +15 % de performance
+              en 3 mois et une récupération deux fois plus rapide. Incroyable."
+            </blockquote>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar" style="background: linear-gradient(135deg, #F0785022, #F0785044);">
+                <span>T</span>
+              </div>
+              <div>
+                <strong>Thomas, 29 ans</strong>
+                <span>Sportif de haut niveau – CrossFit</span>
+              </div>
+            </div>
+            <div class="temoignage-card__tag">⚡ Performance sportive</div>
+          </div>
+
+          <div class="temoignage-card fade-in" data-delay="300">
+            <div class="temoignage-card__stars">⭐⭐⭐⭐⭐</div>
+            <blockquote class="temoignage-card__quote">
+              "J'avais des troubles digestifs sévères depuis des années — ballonnements,
+              douleurs, intestin irritable. Les médecins ne trouvaient rien. Sophie a
+              identifié des intolérances et une dysbiose intestinale. En 6 mois,
+              ma vie a complètement changé. Je mange enfin sans souffrir !"
+            </blockquote>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar" style="background: linear-gradient(135deg, #7AB64822, #7AB64844);">
+                <span>I</span>
+              </div>
+              <div>
+                <strong>Isabelle, 56 ans</strong>
+                <span>Syndrome intestin irritable &amp; hypothyroïdie</span>
+              </div>
+            </div>
+            <div class="temoignage-card__tag">🌿 Santé digestive</div>
+          </div>
+
+        </div>
+
+        <div class="temoignages__cta fade-in">
+          <p>Prête à écrire votre propre histoire de santé ?</p>
+          <a href="#contact" class="btn btn--primary btn--lg">Commencer maintenant</a>
+        </div>
+      </div>
+
+      <div class="section__wave">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C720,70 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff"/></svg>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+      <div class="contact__deco">
+        <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="90" fill="#E8197D" opacity="0.04"/><circle cx="100" cy="100" r="60" fill="#E8197D" opacity="0.04"/></svg>
+      </div>
+
+      <div class="container contact__container">
+        <div class="contact__info fade-in">
+          <span class="section__eyebrow">Contact</span>
+          <h2 class="section__title">Parlons de votre santé</h2>
+          <p class="contact__intro">
+            Vous avez des questions, souhaitez prendre rendez-vous ou simplement
+            en savoir plus sur mon approche ? N'hésitez pas à me contacter.
+            Je réponds à chaque message avec attention.
+          </p>
+
+          <div class="contact__details">
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4,4 L20,4 Q21,4 21,5 L21,16 Q21,17 20,17 L7,17 L4,20 L4,5 Q4,4 5,4 Z" stroke="#E8197D" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5,4 Q5,3 7,3 L9,3 L11,8 L9.5,9.5 Q11,13 15,14.5 L16.5,13 L21,15 L21,17 Q21,19 19,19 Q8,18 5,6 Q4.5,4.5 5,4Z" stroke="#E8197D" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Téléphone</strong>
+                <a href="tel:+41797822737">079 / 782.27.37</a>
+              </div>
+            </div>
+
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#E8197D" stroke-width="1.8"/><path d="M12,7 L12,12 L16,14" stroke="#E8197D" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <strong>Disponibilités</strong>
+                <span>Lun – Ven : 9h00 – 19h00</span>
+                <span>Sam : 9h00 – 13h00</span>
+              </div>
+            </div>
+
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#E8197D" stroke-width="1.8"/><path d="M3,10 L21,10" stroke="#E8197D" stroke-width="1.8"/><path d="M8,3 L8,7 M16,3 L16,7" stroke="#E8197D" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <strong>Consultation</strong>
+                <span>En cabinet ou en visioconférence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__form-wrap fade-in fade-in--delay">
+          <form class="contact__form" id="contactForm" action="mailto:nutrisophie2@gmail.com" method="POST" enctype="text/plain">
+            <div class="form__row">
+              <div class="form__group">
+                <label for="nom">Nom complet *</label>
+                <input type="text" id="nom" name="nom" placeholder="Marie Dupont" required />
+              </div>
+              <div class="form__group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" placeholder="079 000 00 00" />
+            </div>
+
+            <div class="form__group">
+              <label for="sujet">Sujet de votre demande *</label>
+              <select id="sujet" name="sujet" required>
+                <option value="" disabled selected>Choisissez un sujet…</option>
+                <option value="consultation">Consultation individuelle</option>
+                <option value="plan">Plan alimentaire personnalisé</option>
+                <option value="coaching">Coaching en ligne</option>
+                <option value="renseignement">Renseignement général</option>
+                <option value="sport">Nutrition sportive</option>
+                <option value="chronique">Maladie chronique</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label for="message">Votre message *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement votre situation ou vos objectifs de santé…" required></textarea>
+            </div>
+
+            <div class="form__group form__group--checkbox">
+              <input type="checkbox" id="rgpd" name="rgpd" required />
+              <label for="rgpd">J'accepte que mes données soient utilisées pour répondre à ma demande *</label>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full btn--lg">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M3,10 L17,10 M12,5 L17,10 L12,15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Envoyer ma demande
+            </button>
+
+            <p class="form__notice">* Champs obligatoires — Réponse sous 24h ouvrables</p>
+          </form>
+          <div class="form__success" id="formSuccess">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" fill="#7AB648" opacity="0.15"/><path d="M18,30 L26,38 L42,22" stroke="#7AB648" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Message envoyé !</h3>
+            <p>Merci pour votre message. Je vous répondrai dans les 24h ouvrables. À très bientôt ! 🌿</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <a href="#accueil" class="nav__logo footer__logo">
+          <svg class="nav__logo-icon" viewBox="0 0 44 44" fill="none">
+            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity="0.85" transform="rotate(0 22 22)"/>
+            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity="0.75" transform="rotate(60 22 22)"/>
+            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#7AB648" opacity="0.75" transform="rotate(120 22 22)"/>
+            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity="0.6" transform="rotate(180 22 22)"/>
+            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#A8D4E6" opacity="0.75" transform="rotate(240 22 22)"/>
+            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity="0.6" transform="rotate(300 22 22)"/>
+            <circle cx="22" cy="22" r="6" fill="white" opacity="0.3"/>
+            <circle cx="22" cy="22" r="3.5" fill="#E8197D"/>
+          </svg>
+          <span>NutriSophie</span>
+        </a>
+        <p class="footer__tagline">Biologie nutritionnelle & micronutrition<br/>pour retrouver votre équilibre de santé.</p>
+      </div>
+
+      <div class="footer__links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#temoignages">Témoignages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Consultations individuelles</a></li>
+          <li><a href="#services">Plans alimentaires</a></li>
+          <li><a href="#services">Coaching en ligne</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Contacts</h4>
+        <a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a>
+        <a href="tel:+41797822737">079 / 782.27.37</a>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M14,8 L12.5,8 Q11,8 11,10 L11,12 L14,12 L13.5,15 L11,15 L11,20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 NutriSophie – Tous droits réservés</p>
+        <p>Site créé avec ❤️ pour votre santé</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#accueil" class="scroll-top" id="scrollTop" aria-label="Retour en haut">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12,19 L12,5 M6,11 L12,5 L18,11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+  <script>
+/* ===================================================
+   NUTRISOPHIE — JavaScript
+   =================================================== */
+
+(function () {
+  'use strict';
+
+  // --- Elements ---
+  const header     = document.getElementById('header');
+  const navToggle  = document.getElementById('navToggle');
+  const navMenu    = document.getElementById('navMenu');
+  const navLinks   = document.querySelectorAll('.nav__link');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  const contactForm  = document.getElementById('contactForm');
+  const formSuccess  = document.getElementById('formSuccess');
+  const sections     = document.querySelectorAll('section[id]');
+
+  // ===================================================
+  // 1. Header — Scrolled state
+  // ===================================================
+  function onScroll() {
+    if (window.scrollY > 30) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+
+    updateActiveLink();
+  }
+
+  // ===================================================
+  // 2. Mobile menu toggle
+  // ===================================================
+  navToggle.addEventListener('click', function () {
+    const isOpen = navMenu.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      navMenu.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function (e) {
+    if (navMenu.classList.contains('open') &&
+        !navMenu.contains(e.target) &&
+        !navToggle.contains(e.target)) {
+      navMenu.classList.remove('open');
+      navToggle.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ===================================================
+  // 3. Active nav link on scroll
+  // ===================================================
+  function updateActiveLink() {
+    let currentSection = '';
+    sections.forEach(function (section) {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(function (link) {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + currentSection) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // ===================================================
+  // 4. Smooth scroll for anchor links
+  // ===================================================
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = parseInt(getComputedStyle(document.documentElement)
+          .getPropertyValue('--header-h')) || 72;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ===================================================
+  // 5. Fade-in animations (Intersection Observer)
+  // ===================================================
+  const fadeEls = document.querySelectorAll('.fade-in');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    fadeEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    fadeEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // ===================================================
+  // 6. Contact form — feedback visuel
+  // ===================================================
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Envoi en cours…</span>';
+
+      setTimeout(function () {
+        contactForm.style.display = 'none';
+        formSuccess.classList.add('visible');
+        window.scrollTo({
+          top: formSuccess.getBoundingClientRect().top + window.scrollY - 120,
+          behavior: 'smooth'
+        });
+      }, 600);
+    });
+  }
+
+  // ===================================================
+  // 7. Service card hover — subtle color accent
+  // ===================================================
+  document.querySelectorAll('.service-card').forEach(function (card) {
+    card.addEventListener('mouseenter', function () {
+      this.style.borderColor = 'transparent';
+    });
+    card.addEventListener('mouseleave', function () {
+      if (!this.classList.contains('service-card--featured')) {
+        this.style.borderColor = '';
+      }
+    });
+  });
+
+  // ===================================================
+  // 8. Init
+  // ===================================================
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Trigger hero fade-in immediately
+  document.querySelectorAll('.hero .fade-in').forEach(function (el) {
+    setTimeout(function () { el.classList.add('visible'); }, 100);
+  });
+
+})();
+
+</script>
+</body>
+</html>

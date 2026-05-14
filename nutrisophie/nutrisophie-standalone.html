@@ -1,1619 +1,951 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NutriSophie – Nutrithérapeute en biologie nutritionnelle & micronutrition</title>
-  <meta name="description" content="Sophie, nutrithérapeute spécialisée en biologie nutritionnelle et micronutrition. Consultations individuelles, plans alimentaires personnalisés et coaching en ligne." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
-  <style>/* ===========================
-   NUTRISOPHIE — DESIGN PREMIUM
-   =========================== */
-
-/* ── Reset <link rel="stylesheet" href="style.css" /> Base ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --pink:        #E8197D;
-  --pink-dark:   #C4136A;
-  --pink-light:  #FDE8F3;
-  --pink-pale:   #FFF5FA;
-  --blue:        #A8D4E6;
-  --blue-dark:   #5BA3C2;
-  --blue-light:  #EEF7FC;
-  --green:       #7AB648;
-  --green-dark:  #5E9234;
-  --green-light: #F0F7EC;
-  --coral:       #F07850;
-  --coral-light: #FEF0EB;
-  --dark:        #12112A;
-  --dark-2:      #1E1D38;
-  --gray:        #6B7280;
-  --gray-2:      #9CA3AF;
-  --gray-light:  #F4F6F8;
-  --white:       #FFFFFF;
-
-  --grad-pink:   linear-gradient(135deg, #E8197D 0%, #F07850 100%);
-  --grad-green:  linear-gradient(135deg, #7AB648 0%, #A8D4E6 100%);
-  --grad-blue:   linear-gradient(135deg, #A8D4E6 0%, #7AB648 100%);
-  --grad-dark:   linear-gradient(135deg, #12112A 0%, #1E1D38 100%);
-  --grad-soft:   linear-gradient(135deg, #FDE8F3 0%, #EEF7FC 50%, #F0F7EC 100%);
-
-  --font:        'Nunito', sans-serif;
-  --r-sm:        12px;
-  --r-md:        20px;
-  --r-lg:        28px;
-  --r-xl:        40px;
-  --shadow-sm:   0 2px 12px rgba(0,0,0,0.06);
-  --shadow-md:   0 8px 32px rgba(0,0,0,0.10);
-  --shadow-lg:   0 20px 60px rgba(0,0,0,0.14);
-  --shadow-pink: 0 12px 40px rgba(232,25,125,0.25);
-  --t:           0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-html { scroll-behavior: smooth; font-size: 16px; }
-html::-webkit-scrollbar { width: 6px; }
-html::-webkit-scrollbar-track { background: var(--gray-light); }
-html::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 3px; }
-
-body {
-  font-family: var(--font);
-  color: var(--dark);
-  background: var(--white);
-  line-height: 1.65;
-  overflow-x: hidden;
-}
-
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-em { font-style: italic; }
-
-.container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-.section { padding: 100px 0; position: relative; overflow: hidden; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 9px;
-  padding: 14px 32px; border-radius: 50px;
-  font-family: var(--font); font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; border: 2px solid transparent;
-  transition: var(--t); white-space: nowrap; position: relative; overflow: hidden;
-}
-.btn::after {
-  content: ''; position: absolute; inset: 0;
-  background: rgba(255,255,255,0.15); opacity: 0; transition: var(--t);
-}
-.btn:hover::after { opacity: 1; }
-.btn--lg { padding: 17px 40px; font-size: 1.05rem; }
-.btn--full { width: 100%; justify-content: center; }
-
-.btn--primary {
-  background: var(--grad-pink); color: var(--white);
-  box-shadow: var(--shadow-pink);
-}
-.btn--primary:hover { transform: translateY(-3px); box-shadow: 0 18px 50px rgba(232,25,125,0.38); }
-
-.btn--outline {
-  background: transparent; color: var(--white);
-  border-color: rgba(255,255,255,0.5); backdrop-filter: blur(8px);
-}
-.btn--outline:hover { background: rgba(255,255,255,0.15); border-color: white; transform: translateY(-3px); }
-
-.btn--outline-pink { background: transparent; color: var(--pink); border-color: var(--pink); }
-.btn--outline-pink:hover { background: var(--pink); color: var(--white); transform: translateY(-3px); box-shadow: var(--shadow-pink); }
-
-.btn--ghost { background: rgba(255,255,255,0.12); color: var(--white); border-color: rgba(255,255,255,0.2); backdrop-filter: blur(12px); }
-.btn--ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-3px); }
-
-.btn--green-solid { background: var(--grad-green); color: var(--white); }
-.btn--green-solid:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(122,182,72,0.35); }
-
-/* ── Section Header ── */
-.section__eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--pink); margin-bottom: 14px;
-}
-.section__eyebrow::before {
-  content: ''; width: 24px; height: 2px;
-  background: var(--grad-pink); border-radius: 2px;
-}
-.section__title {
-  font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.15;
-  color: var(--dark); margin-bottom: 18px;
-}
-.section__title span { background: var(--grad-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.section__subtitle { font-size: 1.05rem; color: var(--gray); max-width: 600px; margin: 0 auto; line-height: 1.75; }
-.section__header { text-align: center; margin-bottom: 64px; }
-
-/* ── Wave ── */
-.section__wave { position: absolute; bottom: 0; left: 0; right: 0; line-height: 0; pointer-events: none; }
-.section__wave svg { display: block; width: 100%; }
-
-/* ── Fade-in animations ── */
-.fade-in { opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-.fade-in--delay { transition-delay: 0.15s; }
-.fade-in--delay-2 { transition-delay: 0.3s; }
-
-/* ══════════════════════════════
-   HEADER
-══════════════════════════════ */
-.header {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(232,25,125,0.07);
-  transition: box-shadow var(--t), background var(--t);
-}
-.header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); background: rgba(255,255,255,0.97); }
-
-.nav { display: flex; align-items: center; gap: 12px; height: 76px; }
-
-.nav__logo { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 1.25rem; color: var(--dark); flex-shrink: 0; transition: var(--t); }
-.nav__logo:hover { color: var(--pink); }
-.nav__logo-icon { width: 40px; height: 40px; filter: drop-shadow(0 2px 8px rgba(232,25,125,0.3)); }
-
-.nav__menu { display: flex; gap: 4px; margin-left: auto; }
-.nav__link {
-  padding: 9px 16px; border-radius: 10px;
-  font-weight: 600; font-size: 0.9rem; color: var(--gray);
-  transition: var(--t); position: relative;
-}
-.nav__link::after {
-  content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
-  width: 0; height: 2px; background: var(--grad-pink);
-  border-radius: 2px; transition: var(--t);
-}
-.nav__link:hover { color: var(--pink); }
-.nav__link:hover::after, .nav__link.active::after { width: 60%; }
-.nav__link.active { color: var(--pink); }
-
-.nav__cta { margin-left: 12px; padding: 11px 26px; }
-
-.nav__toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; margin-left: auto; }
-.nav__toggle span { display: block; width: 24px; height: 2.5px; background: var(--dark); border-radius: 2px; transition: var(--t); }
-
-/* ══════════════════════════════
-   HERO
-══════════════════════════════ */
-.hero {
-  min-height: 100vh; display: flex; align-items: center;
-  background: var(--dark);
-  position: relative; overflow: hidden;
-  padding: 120px 0 80px;
-}
-
-/* Animated gradient mesh */
-.hero__bg {
-  position: absolute; inset: 0; overflow: hidden;
-}
-.hero__bg-blob {
-  position: absolute; border-radius: 50%;
-  filter: blur(80px); opacity: 0.35;
-  animation: float-blob 8s ease-in-out infinite;
-}
-.hero__bg-blob--1 { width: 600px; height: 600px; background: var(--pink); top: -200px; right: -150px; animation-delay: 0s; }
-.hero__bg-blob--2 { width: 500px; height: 500px; background: var(--coral); bottom: -200px; right: 100px; animation-delay: -2s; opacity: 0.2; }
-.hero__bg-blob--3 { width: 400px; height: 400px; background: var(--blue); top: 50%; left: -100px; transform: translateY(-50%); animation-delay: -4s; opacity: 0.2; }
-.hero__bg-blob--4 { width: 300px; height: 300px; background: var(--green); bottom: 0; left: 30%; animation-delay: -6s; opacity: 0.15; }
-
-@keyframes float-blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.05); }
-  66% { transform: translate(-20px, 15px) scale(0.95); }
-}
-
-/* Grid pattern overlay */
-.hero__bg::after {
-  content: ''; position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.hero__container {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center;
-  position: relative; z-index: 2;
-}
-
-/* Left content */
-.hero__content { }
-
-.hero__badge {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-  backdrop-filter: blur(12px); color: white;
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; padding: 10px 20px;
-  border-radius: 50px; margin-bottom: 28px;
-}
-.hero__badge-dot {
-  width: 8px; height: 8px; background: var(--green);
-  border-radius: 50%; box-shadow: 0 0 0 3px rgba(122,182,72,0.3);
-  animation: pulse-dot 2s infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(122,182,72,0.3); }
-  50% { box-shadow: 0 0 0 7px rgba(122,182,72,0.1); }
-}
-
-.hero__title {
-  font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 800;
-  line-height: 1.1; color: var(--white); margin-bottom: 24px;
-}
-.hero__title em {
-  font-style: italic;
-  background: var(--grad-pink); -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; background-clip: text;
-}
-
-.hero__text {
-  font-size: 1.1rem; color: rgba(255,255,255,0.7);
-  margin-bottom: 40px; line-height: 1.8; max-width: 480px;
-}
-.hero__text strong { color: white; }
-
-.hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
-
-.hero__tags { display: flex; flex-wrap: wrap; gap: 10px; }
-.tag {
-  display: inline-flex; align-items: center; gap: 7px;
-  padding: 9px 18px; border-radius: 50px;
-  font-size: 0.83rem; font-weight: 700;
-  backdrop-filter: blur(12px);
-}
-.tag--green  { background: rgba(122,182,72,0.2); color: #9DDE65; border: 1px solid rgba(122,182,72,0.3); }
-.tag--blue   { background: rgba(168,212,230,0.2); color: #A8D4E6; border: 1px solid rgba(168,212,230,0.3); }
-.tag--coral  { background: rgba(240,120,80,0.2); color: #F09870; border: 1px solid rgba(240,120,80,0.3); }
-.tag--pink   { background: rgba(232,25,125,0.2); color: #F472B6; border: 1px solid rgba(232,25,125,0.3); }
-
-/* Right — visual */
-.hero__visual { position: relative; display: flex; justify-content: center; align-items: center; }
-
-.hero__photo-ring {
-  position: relative; width: 380px; height: 380px;
-}
-.hero__photo-ring::before {
-  content: ''; position: absolute; inset: -3px;
-  border-radius: 50%;
-  background: conic-gradient(var(--pink), var(--coral), var(--blue), var(--green), var(--pink));
-  animation: spin-ring 6s linear infinite;
-}
-.hero__photo-ring::after {
-  content: ''; position: absolute; inset: 3px;
-  border-radius: 50%; background: var(--dark-2);
-}
-@keyframes spin-ring { to { transform: rotate(360deg); } }
-
-.hero__photo-inner {
-  position: absolute; inset: 6px; border-radius: 50%;
-  overflow: hidden; z-index: 1;
-  background: linear-gradient(145deg, #2A2848, #1A1A2E);
-  display: flex; align-items: center; justify-content: center;
-}
-.hero__photo-inner svg { width: 100%; height: 100%; }
-
-.hero__float-card {
-  position: absolute; z-index: 3;
-  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-  backdrop-filter: blur(20px); border-radius: var(--r-md);
-  padding: 14px 20px; display: flex; align-items: center; gap: 12px;
-  box-shadow: var(--shadow-lg); animation: float-card 4s ease-in-out infinite;
-}
-.hero__float-card--1 { top: 20px; left: -60px; animation-delay: 0s; }
-.hero__float-card--2 { bottom: 60px; right: -50px; animation-delay: -2s; }
-.hero__float-card--3 { top: 50%; left: -80px; transform: translateY(-50%); animation-delay: -1s; }
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.hero__float-card--3 { animation: float-card-3 4s ease-in-out infinite; }
-@keyframes float-card-3 {
-  0%, 100% { transform: translateY(-50%); }
-  50% { transform: translateY(calc(-50% - 10px)); }
-}
-
-.float-card__icon {
-  width: 42px; height: 42px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; flex-shrink: 0;
-}
-.float-card__icon--pink { background: rgba(232,25,125,0.25); }
-.float-card__icon--green { background: rgba(122,182,72,0.25); }
-.float-card__icon--blue { background: rgba(168,212,230,0.25); }
-.float-card__num { font-size: 1.2rem; font-weight: 800; color: white; line-height: 1; }
-.float-card__label { font-size: 0.75rem; color: rgba(255,255,255,0.65); font-weight: 600; }
-
-/* Scroll indicator */
-.hero__scroll {
-  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  color: rgba(255,255,255,0.4); font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase; z-index: 2;
-}
-.hero__scroll-line {
-  width: 1.5px; height: 48px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
-  animation: scroll-line 2s ease-in-out infinite;
-}
-@keyframes scroll-line { 0%, 100% { transform: scaleY(1); opacity: 1; } 50% { transform: scaleY(0.5); opacity: 0.4; } }
-
-/* ══════════════════════════════
-   STATS BAR
-══════════════════════════════ */
-.stats-bar { background: var(--white); padding: 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
-.stats-bar__inner {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  max-width: 1180px; margin: 0 auto; padding: 0 28px;
-}
-.stats-bar__item {
-  display: flex; align-items: center; gap: 16px;
-  padding: 28px 24px; border-right: 1px solid rgba(0,0,0,0.06);
-  transition: var(--t);
-}
-.stats-bar__item:last-child { border-right: none; }
-.stats-bar__item:hover { background: var(--pink-pale); }
-.stats-bar__icon {
-  width: 50px; height: 50px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem; flex-shrink: 0;
-}
-.stats-bar__icon--pink { background: var(--pink-light); }
-.stats-bar__icon--green { background: var(--green-light); }
-.stats-bar__icon--blue { background: var(--blue-light); }
-.stats-bar__icon--coral { background: var(--coral-light); }
-.stats-bar__num { font-size: 1.7rem; font-weight: 800; color: var(--dark); line-height: 1; }
-.stats-bar__num span { background: var(--grad-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.stats-bar__label { font-size: 0.82rem; color: var(--gray); font-weight: 600; margin-top: 3px; }
-
-/* ══════════════════════════════
-   À PROPOS
-══════════════════════════════ */
-.apropos {
-  background: var(--grad-soft);
-  padding-bottom: 120px;
-}
-
-.apropos__container { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; align-items: center; }
-
-/* Image side */
-.apropos__image-wrap { position: relative; }
-
-.apropos__photo-frame {
-  position: relative; width: 340px; margin: 0 auto;
-}
-
-.apropos__photo-bg {
-  width: 340px; height: 340px; border-radius: 40px;
-  background: var(--grad-pink); padding: 4px; position: relative;
-  box-shadow: var(--shadow-pink);
-}
-.apropos__photo-bg::before {
-  content: ''; position: absolute;
-  width: 180px; height: 180px; border-radius: 30px;
-  background: var(--green); opacity: 0.15;
-  bottom: -30px; right: -30px; z-index: -1;
-}
-
-.apropos__photo-inner {
-  width: 100%; height: 100%; border-radius: 36px;
-  background: linear-gradient(145deg, #F5EEF8, #EAF4FB);
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-}
-.apropos__photo-inner svg { width: 100%; height: 100%; }
-
-.apropos__deco-flower {
-  position: absolute; top: -30px; right: -30px;
-  width: 90px; height: 90px;
-  animation: spin-slow 14s linear infinite;
-  filter: drop-shadow(0 4px 12px rgba(232,25,125,0.2));
-}
-@keyframes spin-slow { to { transform: rotate(360deg); } }
-
-.apropos__exp-badge {
-  position: absolute; bottom: -20px; left: -20px;
-  background: white; border-radius: 20px;
-  padding: 16px 22px; box-shadow: var(--shadow-md);
-  display: flex; align-items: center; gap: 12px;
-  border: 2px solid var(--pink-light);
-}
-.apropos__exp-badge .num { font-size: 1.8rem; font-weight: 800; background: var(--grad-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
-.apropos__exp-badge .label { font-size: 0.8rem; color: var(--gray); font-weight: 600; }
-
-.apropos__stats { display: flex; gap: 16px; margin-top: 40px; }
-
-.stat-card {
-  flex: 1; background: white; border-radius: var(--r-md);
-  padding: 20px 22px; box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: var(--t);
-}
-.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.stat-card__number {
-  display: block; font-size: 1.8rem; font-weight: 800; line-height: 1;
-  background: var(--grad-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.stat-card__label { display: block; font-size: 0.8rem; color: var(--gray); margin-top: 5px; font-weight: 600; }
-
-/* Content side */
-.apropos__content { }
-.apropos__subtitle { font-size: 1rem; color: var(--pink); font-weight: 700; margin-bottom: 20px; }
-
-.apropos__text { color: var(--gray); margin-bottom: 18px; line-height: 1.8; font-size: 0.98rem; }
-
-.apropos__philosophy {
-  background: var(--white); border-radius: var(--r-md);
-  padding: 24px 28px; margin: 28px 0;
-  border-left: 4px solid var(--green);
-  box-shadow: var(--shadow-sm); position: relative;
-}
-.apropos__philosophy::before {
-  content: '"'; font-size: 6rem; line-height: 0.5;
-  color: var(--green); opacity: 0.12; font-family: Georgia, serif;
-  position: absolute; top: 24px; left: 16px;
-}
-.apropos__quote {
-  font-style: italic; color: var(--dark); font-size: 1rem;
-  line-height: 1.75; font-weight: 600; position: relative;
-}
-.apropos__quote em { color: var(--pink); font-style: normal; }
-
-.apropos__specialites { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
-.specialite-tag {
-  background: var(--white); color: var(--dark);
-  border: 1.5px solid rgba(0,0,0,0.08);
-  border-radius: 50px; padding: 9px 18px;
-  font-size: 0.83rem; font-weight: 700; transition: var(--t);
-  display: flex; align-items: center; gap: 6px;
-}
-.specialite-tag:hover { border-color: var(--pink); color: var(--pink); background: var(--pink-pale); transform: translateY(-2px); }
-
-/* ══════════════════════════════
-   SERVICES
-══════════════════════════════ */
-.services { background: var(--white); }
-.services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
-
-.service-card {
-  background: var(--gray-light); border-radius: var(--r-lg);
-  border: 2px solid transparent; overflow: hidden;
-  transition: var(--t); position: relative;
-  display: flex; flex-direction: column;
-}
-.service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: rgba(232,25,125,0.15); }
-
-.service-card--featured {
-  background: var(--white);
-  border-color: var(--pink);
-  box-shadow: var(--shadow-pink);
-  transform: translateY(-12px);
-}
-.service-card--featured:hover { transform: translateY(-18px); }
-
-.service-card__header {
-  height: 8px; width: 100%;
-}
-.service-card__header--pink { background: var(--grad-pink); }
-.service-card__header--green { background: var(--grad-green); }
-.service-card__header--blue { background: linear-gradient(135deg, #A8D4E6, #5BA3C2); }
-
-.service-card__badge {
-  position: absolute; top: 20px; right: 20px;
-  background: var(--grad-pink); color: white;
-  font-size: 0.72rem; font-weight: 800;
-  padding: 6px 14px; border-radius: 50px;
-  box-shadow: var(--shadow-pink); letter-spacing: 0.05em;
-}
-
-.service-card__body { padding: 32px 28px; flex: 1; display: flex; flex-direction: column; }
-
-.service-card__icon {
-  width: 64px; height: 64px; border-radius: 18px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 22px; font-size: 1.8rem;
-}
-.service-card__icon--pink { background: var(--pink-light); }
-.service-card__icon--green { background: var(--green-light); }
-.service-card__icon--blue { background: var(--blue-light); }
-
-.service-card__title { font-size: 1.2rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
-.service-card__text { font-size: 0.9rem; color: var(--gray); line-height: 1.75; margin-bottom: 22px; flex: 1; }
-
-.service-card__list { margin-bottom: 28px; display: flex; flex-direction: column; gap: 9px; }
-.service-card__list li {
-  font-size: 0.88rem; color: var(--dark); padding-left: 24px;
-  position: relative; font-weight: 600; line-height: 1.5;
-}
-.service-card__list li::before {
-  content: ''; position: absolute; left: 0; top: 6px;
-  width: 14px; height: 14px; border-radius: 50%;
-  background: var(--grad-green);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7' cy='7' r='7' fill='%237AB648'/%3E%3Cpath d='M4 7l2 2 4-4' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-size: cover;
-}
-
-.service-card__footer {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding-top: 22px; border-top: 1px solid rgba(0,0,0,0.06);
-  flex-wrap: wrap;
-}
-.service-card__duration { font-size: 0.82rem; color: var(--gray); font-weight: 600; }
-
-.services__note {
-  display: flex; align-items: center; gap: 16px;
-  background: var(--green-light); border-radius: var(--r-md);
-  padding: 22px 28px; margin-top: 52px;
-  border: 1px solid rgba(122,182,72,0.2);
-}
-.services__note svg { width: 22px; height: 22px; flex-shrink: 0; }
-.services__note p { font-size: 0.93rem; color: var(--dark); }
-
-/* ══════════════════════════════
-   PROCESSUS
-══════════════════════════════ */
-.processus {
-  background: var(--dark);
-  position: relative; overflow: hidden;
-}
-.processus::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-.processus .section__eyebrow { color: var(--blue); }
-.processus .section__title { color: var(--white); }
-.processus .section__subtitle { color: rgba(255,255,255,0.55); }
-
-.processus__grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 32px; position: relative;
-}
-.processus__grid::before {
-  content: ''; position: absolute;
-  top: 36px; left: calc(12.5% + 20px); right: calc(12.5% + 20px);
-  height: 1px; background: linear-gradient(to right, var(--pink), var(--coral), var(--blue), var(--green));
-  opacity: 0.3;
-}
-
-.processus__step { text-align: center; position: relative; }
-
-.processus__num {
-  width: 72px; height: 72px; border-radius: 50%;
-  margin: 0 auto 22px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; font-weight: 800; color: white;
-  position: relative; z-index: 1;
-}
-.processus__num--1 { background: var(--grad-pink); box-shadow: 0 8px 24px rgba(232,25,125,0.4); }
-.processus__num--2 { background: linear-gradient(135deg, #F07850, #E8197D); box-shadow: 0 8px 24px rgba(240,120,80,0.4); }
-.processus__num--3 { background: var(--grad-green); box-shadow: 0 8px 24px rgba(122,182,72,0.4); }
-.processus__num--4 { background: linear-gradient(135deg, #A8D4E6, #7AB648); box-shadow: 0 8px 24px rgba(168,212,230,0.4); }
-
-.processus__title { font-size: 1rem; font-weight: 800; color: white; margin-bottom: 10px; }
-.processus__text { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
-
-/* ══════════════════════════════
-   TÉMOIGNAGES
-══════════════════════════════ */
-.temoignages { background: var(--pink-pale); position: relative; }
-
-.temoignages__deco-leaf { position: absolute; pointer-events: none; }
-.temoignages__deco-leaf--left { top: 0; bottom: 0; left: 0; width: 160px; display: flex; align-items: center; }
-.temoignages__deco-leaf--right { top: 0; bottom: 0; right: 0; width: 160px; display: flex; align-items: center; }
-.temoignages__deco-leaf svg { width: 100%; }
-
-.temoignages__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
-
-.temoignage-card {
-  background: var(--white); border-radius: var(--r-lg);
-  padding: 32px 28px; box-shadow: var(--shadow-sm);
-  transition: var(--t); display: flex; flex-direction: column; gap: 18px;
-  border: 1.5px solid rgba(0,0,0,0.04);
-  position: relative; overflow: hidden;
-}
-.temoignage-card::before {
-  content: '"'; position: absolute; top: 16px; right: 20px;
-  font-size: 5rem; font-family: Georgia, serif;
-  color: var(--pink); opacity: 0.07; line-height: 1;
-}
-.temoignage-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-
-.temoignage-card--featured {
-  background: var(--dark);
-  border-color: transparent;
-  box-shadow: var(--shadow-lg);
-}
-.temoignage-card--featured::before { color: var(--pink); opacity: 0.15; }
-.temoignage-card--featured .temoignage-card__quote { color: rgba(255,255,255,0.75); }
-.temoignage-card--featured .temoignage-card__author strong { color: var(--white); }
-.temoignage-card--featured .temoignage-card__author span { color: rgba(255,255,255,0.45); }
-
-.temoignage-card__ribbon {
-  position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: var(--grad-pink);
-}
-
-.temoignage-card__stars { font-size: 0.9rem; letter-spacing: 2px; }
-.temoignage-card__quote { font-size: 0.9rem; color: var(--gray); line-height: 1.8; font-style: italic; flex: 1; }
-
-.temoignage-card__author { display: flex; align-items: center; gap: 13px; }
-.temoignage-card__avatar {
-  width: 46px; height: 46px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 1.1rem; color: var(--white);
-  flex-shrink: 0;
-}
-.temoignage-card__avatar--pink { background: var(--grad-pink); }
-.temoignage-card__avatar--coral { background: linear-gradient(135deg, #F07850, #E8197D); }
-.temoignage-card__avatar--green { background: var(--grad-green); }
-
-.temoignage-card__author strong { display: block; font-size: 0.9rem; color: var(--dark); }
-.temoignage-card__author span { font-size: 0.78rem; color: var(--gray-2); }
-
-.temoignage-card__tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.78rem; font-weight: 700;
-  padding: 6px 14px; border-radius: 50px; align-self: flex-start;
-}
-.temoignage-card__tag--pink { background: var(--pink-light); color: var(--pink); }
-.temoignage-card__tag--coral { background: var(--coral-light); color: var(--coral); }
-.temoignage-card__tag--green { background: var(--green-light); color: var(--green-dark); }
-
-.temoignages__cta { text-align: center; margin-top: 60px; }
-.temoignages__cta p { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 22px; }
-
-/* ══════════════════════════════
-   CTA BAND
-══════════════════════════════ */
-.cta-band {
-  background: var(--grad-pink); padding: 80px 0; text-align: center;
-  position: relative; overflow: hidden;
-}
-.cta-band::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-.cta-band__inner { position: relative; z-index: 1; }
-.cta-band__eyebrow {
-  display: inline-block; background: rgba(255,255,255,0.2);
-  color: white; font-size: 0.75rem; font-weight: 800;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  padding: 8px 20px; border-radius: 50px; margin-bottom: 20px;
-}
-.cta-band__title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: white; margin-bottom: 14px; line-height: 1.2; }
-.cta-band__text { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
-.cta-band__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-/* ══════════════════════════════
-   CONTACT
-══════════════════════════════ */
-.contact { background: var(--gray-light); }
-
-.contact__container { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
-
-.contact__intro { color: var(--gray); line-height: 1.8; margin-bottom: 36px; }
-.contact__details { display: flex; flex-direction: column; gap: 20px; }
-.contact__detail-item { display: flex; align-items: flex-start; gap: 16px; }
-
-.contact__detail-icon {
-  width: 50px; height: 50px; border-radius: 14px;
-  background: var(--white); box-shadow: var(--shadow-sm);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  border: 1.5px solid rgba(232,25,125,0.1);
-}
-.contact__detail-icon svg { width: 22px; height: 22px; }
-.contact__detail-item div { display: flex; flex-direction: column; gap: 3px; }
-.contact__detail-item strong { font-size: 0.78rem; color: var(--gray-2); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
-.contact__detail-item a, .contact__detail-item span { font-size: 0.95rem; color: var(--dark); font-weight: 600; }
-.contact__detail-item a:hover { color: var(--pink); }
-
-.contact__social-title { font-size: 0.85rem; font-weight: 700; color: var(--dark); margin: 28px 0 12px; }
-.contact__social { display: flex; gap: 12px; }
-.contact__social-btn {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--white); border-radius: 12px;
-  padding: 10px 18px; font-size: 0.85rem; font-weight: 700;
-  color: var(--dark); box-shadow: var(--shadow-sm);
-  border: 1.5px solid transparent; transition: var(--t);
-}
-.contact__social-btn svg { width: 20px; height: 20px; }
-.contact__social-btn:hover { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
-
-/* Form */
-.contact__form-wrap {
-  background: var(--white); border-radius: var(--r-xl);
-  padding: 44px; box-shadow: var(--shadow-md);
-  border: 1px solid rgba(0,0,0,0.04);
-}
-.contact__form-title { font-size: 1.3rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
-.contact__form-sub { font-size: 0.88rem; color: var(--gray); margin-bottom: 30px; }
-
-.contact__form { display: flex; flex-direction: column; gap: 20px; }
-.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form__group { display: flex; flex-direction: column; gap: 7px; }
-.form__group label { font-size: 0.83rem; font-weight: 700; color: var(--dark); }
-
-.form__group input, .form__group select, .form__group textarea {
-  width: 100%; padding: 14px 18px;
-  border: 2px solid rgba(0,0,0,0.08); border-radius: var(--r-sm);
-  font-family: var(--font); font-size: 0.95rem; color: var(--dark);
-  background: var(--gray-light); transition: var(--t); outline: none;
-}
-.form__group input:focus, .form__group select:focus, .form__group textarea:focus {
-  border-color: var(--pink); background: white;
-  box-shadow: 0 0 0 4px rgba(232,25,125,0.08);
-}
-.form__group textarea { resize: vertical; min-height: 130px; }
-.form__group--checkbox { flex-direction: row; align-items: flex-start; gap: 12px; }
-.form__group--checkbox input { width: auto; margin-top: 3px; accent-color: var(--pink); }
-.form__group--checkbox label { font-size: 0.82rem; font-weight: 500; color: var(--gray); }
-.form__notice { font-size: 0.78rem; color: var(--gray-2); text-align: center; }
-
-.form__success { display: none; text-align: center; padding: 48px 24px; flex-direction: column; align-items: center; gap: 16px; }
-.form__success svg { width: 64px; height: 64px; }
-.form__success h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); }
-.form__success p { color: var(--gray); }
-
-/* ══════════════════════════════
-   FOOTER
-══════════════════════════════ */
-.footer {
-  background: var(--dark-2);
-  position: relative; overflow: hidden;
-}
-.footer::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 3px; background: var(--grad-pink);
-}
-.footer__container {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 48px; padding: 64px 28px 52px;
-  max-width: 1180px; margin: 0 auto;
-}
-.footer__logo { color: var(--white); margin-bottom: 14px; }
-.footer__logo span { color: var(--white); font-size: 1.2rem; }
-.footer__tagline { font-size: 0.88rem; color: rgba(255,255,255,0.4); line-height: 1.7; }
-
-.footer__links h4, .footer__contact h4 {
-  color: rgba(255,255,255,0.9); font-size: 0.78rem;
-  text-transform: uppercase; letter-spacing: 0.12em;
-  margin-bottom: 18px; font-weight: 800;
-}
-.footer__links ul { display: flex; flex-direction: column; gap: 10px; }
-.footer__links a { font-size: 0.88rem; color: rgba(255,255,255,0.45); transition: var(--t); display: inline-flex; align-items: center; gap: 6px; }
-.footer__links a:hover { color: var(--pink); padding-left: 4px; }
-.footer__links a::before { content: '→'; font-size: 0.7rem; opacity: 0; transition: var(--t); }
-.footer__links a:hover::before { opacity: 1; }
-
-.footer__contact { display: flex; flex-direction: column; gap: 12px; }
-.footer__contact a { font-size: 0.88rem; color: rgba(255,255,255,0.45); transition: var(--t); }
-.footer__contact a:hover { color: var(--pink); }
-
-.footer__social { display: flex; gap: 10px; margin-top: 10px; }
-.footer__social-link {
-  width: 40px; height: 40px; border-radius: 12px;
-  border: 1.5px solid rgba(255,255,255,0.1);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.5); transition: var(--t);
-}
-.footer__social-link svg { width: 18px; height: 18px; }
-.footer__social-link:hover { border-color: var(--pink); color: var(--pink); background: rgba(232,25,125,0.1); transform: translateY(-3px); }
-
-.footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.06); padding: 22px 0;
-}
-.footer__bottom .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-.footer__bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
-
-/* Scroll top */
-.scroll-top {
-  position: fixed; bottom: 32px; right: 32px;
-  width: 50px; height: 50px;
-  background: var(--grad-pink); color: white; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-pink); opacity: 0; pointer-events: none;
-  transition: var(--t); z-index: 50;
-}
-.scroll-top.visible { opacity: 1; pointer-events: auto; }
-.scroll-top:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(232,25,125,0.45); }
-.scroll-top svg { width: 22px; height: 22px; }
-
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
-@media (max-width: 1024px) {
-  .hero__float-card--1, .hero__float-card--2, .hero__float-card--3 { display: none; }
-  .stats-bar__inner { grid-template-columns: repeat(2, 1fr); }
-  .stats-bar__item:nth-child(2) { border-right: none; }
-  .services__grid { grid-template-columns: 1fr 1fr; }
-  .processus__grid { grid-template-columns: repeat(2, 1fr); }
-  .processus__grid::before { display: none; }
-  .temoignages__grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
-  .footer__container { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 768px) {
-  .section { padding: 72px 0; }
-  .hero { min-height: auto; padding: 100px 0 80px; }
-  .hero__container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-  .hero__actions { justify-content: center; }
-  .hero__tags { justify-content: center; }
-  .hero__text { margin: 0 auto 40px; }
-  .hero__visual { order: -1; }
-  .hero__photo-ring { width: 260px; height: 260px; }
-
-  .apropos__container { grid-template-columns: 1fr; gap: 48px; }
-  .apropos__content { text-align: left; }
-  .apropos__philosophy { text-align: left; }
-  .apropos__specialites { justify-content: flex-start; }
-
-  .services__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-  .service-card--featured { transform: none; }
-  .service-card--featured:hover { transform: translateY(-8px); }
-
-  .contact__container { grid-template-columns: 1fr; gap: 40px; }
-  .form__row { grid-template-columns: 1fr; }
-  .contact__form-wrap { padding: 28px 22px; }
-
-  .footer__container { grid-template-columns: 1fr; gap: 32px; }
-  .footer__bottom .container { flex-direction: column; text-align: center; }
-
-  .nav__menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: white; flex-direction: column; padding: 20px; box-shadow: var(--shadow-lg); border-top: 1px solid rgba(0,0,0,0.06); gap: 4px; z-index: 200; }
-  .nav__menu.open { display: flex; }
-  .nav__cta { display: none; }
-  .nav__toggle { display: flex; }
-
-  .cta-band__actions { flex-direction: column; align-items: center; }
-  .stats-bar__inner { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 480px) {
-  .hero__title { font-size: 2.2rem; }
-  .hero__photo-ring { width: 220px; height: 220px; }
-  .hero__actions { flex-direction: column; align-items: center; }
-  .stats-bar__inner { grid-template-columns: 1fr; }
-  .stats-bar__item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); }
-}</style>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NutriSophie – Nutrithérapeute · Biologie nutritionnelle & Micronutrition</title>
+<meta name="description" content="Sophie, nutrithérapeute spécialisée en biologie nutritionnelle et micronutrition. Consultations, plans alimentaires et coaching en ligne. Basée en Suisse."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pk:#E8197D;--pkd:#C4136A;--pkl:#FDE8F3;--pkp:#FFF5FA;
+  --bl:#A8D4E6;--bld:#5BA3C2;--bll:#EEF7FC;
+  --gn:#7AB648;--gnd:#5E9234;--gnl:#F0F7EC;
+  --co:#F07850;--col:#FEF0EB;
+  --dk:#12112A;--dk2:#1E1D38;--gy:#6B7280;--gy2:#9CA3AF;--gl:#F4F6F8;--wh:#fff;
+  --gp:linear-gradient(135deg,#E8197D,#F07850);
+  --gg:linear-gradient(135deg,#7AB648,#A8D4E6);
+  --gd:linear-gradient(135deg,#12112A,#1E1D38);
+  --gs:linear-gradient(135deg,#FDE8F3 0%,#EEF7FC 50%,#F0F7EC 100%);
+  --fn:'Nunito',sans-serif;--r:16px;--rl:26px;--rxl:38px;
+  --s1:0 2px 12px rgba(0,0,0,.06);--s2:0 8px 32px rgba(0,0,0,.1);--s3:0 20px 60px rgba(0,0,0,.14);
+  --sp:0 12px 40px rgba(232,25,125,.25);--tr:.3s cubic-bezier(.4,0,.2,1)
+}
+html{scroll-behavior:smooth}html::-webkit-scrollbar{width:5px}html::-webkit-scrollbar-thumb{background:var(--pk);border-radius:3px}
+body{font-family:var(--fn);color:var(--dk);background:var(--wh);line-height:1.65;overflow-x:hidden}
+a{text-decoration:none;color:inherit}ul{list-style:none}button{font-family:var(--fn)}
+.ctr{max-width:1160px;margin:0 auto;padding:0 28px}
+.sec{padding:88px 0;position:relative;overflow:hidden}
+
+/* ROUTER */
+.pg{display:none;animation:pi .4s ease}
+.pg.on{display:block}
+@keyframes pi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:50px;font-family:var(--fn);font-weight:700;font-size:.95rem;cursor:pointer;border:2px solid transparent;transition:var(--tr);white-space:nowrap}
+.btn.lg{padding:16px 38px;font-size:1.05rem}.btn.fw{width:100%;justify-content:center}
+.btn.primary{background:var(--gp);color:#fff;box-shadow:var(--sp)}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(232,25,125,.4)}
+.btn.outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn.outline:hover{background:rgba(255,255,255,.15);transform:translateY(-3px)}
+.btn.opk{background:transparent;color:var(--pk);border-color:var(--pk)}
+.btn.opk:hover{background:var(--pk);color:#fff;transform:translateY(-3px);box-shadow:var(--sp)}
+.btn.wh{background:#fff;color:var(--pk);box-shadow:var(--s2)}
+.btn.wh:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.btn.gh{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)}
+.btn.gh:hover{background:rgba(255,255,255,.22);transform:translateY(-3px)}
+
+/* TYPOGRAPHY */
+.ey{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--pk);margin-bottom:13px}
+.ey::before{content:'';width:22px;height:2px;background:var(--gp);border-radius:2px}
+.ey.wt{color:var(--bl)}.ey.wt::before{background:var(--gg)}
+.ttl{font-size:clamp(1.85rem,3.8vw,2.9rem);font-weight:800;line-height:1.15;color:var(--dk);margin-bottom:16px}
+.ttl span{background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ttl.wt{color:#fff}
+.sub{font-size:1.05rem;color:var(--gy);max-width:600px;margin:0 auto;line-height:1.75}
+.sub.wt{color:rgba(255,255,255,.55)}
+.sh{text-align:center;margin-bottom:58px}
+
+/* FADE-IN */
+.fi{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.fi.v{opacity:1;transform:translateY(0)}.fi.d1{transition-delay:.12s}.fi.d2{transition-delay:.24s}.fi.d3{transition-delay:.36s}
+
+/* WAVES */
+.wv{position:absolute;bottom:0;left:0;right:0;line-height:0;pointer-events:none}
+.wv svg{display:block;width:100%}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(232,25,125,.07);transition:box-shadow var(--tr)}
+.hdr.sc{box-shadow:0 4px 30px rgba(0,0,0,.08)}
+.nav{display:flex;align-items:center;gap:6px;height:72px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;color:var(--dk);cursor:pointer;transition:var(--tr);flex-shrink:0;background:none;border:none}
+.nav__logo:hover{color:var(--pk)}
+.nav__logo svg{width:36px;height:36px;filter:drop-shadow(0 2px 8px rgba(232,25,125,.3))}
+.nav__menu{display:flex;gap:2px;margin-left:auto}
+.nlk{padding:8px 13px;border-radius:9px;font-weight:600;font-size:.88rem;color:var(--gy);transition:var(--tr);cursor:pointer;background:none;border:none;position:relative}
+.nlk::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--gp);border-radius:2px;transition:var(--tr)}
+.nlk:hover{color:var(--pk)}.nlk:hover::after{width:55%}
+.nlk.on{color:var(--pk)}.nlk.on::after{width:55%}
+.nav__cta{margin-left:10px;padding:10px 20px}
+.nav__tog{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;margin-left:auto}
+.nav__tog span{display:block;width:24px;height:2px;background:var(--dk);border-radius:2px;transition:var(--tr)}
+
+/* PAGE HERO (inner) */
+.phero{padding:76px 0 96px;background:var(--dk);position:relative;overflow:hidden;text-align:center}
+.phero-blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.3;animation:fb 9s ease-in-out infinite}
+.phero-blob.a{width:400px;height:400px;background:var(--pk);top:-150px;right:-100px}
+.phero-blob.b{width:340px;height:340px;background:var(--bl);bottom:-110px;left:-80px;animation-delay:-3s;opacity:.2}
+.phero-pill{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 20px;border-radius:50px;margin-bottom:18px}
+.phero-ttl{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:#fff;margin-bottom:14px;line-height:1.15}
+.phero-ttl span{background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.phero-sub{color:rgba(255,255,255,.6);font-size:1.05rem;max-width:540px;margin:0 auto;line-height:1.75}
+@keyframes fb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-14px) scale(1.06)}}
+
+/* ════ ACCUEIL ════ */
+.hero{min-height:100vh;display:flex;align-items:center;background:var(--dk);position:relative;overflow:hidden;padding:110px 0 80px}
+.hb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;animation:fb 8s ease-in-out infinite}
+.hb.h1{width:580px;height:580px;background:var(--pk);top:-180px;right:-120px}
+.hb.h2{width:480px;height:480px;background:var(--co);bottom:-180px;right:120px;animation-delay:-2s;opacity:.22}
+.hb.h3{width:380px;height:380px;background:var(--bl);top:50%;left:-80px;transform:translateY(-50%);animation-delay:-4s;opacity:.2}
+.hb.h4{width:280px;height:280px;background:var(--gn);bottom:0;left:35%;animation-delay:-6s;opacity:.15}
+.hgp{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
+.hgrd{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;position:relative;z-index:2}
+.hbadge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(12px);color:#fff;font-size:.77rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 20px;border-radius:50px;margin-bottom:26px}
+.hdot{width:8px;height:8px;background:var(--gn);border-radius:50%;animation:pd 2s infinite}
+@keyframes pd{0%,100%{box-shadow:0 0 0 3px rgba(122,182,72,.3)}50%{box-shadow:0 0 0 7px rgba(122,182,72,.1)}}
+.httl{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:22px}
+.httl em{font-style:italic;background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.htxt{font-size:1.08rem;color:rgba(255,255,255,.7);margin-bottom:36px;line-height:1.8;max-width:480px}
+.htxt strong{color:#fff}
+.hact{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.htags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:50px;font-size:.82rem;font-weight:700;backdrop-filter:blur(12px)}
+.tg{background:rgba(122,182,72,.2);color:#9DDE65;border:1px solid rgba(122,182,72,.3)}
+.tb{background:rgba(168,212,230,.2);color:#A8D4E6;border:1px solid rgba(168,212,230,.3)}
+.tc_{background:rgba(240,120,80,.2);color:#F09870;border:1px solid rgba(240,120,80,.3)}
+.tp{background:rgba(232,25,125,.2);color:#F472B6;border:1px solid rgba(232,25,125,.3)}
+.hvis{position:relative;display:flex;justify-content:center;align-items:center}
+.hring{position:relative;width:360px;height:360px}
+.hring::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(var(--pk),var(--co),var(--bl),var(--gn),var(--pk));animation:sr 7s linear infinite}
+.hring::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--dk2)}
+@keyframes sr{to{transform:rotate(360deg)}}
+.hrin{position:absolute;inset:6px;border-radius:50%;overflow:hidden;z-index:1;background:linear-gradient(145deg,#2A2848,#1A1A2E);display:flex;align-items:center;justify-content:center}
+.hrin svg{width:100%;height:100%}
+.hfc{position:absolute;z-index:3;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(20px);border-radius:var(--r);padding:13px 18px;display:flex;align-items:center;gap:11px;box-shadow:var(--s3)}
+.hfc.f1{top:16px;left:-55px;animation:fc 4s ease-in-out infinite}
+.hfc.f2{bottom:50px;right:-45px;animation:fc 4s ease-in-out infinite;animation-delay:-2s}
+.hfc.f3{top:50%;left:-75px;animation:fc3 4s ease-in-out infinite;animation-delay:-1s}
+@keyframes fc{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes fc3{0%,100%{transform:translateY(-50%)}50%{transform:translateY(calc(-50% - 10px))}}
+.fci{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.fci.fp{background:rgba(232,25,125,.25)}.fci.fg{background:rgba(122,182,72,.25)}.fci.fb{background:rgba(168,212,230,.25)}
+.fcn{font-size:1.15rem;font-weight:800;color:#fff;line-height:1}
+.fcl{font-size:.72rem;color:rgba(255,255,255,.6);font-weight:600}
+.hscr{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.35);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;z-index:2}
+.hscrl{width:1.5px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:sl 2s ease-in-out infinite}
+@keyframes sl{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* STATS BAR */
+.sbar{background:#fff;border-bottom:1px solid rgba(0,0,0,.06)}
+.sbr{display:grid;grid-template-columns:repeat(4,1fr);max-width:1160px;margin:0 auto;padding:0 28px}
+.sbi{display:flex;align-items:center;gap:14px;padding:25px 18px;border-right:1px solid rgba(0,0,0,.06);transition:var(--tr)}
+.sbi:last-child{border-right:none}.sbi:hover{background:var(--pkp)}
+.sbii{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.sbii.ip{background:var(--pkl)}.sbii.ig{background:var(--gnl)}.sbii.ib{background:var(--bll)}.sbii.ic{background:var(--col)}
+.sbn{font-size:1.6rem;font-weight:800;line-height:1;background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sbl{font-size:.8rem;color:var(--gy);font-weight:600;margin-top:3px}
+
+/* WHY */
+.why-sec{background:var(--gs)}
+.why-grd{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.wc{background:#fff;border-radius:var(--rl);padding:34px 26px;box-shadow:var(--s1);border:1.5px solid rgba(0,0,0,.04);transition:var(--tr);text-align:center}
+.wc:hover{transform:translateY(-6px);box-shadow:var(--s3)}
+.wc i{font-size:2.7rem;display:block;margin-bottom:16px;font-style:normal}
+.wc h3{font-size:1.08rem;font-weight:800;color:var(--dk);margin-bottom:9px}
+.wc p{font-size:.89rem;color:var(--gy);line-height:1.75}
+
+/* TESTI PREVIEW */
+.tpv{background:#fff}
+.tpg{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:900px;margin:0 auto}
+.tpc{background:var(--gl);border-radius:var(--rl);padding:26px;border:1.5px solid rgba(0,0,0,.04);transition:var(--tr);position:relative;overflow:hidden}
+.tpc:hover{transform:translateY(-4px);box-shadow:var(--s2)}
+.tpc::before{content:'"';position:absolute;top:10px;right:16px;font-size:5rem;font-family:Georgia,serif;color:var(--pk);opacity:.07;line-height:1}
+.tpc .stars{font-size:.85rem;margin-bottom:11px}
+.tpc blockquote{font-size:.89rem;color:var(--gy);font-style:italic;line-height:1.78;margin-bottom:15px}
+.tpc .ath{display:flex;align-items:center;gap:11px}
+.tpc .av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#fff;flex-shrink:0}
+.av.ap{background:var(--gp)}.av.ag{background:var(--gg)}.av.ac{background:linear-gradient(135deg,#F07850,#E8197D)}.av.ab{background:linear-gradient(135deg,#A8D4E6,#5BA3C2)}
+.tpc .ath strong{display:block;font-size:.88rem;color:var(--dk)}
+.tpc .ath span{font-size:.75rem;color:var(--gy2)}
+
+/* CTA BAND */
+.ctab{background:var(--gp);padding:78px 0;text-align:center;position:relative;overflow:hidden}
+.ctab::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.08) 1px,transparent 1px);background-size:28px 28px}
+.ctabi{position:relative;z-index:1}
+.ctap{display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:17px}
+.ctab h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:12px;line-height:1.2}
+.ctab p{color:rgba(255,255,255,.8);font-size:1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+.ctaa{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ════ À PROPOS ════ */
+.apst{background:var(--gs)}
+.apgrd{display:grid;grid-template-columns:1fr 1.15fr;gap:76px;align-items:start}
+.apphw{position:sticky;top:90px}
+.apphf{position:relative;width:310px;margin:0 auto}
+.appbg{width:310px;height:310px;border-radius:34px;background:var(--gp);padding:4px;box-shadow:var(--sp);position:relative}
+.appbg::before{content:'';position:absolute;width:150px;height:150px;border-radius:26px;background:var(--gn);opacity:.12;bottom:-26px;right:-26px;z-index:-1}
+.appi{width:100%;height:100%;border-radius:30px;background:linear-gradient(145deg,#F5EEF8,#EAF4FB);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.appi svg{width:100%;height:100%}
+.apdf{position:absolute;top:-26px;right:-26px;width:80px;height:80px;animation:sr 14s linear infinite;filter:drop-shadow(0 4px 12px rgba(232,25,125,.2))}
+.apeb{position:absolute;bottom:-17px;left:-17px;background:#fff;border-radius:17px;padding:14px 19px;box-shadow:var(--s2);display:flex;align-items:center;gap:10px;border:2px solid var(--pkl)}
+.apeb .num{font-size:1.65rem;font-weight:800;background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.apeb .lbl{font-size:.76rem;color:var(--gy);font-weight:600}
+.apst2{display:flex;gap:13px;margin-top:34px}
+.stc{flex:1;background:#fff;border-radius:var(--r);padding:17px 19px;box-shadow:var(--s1);border:1px solid rgba(0,0,0,.05);transition:var(--tr)}
+.stc:hover{transform:translateY(-3px);box-shadow:var(--s2)}
+.stc .n{display:block;font-size:1.65rem;font-weight:800;line-height:1;background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stc .l{display:block;font-size:.77rem;color:var(--gy);margin-top:4px;font-weight:600}
+.apsb{font-size:1rem;color:var(--pk);font-weight:700;margin-bottom:17px}
+.aptx{color:var(--gy);margin-bottom:15px;line-height:1.8;font-size:.97rem}
+.apq{background:#fff;border-radius:var(--r);padding:22px 25px;margin:25px 0;border-left:4px solid var(--gn);box-shadow:var(--s1);position:relative}
+.apq::before{content:'"';font-size:5rem;font-family:Georgia,serif;color:var(--gn);opacity:.1;position:absolute;top:14px;left:12px;line-height:.5}
+.apq blockquote{font-style:italic;color:var(--dk);font-size:.97rem;line-height:1.75;font-weight:600;position:relative}
+.apq blockquote em{color:var(--pk);font-style:normal}
+
+/* Timeline */
+.aptl{background:#fff;padding:78px 0}
+.tl{max-width:700px;margin:0 auto;position:relative}
+.tl::before{content:'';position:absolute;left:27px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--pk),var(--bl));opacity:.2}
+.tli{display:flex;gap:22px;margin-bottom:38px;position:relative}
+.tli:last-child{margin-bottom:0}
+.tld{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0;position:relative;z-index:1}
+.tld.dp{background:var(--pkl)}.tld.dg{background:var(--gnl)}.tld.db{background:var(--bll)}.tld.dc{background:var(--col)}
+.tly{font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--pk);margin-bottom:4px}
+.tlt{font-size:1rem;font-weight:800;color:var(--dk);margin-bottom:5px}
+.tltx{font-size:.87rem;color:var(--gy);line-height:1.7}
+
+/* Values */
+.apv{background:var(--dk);padding:78px 0}
+.apv .ttl{color:#fff}
+.apv .sub{color:rgba(255,255,255,.5)}
+.vgrd{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--rl);padding:30px 24px;text-align:center;transition:var(--tr)}
+.vc:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.vc i{font-size:2.5rem;display:block;margin-bottom:15px;font-style:normal}
+.vc h3{font-size:1.03rem;font-weight:800;color:#fff;margin-bottom:8px}
+.vc p{font-size:.86rem;color:rgba(255,255,255,.48);line-height:1.7}
+
+/* Specialties */
+.aps{background:var(--gnl);padding:78px 0}
+.spgrd{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.spc{background:#fff;border-radius:var(--r);padding:20px 18px;display:flex;align-items:center;gap:13px;box-shadow:var(--s1);border:1.5px solid rgba(0,0,0,.05);transition:var(--tr)}
+.spc:hover{border-color:var(--pk);transform:translateY(-3px);box-shadow:var(--s2)}
+.spc i{font-size:1.75rem;flex-shrink:0;font-style:normal}
+.spc h4{font-size:.9rem;font-weight:700;color:var(--dk)}
+.spc p{font-size:.77rem;color:var(--gy);margin-top:2px}
+
+/* ════ SERVICES ════ */
+.srvmn{background:#fff}
+.srvgrd{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.srvc{background:var(--gl);border-radius:var(--rl);overflow:hidden;border:2px solid transparent;transition:var(--tr);display:flex;flex-direction:column}
+.srvc:hover{transform:translateY(-7px);box-shadow:var(--s3);border-color:rgba(232,25,125,.15)}
+.srvc.ft{background:#fff;border-color:var(--pk);box-shadow:var(--sp);transform:translateY(-10px)}
+.srvc.ft:hover{transform:translateY(-15px)}
+.srth{height:6px;width:100%}
+.srth.p{background:var(--gp)}.srth.g{background:var(--gg)}.srth.b{background:linear-gradient(135deg,#A8D4E6,#5BA3C2)}
+.srbdg{display:flex;justify-content:flex-end;padding:13px 15px 0}
+.srbdg span{background:var(--gp);color:#fff;font-size:.7rem;font-weight:800;padding:5px 11px;border-radius:50px;box-shadow:var(--sp)}
+.srbd{padding:26px 24px;flex:1;display:flex;flex-direction:column}
+.srvi{width:58px;height:58px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.65rem;margin-bottom:19px}
+.srvi.ip{background:var(--pkl)}.srvi.ig{background:var(--gnl)}.srvi.ib{background:var(--bll)}
+.srvc h3{font-size:1.12rem;font-weight:800;color:var(--dk);margin-bottom:10px}
+.srvc .txt{font-size:.87rem;color:var(--gy);line-height:1.75;margin-bottom:19px;flex:1}
+.srl{margin-bottom:22px;display:flex;flex-direction:column;gap:7px}
+.srl li{font-size:.85rem;color:var(--dk);padding-left:21px;position:relative;font-weight:600;line-height:1.5}
+.srl li::before{content:'✓';position:absolute;left:0;color:var(--gn);font-weight:800}
+.srft{display:flex;align-items:center;justify-content:space-between;gap:11px;padding-top:18px;border-top:1px solid rgba(0,0,0,.06);flex-wrap:wrap}
+.srft .dur{font-size:.8rem;color:var(--gy);font-weight:600}
+.srnote{display:flex;align-items:center;gap:13px;background:var(--gnl);border-radius:var(--r);padding:19px 24px;margin-top:44px;border:1px solid rgba(122,182,72,.2)}
+.srnote svg{width:19px;height:19px;flex-shrink:0}
+.srnote p{font-size:.9rem;color:var(--dk)}
+
+/* Processus */
+.proc{background:var(--dk);padding:88px 0}
+.proc .ttl{color:#fff}.proc .sub{color:rgba(255,255,255,.5)}
+.prgrd{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;position:relative}
+.prgrd::before{content:'';position:absolute;top:33px;left:calc(12.5% + 17px);right:calc(12.5% + 17px);height:1px;background:linear-gradient(to right,var(--pk),var(--co),var(--bl),var(--gn));opacity:.25}
+.prs{text-align:center;position:relative}
+.prn{width:66px;height:66px;border-radius:50%;margin:0 auto 19px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;color:#fff;position:relative;z-index:1}
+.prn.n1{background:var(--gp);box-shadow:0 8px 24px rgba(232,25,125,.4)}
+.prn.n2{background:linear-gradient(135deg,#F07850,#E8197D);box-shadow:0 8px 24px rgba(240,120,80,.4)}
+.prn.n3{background:var(--gg);box-shadow:0 8px 24px rgba(122,182,72,.4)}
+.prn.n4{background:linear-gradient(135deg,#A8D4E6,#7AB648);box-shadow:0 8px 24px rgba(168,212,230,.4)}
+.prt{font-size:1rem;font-weight:800;color:#fff;margin-bottom:8px}
+.prtx{font-size:.83rem;color:rgba(255,255,255,.48);line-height:1.7}
+
+/* FAQ */
+.faqsec{background:var(--gs);padding:88px 0}
+.faql{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:11px}
+.faqi{background:#fff;border-radius:var(--r);border:1.5px solid rgba(0,0,0,.06);overflow:hidden;transition:var(--tr)}
+.faqi:hover{border-color:rgba(232,25,125,.2)}.faqi.op{border-color:var(--pk)}
+.faqq{display:flex;align-items:center;justify-content:space-between;padding:19px 22px;cursor:pointer;font-weight:700;font-size:.96rem;color:var(--dk);gap:11px}
+.faqq svg{width:19px;height:19px;flex-shrink:0;color:var(--pk);transition:transform var(--tr)}
+.faqi.op .faqq svg{transform:rotate(45deg)}
+.faqa{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:.9rem;color:var(--gy);line-height:1.75;padding:0 22px}
+.faqi.op .faqa{max-height:250px;padding-bottom:18px}
+
+/* ════ TÉMOIGNAGES ════ */
+.tsec{background:var(--pkp)}
+.tgrd{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc{background:#fff;border-radius:var(--rl);padding:28px 24px;box-shadow:var(--s1);transition:var(--tr);display:flex;flex-direction:column;gap:15px;border:1.5px solid rgba(0,0,0,.04);position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gp)}
+.tc.gn::before{background:var(--gg)}.tc.bl::before{background:linear-gradient(135deg,#A8D4E6,#5BA3C2)}
+.tc:hover{transform:translateY(-5px);box-shadow:var(--s3)}
+.tc.dk{background:var(--dk);border-color:transparent}
+.tc.dk .tcq{color:rgba(255,255,255,.7)}.tc.dk .tca strong{color:#fff}.tc.dk .tca span{color:rgba(255,255,255,.4)}
+.tcst{font-size:.85rem;letter-spacing:2px}
+.tcq{font-size:.87rem;color:var(--gy);font-style:italic;line-height:1.8;flex:1}
+.tca{display:flex;align-items:center;gap:12px}
+.tcav{width:43px;height:43px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#fff;flex-shrink:0}
+.tca strong{display:block;font-size:.88rem;color:var(--dk)}
+.tca span{font-size:.74rem;color:var(--gy2)}
+.tctg{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:700;padding:5px 11px;border-radius:50px;align-self:flex-start}
+.tctg.p{background:var(--pkl);color:var(--pk)}.tctg.c{background:var(--col);color:var(--co)}.tctg.g{background:var(--gnl);color:var(--gnd)}.tctg.b{background:var(--bll);color:var(--bld)}
+
+/* Trust stats */
+.trst{background:#fff;padding:58px 0}
+.trgrd{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;text-align:center}
+.tri .num{font-size:2.4rem;font-weight:800;background:var(--gp);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:5px}
+.tri .lbl{font-size:.83rem;color:var(--gy);font-weight:600}
+
+/* ════ CONTACT ════ */
+.ctsec{background:var(--gl)}
+.ctctr{display:grid;grid-template-columns:1fr 1.4fr;gap:76px;align-items:start}
+.ctin{color:var(--gy);line-height:1.8;margin-bottom:30px}
+.cdets{display:flex;flex-direction:column;gap:17px;margin-bottom:30px}
+.cdi{display:flex;align-items:flex-start;gap:14px}
+.cdii{width:46px;height:46px;border-radius:12px;background:#fff;box-shadow:var(--s1);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1.5px solid rgba(232,25,125,.1)}
+.cdii svg{width:20px;height:20px}
+.cdib{display:flex;flex-direction:column;gap:2px}
+.cdil{font-size:.73rem;color:var(--gy2);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.cdiv{font-size:.93rem;color:var(--dk);font-weight:600}
+.cdiv a{color:var(--dk);transition:var(--tr)}.cdiv a:hover{color:var(--pk)}
+.hcard{background:#fff;border-radius:var(--r);padding:21px 23px;box-shadow:var(--s1);margin-bottom:22px;border-left:4px solid var(--gn)}
+.hcard h4{font-size:.93rem;font-weight:800;color:var(--dk);margin-bottom:11px}
+.hrow{display:flex;justify-content:space-between;font-size:.86rem;padding:6px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+.hrow:last-child{border-bottom:none}
+.hrow span:first-child{color:var(--gy);font-weight:600}
+.hrow span:last-child{color:var(--dk);font-weight:700}
+.csocttl{font-size:.84rem;font-weight:700;color:var(--dk);margin-bottom:10px}
+.csoc{display:flex;gap:9px}
+.csb{display:flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:9px 15px;font-size:.82rem;font-weight:700;color:var(--dk);box-shadow:var(--s1);border:1.5px solid transparent;transition:var(--tr)}
+.csb svg{width:17px;height:17px}
+.csb:hover{border-color:var(--pk);color:var(--pk);transform:translateY(-2px)}
+.fwrap{background:#fff;border-radius:var(--rxl);padding:40px;box-shadow:var(--s2);border:1px solid rgba(0,0,0,.04)}
+.fwrap h3{font-size:1.22rem;font-weight:800;color:var(--dk);margin-bottom:5px}
+.fwrap .fsub{font-size:.85rem;color:var(--gy);margin-bottom:26px}
+.frm{display:flex;flex-direction:column;gap:16px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:.81rem;font-weight:700;color:var(--dk)}
+.fg input,.fg select,.fg textarea{width:100%;padding:12px 15px;border:2px solid rgba(0,0,0,.08);border-radius:10px;font-family:var(--fn);font-size:.92rem;color:var(--dk);background:var(--gl);transition:var(--tr);outline:none;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--pk);background:#fff;box-shadow:0 0 0 4px rgba(232,25,125,.08)}
+.fg textarea{resize:vertical;min-height:115px}
+.fg.cb{flex-direction:row;align-items:flex-start;gap:9px}
+.fg.cb input{width:auto;margin-top:3px;accent-color:var(--pk)}
+.fg.cb label{font-size:.79rem;font-weight:500;color:var(--gy)}
+.fnote{font-size:.75rem;color:var(--gy2);text-align:center}
+.fsuccess{display:none;text-align:center;padding:42px 18px;flex-direction:column;align-items:center;gap:13px}
+.fsuccess svg{width:58px;height:58px}
+.fsuccess h3{font-size:1.3rem;font-weight:800;color:var(--dk)}
+.fsuccess p{color:var(--gy)}
+
+/* Quick FAQ */
+.qfaq{background:#fff;padding:68px 0}
+.qfgrd{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto}
+.qfc{background:var(--gl);border-radius:var(--r);padding:22px 19px;border:1.5px solid rgba(0,0,0,.05)}
+.qfc .q{font-size:.9rem;font-weight:800;color:var(--dk);margin-bottom:7px;display:flex;align-items:flex-start;gap:8px}
+.qfc .q::before{content:'?';width:22px;height:22px;border-radius:50%;background:var(--pkl);color:var(--pk);font-size:.78rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.qfc .a{font-size:.84rem;color:var(--gy);line-height:1.7}
+
+/* FOOTER */
+.ftr{background:var(--dk2);position:relative;overflow:hidden}
+.ftr::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gp)}
+.ftrgrd{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:42px;padding:58px 28px 48px;max-width:1160px;margin:0 auto}
+.flogo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:#fff;cursor:pointer;margin-bottom:12px;background:none;border:none}
+.flogo svg{width:34px;height:34px}
+.ftag{font-size:.85rem;color:rgba(255,255,255,.36);line-height:1.65}
+.fcol h4{color:rgba(255,255,255,.82);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:15px;font-weight:800}
+.fcol ul{display:flex;flex-direction:column;gap:8px}
+.fcol a,.fcol button{font-size:.86rem;color:rgba(255,255,255,.4);transition:var(--tr);cursor:pointer;background:none;border:none;font-family:var(--fn);text-align:left;padding:0}
+.fcol a:hover,.fcol button:hover{color:var(--pk)}
+.fctl{display:flex;flex-direction:column;gap:9px;margin-bottom:12px}
+.fsocs{display:flex;gap:8px}
+.fsoc{width:36px;height:36px;border-radius:9px;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.43);transition:var(--tr)}
+.fsoc svg{width:16px;height:16px}
+.fsoc:hover{border-color:var(--pk);color:var(--pk);background:rgba(232,25,125,.1);transform:translateY(-3px)}
+.fbot{border-top:1px solid rgba(255,255,255,.06);padding:18px 0}
+.fbot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:7px;max-width:1160px;margin:0 auto;padding:0 28px}
+.fbot p{font-size:.77rem;color:rgba(255,255,255,.2)}
+
+/* SCROLL TOP */
+.stbtn{position:fixed;bottom:26px;right:26px;width:46px;height:46px;background:var(--gp);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--sp);opacity:0;pointer-events:none;transition:var(--tr);z-index:50;border:none;cursor:pointer}
+.stbtn.v{opacity:1;pointer-events:auto}
+.stbtn:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(232,25,125,.45)}
+.stbtn svg{width:20px;height:20px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hgrd{gap:40px}.sbr{grid-template-columns:repeat(2,1fr)}
+  .sbi:nth-child(2){border-right:none}
+  .why-grd{grid-template-columns:1fr 1fr}.tpg{grid-template-columns:1fr}
+  .apgrd{grid-template-columns:1fr}.apphw{position:static}
+  .apphf{margin-bottom:30px}.apst2{gap:12px}
+  .srvgrd{grid-template-columns:1fr 1fr}.srvc.ft{transform:none}
+  .prgrd{grid-template-columns:repeat(2,1fr)}.prgrd::before{display:none}
+  .tgrd{grid-template-columns:1fr 1fr}.trgrd{grid-template-columns:repeat(2,1fr)}
+  .ctctr{grid-template-columns:1fr;gap:36px}
+  .ftrgrd{grid-template-columns:1fr 1fr;gap:30px}
+  .vgrd{grid-template-columns:1fr 1fr}.spgrd{grid-template-columns:1fr 1fr}.qfgrd{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .sec{padding:62px 0}.hero{min-height:auto;padding:88px 0 68px}
+  .hgrd{grid-template-columns:1fr;text-align:center}
+  .hact{justify-content:center}.htags{justify-content:center}
+  .htxt{margin:0 auto 34px}.hvis{order:-1}.hring{width:250px;height:250px}
+  .hfc{display:none}.sbr{grid-template-columns:1fr 1fr}
+  .why-grd{grid-template-columns:1fr}.srvgrd{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+  .tgrd{grid-template-columns:1fr}.trgrd{grid-template-columns:1fr 1fr}
+  .ftrgrd{grid-template-columns:1fr;gap:26px}.fbot-in{flex-direction:column;text-align:center}
+  .nav__menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:var(--s3);border-top:1px solid rgba(0,0,0,.06);gap:3px;z-index:300}
+  .nav__menu.open{display:flex}.nav__cta{display:none}.nav__tog{display:flex}
+  .frow{grid-template-columns:1fr}.fwrap{padding:24px 16px}
+  .ctaa{flex-direction:column;align-items:center}
+  .vgrd{grid-template-columns:1fr}.spgrd{grid-template-columns:1fr}.apst2{flex-direction:column}
+}
+@media(max-width:480px){
+  .hring{width:210px;height:210px}.httl{font-size:2.2rem}
+  .hact{flex-direction:column;align-items:center}
+  .sbr{grid-template-columns:1fr}.sbi{border-right:none;border-bottom:1px solid rgba(0,0,0,.06)}
+  .trgrd{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#accueil" class="nav__logo">
-        <svg class="nav__logo-icon" viewBox="0 0 44 44" fill="none">
-          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity="0.85" transform="rotate(0 22 22)"/>
-          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity="0.75" transform="rotate(60 22 22)"/>
-          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#7AB648" opacity="0.75" transform="rotate(120 22 22)"/>
-          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity="0.6" transform="rotate(180 22 22)"/>
-          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#A8D4E6" opacity="0.75" transform="rotate(240 22 22)"/>
-          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity="0.6" transform="rotate(300 22 22)"/>
-          <circle cx="22" cy="22" r="6" fill="#F8F4F0"/>
-          <circle cx="22" cy="22" r="3.5" fill="#E8197D"/>
-        </svg>
-        <span>NutriSophie</span>
-      </a>
-      <ul class="nav__menu" id="navMenu">
-        <li><a href="#accueil" class="nav__link">Accueil</a></li>
-        <li><a href="#apropos" class="nav__link">À propos</a></li>
-        <li><a href="#services" class="nav__link">Services</a></li>
-        <li><a href="#temoignages" class="nav__link">Témoignages</a></li>
-        <li><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-      <a href="#contact" class="btn btn--primary nav__cta">Prendre RDV</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Ouvrir le menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-  </header>
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <nav class="nav ctr">
+    <button class="nav__logo" onclick="go('home')">
+      <svg viewBox="0 0 44 44" fill="none">
+        <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity=".85" transform="rotate(0 22 22)"/>
+        <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity=".75" transform="rotate(60 22 22)"/>
+        <ellipse cx="22" cy="10" rx="5" ry="9" fill="#7AB648" opacity=".75" transform="rotate(120 22 22)"/>
+        <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity=".6" transform="rotate(180 22 22)"/>
+        <ellipse cx="22" cy="10" rx="5" ry="9" fill="#A8D4E6" opacity=".75" transform="rotate(240 22 22)"/>
+        <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity=".6" transform="rotate(300 22 22)"/>
+        <circle cx="22" cy="22" r="6" fill="#F8F4F0"/><circle cx="22" cy="22" r="3.5" fill="#E8197D"/>
+      </svg>NutriSophie
+    </button>
+    <ul class="nav__menu" id="nm">
+      <li><button class="nlk" data-pg="home" onclick="go('home')">Accueil</button></li>
+      <li><button class="nlk" data-pg="about" onclick="go('about')">À propos</button></li>
+      <li><button class="nlk" data-pg="services" onclick="go('services')">Services</button></li>
+      <li><button class="nlk" data-pg="testi" onclick="go('testi')">Témoignages</button></li>
+      <li><button class="nlk" data-pg="contact" onclick="go('contact')">Contact</button></li>
+    </ul>
+    <button class="btn primary nav__cta" onclick="go('contact')">Prendre RDV</button>
+    <button class="nav__tog" id="ntog"><span></span><span></span><span></span></button>
+  </nav>
+</header>
 
-  <main>
-
-    <!-- ===== HERO ===== -->
-    <section class="hero section" id="accueil">
-      <div class="hero__bg">
-        <div class="hero__bg-blob hero__bg-blob--1"></div>
-        <div class="hero__bg-blob hero__bg-blob--2"></div>
-        <div class="hero__bg-blob hero__bg-blob--3"></div>
-        <div class="hero__bg-blob hero__bg-blob--4"></div>
-      </div>
-
-      <div class="container hero__container">
-        <!-- Content -->
-        <div class="hero__content fade-in">
-          <div class="hero__badge">
-            <span class="hero__badge-dot"></span>
-            Nutrithérapeute certifiée · Suisse
-          </div>
-
-          <h1 class="hero__title">
-            Ta santé passe<br/>
-            <em>aussi par la nutrition…</em>
-          </h1>
-
-          <p class="hero__text">
-            Biologie nutritionnelle, micronutrition, accompagnement sur-mesure.
-            Je vous aide à retrouver votre équilibre de santé grâce à une alimentation
-            ciblée et adaptée à <strong>votre</strong> corps.
-          </p>
-
-          <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary btn--lg">Prendre rendez-vous</a>
-            <a href="#services" class="btn btn--outline btn--lg">Découvrir mes services</a>
-          </div>
-
-          <div class="hero__tags">
-            <span class="tag tag--green">🌿 Maladies chroniques</span>
-            <span class="tag tag--blue">💧 Troubles digestifs</span>
-            <span class="tag tag--coral">⚡ Sport & Performance</span>
-            <span class="tag tag--pink">💤 Fatigue & Énergie</span>
-          </div>
+<!-- ══ PAGE ACCUEIL ══ -->
+<div id="pg-home" class="pg on">
+  <section class="hero">
+    <div class="hb h1"></div><div class="hb h2"></div><div class="hb h3"></div><div class="hb h4"></div>
+    <div class="hgp"></div>
+    <div class="ctr hgrd">
+      <div class="fi">
+        <div class="hbadge"><span class="hdot"></span>Nutrithérapeute certifiée · Suisse</div>
+        <h1 class="httl">Ta santé passe<br/><em>aussi par la nutrition…</em></h1>
+        <p class="htxt">Biologie nutritionnelle, micronutrition, accompagnement sur-mesure. Je vous aide à retrouver votre équilibre grâce à une alimentation adaptée à <strong>votre</strong> corps.</p>
+        <div class="hact">
+          <button class="btn primary lg" onclick="go('contact')">Prendre rendez-vous</button>
+          <button class="btn outline lg" onclick="go('services')">Découvrir mes services</button>
         </div>
-
-        <!-- Visual -->
-        <div class="hero__visual fade-in fade-in--delay">
-          <div class="hero__photo-ring">
-            <div class="hero__photo-inner">
-              <svg viewBox="0 0 380 380" fill="none">
-                <circle cx="190" cy="190" r="190" fill="url(#grad-photo)"/>
-                <defs>
-                  <radialGradient id="grad-photo" cx="50%" cy="30%" r="60%">
-                    <stop offset="0%" stop-color="#2A2848"/>
-                    <stop offset="100%" stop-color="#12112A"/>
-                  </radialGradient>
-                </defs>
-                <!-- Silhouette Sophie -->
-                <circle cx="190" cy="148" r="52" fill="#3D3A6A"/>
-                <path d="M80,340 Q80,250 190,250 Q300,250 300,340 Z" fill="#3D3A6A"/>
-                <!-- Logo fleur centré -->
-                <g transform="translate(190,148)" opacity="0.5">
-                  <ellipse cx="0" cy="-22" rx="7" ry="13" fill="#E8197D"/>
-                  <ellipse cx="0" cy="-22" rx="7" ry="13" fill="#F07850" transform="rotate(60)"/>
-                  <ellipse cx="0" cy="-22" rx="7" ry="13" fill="#7AB648" transform="rotate(120)"/>
-                  <ellipse cx="0" cy="-22" rx="7" ry="13" fill="#E8197D" transform="rotate(180)"/>
-                  <ellipse cx="0" cy="-22" rx="7" ry="13" fill="#A8D4E6" transform="rotate(240)"/>
-                  <ellipse cx="0" cy="-22" rx="7" ry="13" fill="#F07850" transform="rotate(300)"/>
-                  <circle r="9" fill="white"/>
-                  <circle r="5" fill="#E8197D"/>
-                </g>
-                <!-- Décoration feuilles -->
-                <path d="M60,290 Q90,240 120,270 Q90,300 60,290Z" fill="#7AB648" opacity="0.4"/>
-                <path d="M310,280 Q330,240 355,265 Q330,295 310,280Z" fill="#7AB648" opacity="0.35"/>
-                <text x="190" y="370" text-anchor="middle" font-family="Nunito" font-size="13" fill="rgba(255,255,255,0.3)" font-style="italic">biologie nutritionnelle</text>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Floating cards -->
-          <div class="hero__float-card hero__float-card--1">
-            <div class="float-card__icon float-card__icon--pink">⭐</div>
-            <div>
-              <div class="float-card__num">+200</div>
-              <div class="float-card__label">patients accompagnés</div>
-            </div>
-          </div>
-          <div class="hero__float-card hero__float-card--2">
-            <div class="float-card__icon float-card__icon--green">🌿</div>
-            <div>
-              <div class="float-card__num">8 ans</div>
-              <div class="float-card__label">d'expérience</div>
-            </div>
-          </div>
-          <div class="hero__float-card hero__float-card--3">
-            <div class="float-card__icon float-card__icon--blue">💊</div>
-            <div>
-              <div class="float-card__num">100%</div>
-              <div class="float-card__label">sur-mesure</div>
-            </div>
-          </div>
+        <div class="htags">
+          <span class="tag tg">🌿 Maladies chroniques</span>
+          <span class="tag tb">💧 Troubles digestifs</span>
+          <span class="tag tc_">⚡ Sport & Performance</span>
+          <span class="tag tp">💤 Fatigue & Énergie</span>
         </div>
       </div>
-
-      <div class="hero__scroll">
-        <div class="hero__scroll-line"></div>
-        <span>Scroll</span>
-      </div>
-    </section>
-
-    <!-- ===== STATS BAR ===== -->
-    <div class="stats-bar">
-      <div class="stats-bar__inner">
-        <div class="stats-bar__item fade-in">
-          <div class="stats-bar__icon stats-bar__icon--pink">👩‍⚕️</div>
-          <div>
-            <div class="stats-bar__num"><span>+200</span></div>
-            <div class="stats-bar__label">Patients accompagnés</div>
+      <div class="hvis fi d1">
+        <div class="hring">
+          <div class="hrin">
+            <svg viewBox="0 0 360 360" fill="none">
+              <circle cx="180" cy="180" r="180" fill="#1A1830"/>
+              <circle cx="180" cy="138" r="50" fill="#3D3A6A"/>
+              <path d="M75,330 Q75,240 180,240 Q285,240 285,330Z" fill="#3D3A6A"/>
+              <g transform="translate(180,138)" opacity=".45">
+                <ellipse cx="0" cy="-20" rx="6" ry="11" fill="#E8197D"/>
+                <ellipse cx="0" cy="-20" rx="6" ry="11" fill="#F07850" transform="rotate(60)"/>
+                <ellipse cx="0" cy="-20" rx="6" ry="11" fill="#7AB648" transform="rotate(120)"/>
+                <ellipse cx="0" cy="-20" rx="6" ry="11" fill="#E8197D" transform="rotate(180)"/>
+                <ellipse cx="0" cy="-20" rx="6" ry="11" fill="#A8D4E6" transform="rotate(240)"/>
+                <ellipse cx="0" cy="-20" rx="6" ry="11" fill="#F07850" transform="rotate(300)"/>
+                <circle r="8" fill="white"/><circle r="4.5" fill="#E8197D"/>
+              </g>
+              <path d="M58,282 Q85,238 112,262 Q85,292 58,282Z" fill="#7AB648" opacity=".35"/>
+              <path d="M298,272 Q318,234 340,257 Q318,282 298,272Z" fill="#7AB648" opacity=".3"/>
+              <text x="180" y="352" text-anchor="middle" font-family="Nunito" font-size="12" fill="rgba(255,255,255,.25)" font-style="italic">biologie nutritionnelle</text>
+            </svg>
           </div>
         </div>
-        <div class="stats-bar__item fade-in">
-          <div class="stats-bar__icon stats-bar__icon--green">🌿</div>
-          <div>
-            <div class="stats-bar__num"><span>8</span> ans</div>
-            <div class="stats-bar__label">D'expérience clinique</div>
-          </div>
-        </div>
-        <div class="stats-bar__item fade-in">
-          <div class="stats-bar__icon stats-bar__icon--blue">⭐</div>
-          <div>
-            <div class="stats-bar__num"><span>98</span>%</div>
-            <div class="stats-bar__label">De satisfaction patient</div>
-          </div>
-        </div>
-        <div class="stats-bar__item fade-in">
-          <div class="stats-bar__icon stats-bar__icon--coral">🌍</div>
-          <div>
-            <div class="stats-bar__num"><span>3</span> pays</div>
-            <div class="stats-bar__label">Suivi à distance</div>
-          </div>
-        </div>
+        <div class="hfc f1"><div class="fci fp">⭐</div><div><div class="fcn">+200</div><div class="fcl">patients</div></div></div>
+        <div class="hfc f2"><div class="fci fg">🌿</div><div><div class="fcn">8 ans</div><div class="fcl">d'expérience</div></div></div>
+        <div class="hfc f3"><div class="fci fb">💊</div><div><div class="fcn">100%</div><div class="fcl">sur-mesure</div></div></div>
       </div>
     </div>
+    <div class="hscr"><div class="hscrl"></div><span>Scroll</span></div>
+  </section>
 
-    <!-- ===== À PROPOS ===== -->
-    <section class="apropos section" id="apropos">
-      <div class="container apropos__container">
-        <div class="apropos__image-wrap fade-in">
-          <div class="apropos__photo-frame">
-            <div class="apropos__photo-bg">
-              <div class="apropos__photo-inner">
-                <svg viewBox="0 0 332 332" fill="none">
-                  <rect width="332" height="332" fill="url(#apropos-grad)"/>
-                  <defs>
-                    <linearGradient id="apropos-grad" x1="0" y1="0" x2="332" y2="332">
-                      <stop offset="0%" stop-color="#F5EEF8"/>
-                      <stop offset="100%" stop-color="#EAF4FB"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="166" cy="130" r="52" fill="#D4C5BE"/>
-                  <path d="M60,310 Q60,220 166,220 Q272,220 272,310 Z" fill="#D4C5BE"/>
-                  <g transform="translate(166,130)" opacity="0.6">
-                    <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#E8197D" opacity="0.7"/>
-                    <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#F07850" opacity="0.6" transform="rotate(60)"/>
-                    <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7AB648" opacity="0.6" transform="rotate(120)"/>
-                    <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#E8197D" opacity="0.5" transform="rotate(180)"/>
-                    <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#A8D4E6" opacity="0.65" transform="rotate(240)"/>
-                    <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#F07850" opacity="0.5" transform="rotate(300)"/>
-                    <circle r="11" fill="white"/>
-                    <circle r="6.5" fill="#E8197D"/>
-                  </g>
-                  <text x="166" y="326" text-anchor="middle" font-family="Nunito" font-size="13" fill="#B0A0A0" font-weight="700">Sophie</text>
-                </svg>
-              </div>
-            </div>
-            <div class="apropos__deco-flower">
-              <svg viewBox="0 0 80 80" fill="none">
-                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#E8197D" opacity="0.8"/>
-                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#F07850" opacity="0.7" transform="rotate(60 40 40)"/>
-                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#7AB648" opacity="0.7" transform="rotate(120 40 40)"/>
-                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#E8197D" opacity="0.6" transform="rotate(180 40 40)"/>
-                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#A8D4E6" opacity="0.75" transform="rotate(240 40 40)"/>
-                <ellipse cx="40" cy="14" rx="9" ry="14" fill="#F07850" opacity="0.6" transform="rotate(300 40 40)"/>
-                <circle cx="40" cy="40" r="11" fill="white"/>
-                <circle cx="40" cy="40" r="6.5" fill="#E8197D"/>
+  <div class="sbar">
+    <div class="sbr">
+      <div class="sbi fi"><div class="sbii ip">👩‍⚕️</div><div><div class="sbn">+200</div><div class="sbl">Patients accompagnés</div></div></div>
+      <div class="sbi fi d1"><div class="sbii ig">🌿</div><div><div class="sbn">8 ans</div><div class="sbl">D'expérience</div></div></div>
+      <div class="sbi fi d2"><div class="sbii ib">⭐</div><div><div class="sbn">98%</div><div class="sbl">Satisfaction patient</div></div></div>
+      <div class="sbi fi d3"><div class="sbii ic">🌍</div><div><div class="sbn">3 pays</div><div class="sbl">Suivi à distance</div></div></div>
+    </div>
+  </div>
+
+  <section class="why-sec sec">
+    <div class="ctr">
+      <div class="sh fi"><div class="ey">Pourquoi NutriSophie</div><h2 class="ttl">Une approche <span>unique</span> et personnalisée</h2><p class="sub">Une méthode fondée sur la science, la bienveillance et l'écoute de votre corps.</p></div>
+      <div class="why-grd">
+        <div class="wc fi"><i>🔬</i><h3>Approche scientifique</h3><p>Chaque protocole est basé sur la biologie nutritionnelle et la micronutrition — une science rigoureuse, pas des tendances.</p></div>
+        <div class="wc fi d1"><i>🤝</i><h3>Accompagnement humain</h3><p>Je vous accompagne à chaque étape avec bienveillance. Pas de jugement — juste votre corps et ses besoins réels.</p></div>
+        <div class="wc fi d2"><i>✨</i><h3>Résultats durables</h3><p>Mes patients ne cherchent pas des solutions rapides. Ils cherchent des changements qui durent. C'est exactement ce que j'offre.</p></div>
+      </div>
+    </div>
+    <div class="wv"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60Z" fill="#fff"/></svg></div>
+  </section>
+
+  <section class="tpv sec">
+    <div class="ctr">
+      <div class="sh fi"><div class="ey">Ils témoignent</div><h2 class="ttl">Des résultats qui <span>parlent</span> d'eux-mêmes</h2></div>
+      <div class="tpg">
+        <div class="tpc fi"><div class="stars">⭐⭐⭐⭐⭐</div><blockquote>"En 4 mois avec Sophie, ma fatigue chronique a diminué de 60 %. Son approche par la micronutrition a vraiment changé ma vie."</blockquote><div class="ath"><div class="av ap">M</div><div><strong>Marie, 43 ans</strong><span>Fibromyalgie & fatigue chronique</span></div></div></div>
+        <div class="tpc fi d1"><div class="stars">⭐⭐⭐⭐⭐</div><blockquote>"Sophie a revu toute mon alimentation autour de mes entraînements. Résultat : +15 % de performance en 3 mois. Incroyable."</blockquote><div class="ath"><div class="av ag">T</div><div><strong>Thomas, 29 ans</strong><span>CrossFit compétiteur</span></div></div></div>
+      </div>
+      <div style="text-align:center;margin-top:32px"><button class="btn opk" onclick="go('testi')">Voir tous les témoignages →</button></div>
+    </div>
+  </section>
+
+  <section class="ctab">
+    <div class="ctr ctabi fi">
+      <div class="ctap">Disponible en cabinet & en ligne</div>
+      <h2>Prête à retrouver votre énergie ?</h2>
+      <p>Prenez rendez-vous aujourd'hui. Je réponds à chaque message sous 24h.</p>
+      <div class="ctaa">
+        <button class="btn wh lg" onclick="go('contact')">📩 Prendre rendez-vous</button>
+        <a href="tel:+41797822737" class="btn outline lg">📞 079 / 782.27.37</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE À PROPOS ══ -->
+<div id="pg-about" class="pg">
+  <div class="phero">
+    <div class="phero-blob a"></div><div class="phero-blob b"></div>
+    <div class="ctr" style="position:relative;z-index:2">
+      <div class="phero-pill">Mon histoire</div>
+      <h1 class="phero-ttl">Bonjour, je suis <span>Sophie</span> 👋</h1>
+      <p class="phero-sub">Nutrithérapeute spécialisée en biologie nutritionnelle & micronutrition, basée en Suisse.</p>
+    </div>
+  </div>
+
+  <section class="apst sec">
+    <div class="ctr apgrd">
+      <div class="apphw fi">
+        <div class="apphf">
+          <div class="appbg">
+            <div class="appi">
+              <svg viewBox="0 0 302 302" fill="none">
+                <rect width="302" height="302" fill="url(#apg)"/>
+                <defs><linearGradient id="apg" x1="0" y1="0" x2="302" y2="302"><stop offset="0%" stop-color="#F5EEF8"/><stop offset="100%" stop-color="#EAF4FB"/></linearGradient></defs>
+                <circle cx="151" cy="118" r="46" fill="#D4C5BE"/>
+                <path d="M56,286 Q56,202 151,202 Q246,202 246,286Z" fill="#D4C5BE"/>
+                <g transform="translate(151,118)" opacity=".55">
+                  <ellipse cx="0" cy="-20" rx="6" ry="12" fill="#E8197D" opacity=".7"/>
+                  <ellipse cx="0" cy="-20" rx="6" ry="12" fill="#F07850" opacity=".6" transform="rotate(60)"/>
+                  <ellipse cx="0" cy="-20" rx="6" ry="12" fill="#7AB648" opacity=".6" transform="rotate(120)"/>
+                  <ellipse cx="0" cy="-20" rx="6" ry="12" fill="#E8197D" opacity=".5" transform="rotate(180)"/>
+                  <ellipse cx="0" cy="-20" rx="6" ry="12" fill="#A8D4E6" opacity=".65" transform="rotate(240)"/>
+                  <ellipse cx="0" cy="-20" rx="6" ry="12" fill="#F07850" opacity=".5" transform="rotate(300)"/>
+                  <circle r="9" fill="white"/><circle r="5.5" fill="#E8197D"/>
+                </g>
+                <text x="151" y="298" text-anchor="middle" font-family="Nunito" font-size="12" fill="#B0A0A0" font-weight="700">Sophie</text>
               </svg>
             </div>
-            <div class="apropos__exp-badge">
-              <div class="num">8</div>
-              <div class="label">ans<br/>d'expérience</div>
-            </div>
           </div>
-          <div class="apropos__stats">
-            <div class="stat-card">
-              <span class="stat-card__number">+200</span>
-              <span class="stat-card__label">patients accompagnés</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-card__number">98%</span>
-              <span class="stat-card__label">taux de satisfaction</span>
-            </div>
+          <div class="apdf">
+            <svg viewBox="0 0 80 80" fill="none">
+              <ellipse cx="40" cy="14" rx="9" ry="14" fill="#E8197D" opacity=".8"/>
+              <ellipse cx="40" cy="14" rx="9" ry="14" fill="#F07850" opacity=".7" transform="rotate(60 40 40)"/>
+              <ellipse cx="40" cy="14" rx="9" ry="14" fill="#7AB648" opacity=".7" transform="rotate(120 40 40)"/>
+              <ellipse cx="40" cy="14" rx="9" ry="14" fill="#E8197D" opacity=".6" transform="rotate(180 40 40)"/>
+              <ellipse cx="40" cy="14" rx="9" ry="14" fill="#A8D4E6" opacity=".75" transform="rotate(240 40 40)"/>
+              <ellipse cx="40" cy="14" rx="9" ry="14" fill="#F07850" opacity=".6" transform="rotate(300 40 40)"/>
+              <circle cx="40" cy="40" r="11" fill="white"/><circle cx="40" cy="40" r="6.5" fill="#E8197D"/>
+            </svg>
           </div>
+          <div class="apeb"><div class="num">8</div><div class="lbl">ans<br/>d'expérience</div></div>
         </div>
-
-        <div class="apropos__content fade-in fade-in--delay">
-          <span class="section__eyebrow">À propos</span>
-          <h2 class="section__title">Bonjour, je suis <span>Sophie</span> 👋</h2>
-          <h3 class="apropos__subtitle">Nutrithérapeute spécialisée en biologie nutritionnelle & micronutrition</h3>
-          <p class="apropos__text">
-            Mon parcours vers la nutrithérapie est né d'une expérience personnelle.
-            Après avoir moi-même souffert d'une fatigue chronique invalidante et de troubles digestifs
-            persistants, j'ai découvert le pouvoir transformateur d'une alimentation ciblée et adaptée
-            à ma biologie unique.
-          </p>
-          <p class="apropos__text">
-            Diplômée en biologie nutritionnelle et micronutrition, je travaille avec deux publics
-            très différents mais unis par un même besoin : <strong>comprendre ce dont leur corps a
-            réellement besoin</strong>. Des personnes souffrant de maladies chroniques aux sportifs
-            cherchant à maximiser leurs performances.
-          </p>
-          <div class="apropos__philosophy">
-            <blockquote class="apropos__quote">
-              "La nutrition n'est pas une question de régime strict, mais de comprendre
-              ce dont <em>votre corps</em> a besoin pour fonctionner à son plein potentiel."
-            </blockquote>
-          </div>
-          <div class="apropos__specialites">
-            <span class="specialite-tag">🔬 Bilan de micronutriments</span>
-            <span class="specialite-tag">🧬 Biologie nutritionnelle</span>
-            <span class="specialite-tag">🌿 Médecine fonctionnelle</span>
-            <span class="specialite-tag">⚡ Nutrition sportive</span>
-            <span class="specialite-tag">🦠 Santé intestinale</span>
-            <span class="specialite-tag">🧠 Neuro-nutrition</span>
-          </div>
-          <a href="#contact" class="btn btn--outline-pink">Réserver une consultation</a>
+        <div class="apst2">
+          <div class="stc"><span class="n">+200</span><span class="l">patients accompagnés</span></div>
+          <div class="stc"><span class="n">98%</span><span class="l">taux de satisfaction</span></div>
         </div>
       </div>
-
-      <div class="section__wave">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#ffffff"/></svg>
+      <div class="fi d1">
+        <div class="ey">Mon parcours</div>
+        <h2 class="ttl">Une vocation née d'une <span>expérience personnelle</span></h2>
+        <p class="apsb">Nutrithérapeute spécialisée en biologie nutritionnelle & micronutrition</p>
+        <p class="aptx">Mon parcours vers la nutrithérapie est né d'une expérience personnelle profonde. Après avoir moi-même souffert d'une fatigue chronique invalidante et de troubles digestifs persistants pendant plusieurs années, j'ai découvert le pouvoir transformateur d'une alimentation ciblée et adaptée à ma biologie unique.</p>
+        <p class="aptx">Cette révélation a changé ma vie. Les médecins n'avaient pas de réponse — mais la biologie nutritionnelle, elle, en avait une. Aujourd'hui, c'est ma mission de vous accompagner sur ce même chemin de transformation.</p>
+        <p class="aptx">Diplômée en biologie nutritionnelle et micronutrition, je travaille avec deux publics très différents : des personnes souffrant de maladies chroniques et des sportifs cherchant à maximiser leurs performances et leur récupération.</p>
+        <div class="apq"><blockquote>"La nutrition n'est pas une question de régime strict, mais de comprendre ce dont <em>votre corps</em> a besoin pour fonctionner à son plein potentiel."</blockquote></div>
+        <button class="btn primary" onclick="go('contact')">Réserver une consultation</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services section" id="services">
-      <div class="container">
-        <div class="section__header fade-in">
-          <span class="section__eyebrow">Mes services</span>
-          <h2 class="section__title">Comment puis-je vous <span>aider</span> ?</h2>
-          <p class="section__subtitle">
-            Chaque accompagnement est unique, adapté à votre histoire, vos symptômes et vos objectifs.
-          </p>
-        </div>
-
-        <div class="services__grid">
-
-          <div class="service-card fade-in" data-delay="0">
-            <div class="service-card__header service-card__header--pink"></div>
-            <div class="service-card__body">
-              <div class="service-card__icon service-card__icon--pink">👩‍⚕️</div>
-              <h3 class="service-card__title">Consultations individuelles</h3>
-              <p class="service-card__text">
-                Une première consultation approfondie de 90 minutes pour établir un bilan complet :
-                anamnèse détaillée, analyse alimentaire, symptômes et objectifs de santé.
-              </p>
-              <ul class="service-card__list">
-                <li>Bilan nutritionnel complet</li>
-                <li>Analyse des carences micronutritionnelles</li>
-                <li>Protocole alimentaire personnalisé</li>
-                <li>Suivi sur 3, 6 ou 12 mois</li>
-              </ul>
-              <div class="service-card__footer">
-                <span class="service-card__duration">⏱ 90 min · 1ère séance</span>
-                <a href="#contact" class="btn btn--outline-pink">Réserver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="service-card service-card--featured fade-in" data-delay="150">
-            <div class="service-card__header service-card__header--green"></div>
-            <div class="service-card__badge">⭐ Populaire</div>
-            <div class="service-card__body">
-              <div class="service-card__icon service-card__icon--green">📋</div>
-              <h3 class="service-card__title">Plans alimentaires personnalisés</h3>
-              <p class="service-card__text">
-                Des menus hebdomadaires 100 % sur-mesure, pensés pour vos contraintes,
-                vos objectifs et votre mode de vie.
-              </p>
-              <ul class="service-card__list">
-                <li>Menus semaine complets et variés</li>
-                <li>Listes de courses incluses</li>
-                <li>Recettes simples et savoureuses</li>
-                <li>Adaptés à vos intolérances</li>
-              </ul>
-              <div class="service-card__footer">
-                <span class="service-card__duration">📅 Plan mensuel évolutif</span>
-                <a href="#contact" class="btn btn--primary">Réserver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="service-card fade-in" data-delay="300">
-            <div class="service-card__header service-card__header--blue"></div>
-            <div class="service-card__body">
-              <div class="service-card__icon service-card__icon--blue">💻</div>
-              <h3 class="service-card__title">Coaching en ligne</h3>
-              <p class="service-card__text">
-                Le même niveau d'accompagnement que les séances en cabinet,
-                depuis le confort de votre domicile, partout dans le monde.
-              </p>
-              <ul class="service-card__list">
-                <li>Séances vidéo en visioconférence</li>
-                <li>Messagerie dédiée entre séances</li>
-                <li>Accès à votre espace client personnel</li>
-                <li>Ressources & fiches pratiques incluses</li>
-              </ul>
-              <div class="service-card__footer">
-                <span class="service-card__duration">🌍 100% en ligne</span>
-                <a href="#contact" class="btn btn--outline-pink">Réserver</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="services__note fade-in">
-          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#7AB648" stroke-width="1.5"/><path d="M10,6 L10,11" stroke="#7AB648" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14" r="1" fill="#7AB648"/></svg>
-          <p>Toutes les consultations peuvent se faire <strong>en cabinet ou en visioconférence</strong>.
-          Un devis personnalisé vous sera proposé lors du premier contact.</p>
-        </div>
+  <section class="aptl">
+    <div class="ctr">
+      <div class="sh fi"><div class="ey">Parcours</div><h2 class="ttl">Mon chemin vers la <span>nutrithérapie</span></h2></div>
+      <div class="tl">
+        <div class="tli fi"><div class="tld dp">😔</div><div><div class="tly">2014</div><div class="tlt">Le déclic personnel</div><div class="tltx">Fatigue chronique et troubles digestifs sévères. Les médecins ne trouvent rien. Je décide de chercher par moi-même.</div></div></div>
+        <div class="tli fi d1"><div class="tld dg">🌱</div><div><div class="tly">2015–2016</div><div class="tlt">Formation en biologie nutritionnelle</div><div class="tltx">Je me forme intensément. Ma propre santé se transforme radicalement grâce aux principes de la micronutrition.</div></div></div>
+        <div class="tli fi d2"><div class="tld db">📚</div><div><div class="tly">2017</div><div class="tlt">Diplôme & premières consultations</div><div class="tltx">Certifiée nutrithérapeute, j'ouvre mon cabinet en Suisse. Les premiers résultats sont au rendez-vous.</div></div></div>
+        <div class="tli fi"><div class="tld dc">⚡</div><div><div class="tly">2019</div><div class="tlt">Spécialisation nutrition sportive</div><div class="tltx">Je me spécialise en nutrition sportive et commence à travailler avec des athlètes de haut niveau.</div></div></div>
+        <div class="tli fi d1"><div class="tld dg">🌍</div><div><div class="tly">2021</div><div class="tlt">Coaching en ligne international</div><div class="tltx">Je lance mon programme de coaching en ligne et commence à accompagner des patients depuis 3 pays.</div></div></div>
+        <div class="tli fi d2"><div class="tld dp">✨</div><div><div class="tly">Aujourd'hui</div><div class="tlt">+200 patients transformés</div><div class="tltx">Chaque histoire est unique — et chaque succès me donne encore plus d'énergie pour continuer.</div></div></div>
       </div>
+    </div>
+  </section>
 
-      <div class="section__wave section__wave--bg">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,40 C360,10 1080,60 1440,20 L1440,60 L0,60 Z" fill="#12112A"/></svg>
+  <section class="apv sec">
+    <div class="ctr">
+      <div class="sh fi"><div class="ey wt">Mes valeurs</div><h2 class="ttl wt">Ce qui guide mon <span>travail</span></h2></div>
+      <div class="vgrd">
+        <div class="vc fi"><i>🔬</i><h3>Rigueur scientifique</h3><p>Chaque recommandation est basée sur des données probantes. La biologie nutritionnelle est une science.</p></div>
+        <div class="vc fi d1"><i>💛</i><h3>Bienveillance totale</h3><p>Aucun jugement. Je pars de là où vous en êtes aujourd'hui, avec vos habitudes et votre vie réelle.</p></div>
+        <div class="vc fi d2"><i>🎯</i><h3>Résultats concrets</h3><p>Mon seul objectif : que vous alliez mieux. Je mesure, j'ajuste, je suis vos progrès jusqu'aux résultats.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== PROCESSUS ===== -->
-    <section class="processus section">
-      <div class="container">
-        <div class="section__header fade-in">
-          <span class="section__eyebrow">Comment ça marche</span>
-          <h2 class="section__title" style="color:white">Un accompagnement en <span>4 étapes</span></h2>
-          <p class="section__subtitle">Un processus clair, bienveillant et entièrement centré sur vous.</p>
+  <section class="aps sec">
+    <div class="ctr">
+      <div class="sh fi"><div class="ey">Expertises</div><h2 class="ttl">Mes domaines de <span>spécialisation</span></h2></div>
+      <div class="spgrd">
+        <div class="spc fi"><i>🔬</i><div><h4>Bilan de micronutriments</h4><p>Analyse des carences et déséquilibres</p></div></div>
+        <div class="spc fi d1"><i>🧬</i><div><h4>Biologie nutritionnelle</h4><p>Alimentation ciblée selon votre biologie</p></div></div>
+        <div class="spc fi d2"><i>🌿</i><div><h4>Médecine fonctionnelle</h4><p>Trouver la cause, pas masquer les symptômes</p></div></div>
+        <div class="spc fi"><i>⚡</i><div><h4>Nutrition sportive</h4><p>Performance et récupération optimales</p></div></div>
+        <div class="spc fi d1"><i>🦠</i><div><h4>Santé intestinale</h4><p>Microbiote, dysbiose, perméabilité</p></div></div>
+        <div class="spc fi d2"><i>🧠</i><div><h4>Neuro-nutrition</h4><p>Nutrition et santé mentale</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ctab">
+    <div class="ctr ctabi fi">
+      <div class="ctap">Commençons ensemble</div>
+      <h2>Votre corps mérite d'être compris</h2>
+      <p>Prenez rendez-vous pour une première consultation et découvrez ce que la micronutrition peut faire pour vous.</p>
+      <div class="ctaa">
+        <button class="btn wh lg" onclick="go('contact')">📅 Prendre rendez-vous</button>
+        <button class="btn outline lg" onclick="go('services')">Voir mes services</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE SERVICES ══ -->
+<div id="pg-services" class="pg">
+  <div class="phero">
+    <div class="phero-blob a"></div><div class="phero-blob b"></div>
+    <div class="ctr" style="position:relative;z-index:2">
+      <div class="phero-pill">Mes services</div>
+      <h1 class="phero-ttl">Comment puis-je vous <span>aider</span> ?</h1>
+      <p class="phero-sub">Chaque accompagnement est unique, adapté à votre histoire, vos symptômes et vos objectifs.</p>
+    </div>
+  </div>
+
+  <section class="srvmn sec">
+    <div class="ctr">
+      <div class="srvgrd">
+        <div class="srvc fi">
+          <div class="srth p"></div>
+          <div class="srbd">
+            <div class="srvi ip">👩‍⚕️</div>
+            <h3>Consultations individuelles</h3>
+            <p class="txt">Une première consultation approfondie de 90 minutes pour établir un bilan complet : anamnèse détaillée, analyse alimentaire, symptômes, antécédents médicaux et objectifs de santé.</p>
+            <ul class="srl"><li>Bilan nutritionnel complet (90 min)</li><li>Analyse des carences micronutritionnelles</li><li>Protocole alimentaire personnalisé</li><li>Compléments alimentaires ciblés</li><li>Suivi sur 3, 6 ou 12 mois</li><li>En cabinet ou en visioconférence</li></ul>
+            <div class="srft"><span class="dur">⏱ 90 min · 1ère séance</span><button class="btn opk" onclick="go('contact')">Réserver</button></div>
+          </div>
         </div>
-        <div class="processus__grid">
-          <div class="processus__step fade-in" data-delay="0">
-            <div class="processus__num processus__num--1">1</div>
-            <h3 class="processus__title">Premier contact</h3>
-            <p class="processus__text">Vous m'écrivez ou m'appelez. On échange brièvement pour comprendre votre situation et vos attentes.</p>
+        <div class="srvc ft fi d1">
+          <div class="srth g"></div>
+          <div class="srbdg"><span>⭐ Populaire</span></div>
+          <div class="srbd">
+            <div class="srvi ig">📋</div>
+            <h3>Plans alimentaires personnalisés</h3>
+            <p class="txt">Des menus hebdomadaires 100 % sur-mesure, pensés pour vos contraintes (intolérances, allergies, préférences), vos objectifs et votre mode de vie.</p>
+            <ul class="srl"><li>Menus semaine complets et variés</li><li>Listes de courses incluses</li><li>Recettes simples et savoureuses</li><li>Adaptés à vos intolérances</li><li>Plan évolutif chaque mois</li><li>Support par messagerie dédiée</li></ul>
+            <div class="srft"><span class="dur">📅 Plan mensuel évolutif</span><button class="btn primary" onclick="go('contact')">Réserver</button></div>
           </div>
-          <div class="processus__step fade-in" data-delay="100">
-            <div class="processus__num processus__num--2">2</div>
-            <h3 class="processus__title">Bilan complet</h3>
-            <p class="processus__text">Consultation de 90 min pour analyser votre alimentation, vos symptômes, vos antécédents et vos objectifs.</p>
-          </div>
-          <div class="processus__step fade-in" data-delay="200">
-            <div class="processus__num processus__num--3">3</div>
-            <h3 class="processus__title">Protocole sur-mesure</h3>
-            <p class="processus__text">Je construis votre plan nutritionnel personnalisé avec menus, compléments et recommandations ciblées.</p>
-          </div>
-          <div class="processus__step fade-in" data-delay="300">
-            <div class="processus__num processus__num--4">4</div>
-            <h3 class="processus__title">Suivi & ajustements</h3>
-            <p class="processus__text">On se retrouve régulièrement pour ajuster le protocole selon vos progrès et vos ressentis.</p>
+        </div>
+        <div class="srvc fi d2">
+          <div class="srth b"></div>
+          <div class="srbd">
+            <div class="srvi ib">💻</div>
+            <h3>Coaching en ligne</h3>
+            <p class="txt">Le même niveau d'accompagnement que les séances en cabinet, depuis le confort de votre domicile, partout dans le monde.</p>
+            <ul class="srl"><li>Séances vidéo en visioconférence</li><li>Messagerie dédiée entre séances</li><li>Espace client personnel sécurisé</li><li>Ressources & fiches pratiques</li><li>Suivi des progrès en temps réel</li><li>Disponible depuis 3 pays</li></ul>
+            <div class="srft"><span class="dur">🌍 100% en ligne</span><button class="btn opk" onclick="go('contact')">Réserver</button></div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- ===== TÉMOIGNAGES ===== -->
-    <section class="temoignages section" id="temoignages">
-      <div class="temoignages__deco-leaf temoignages__deco-leaf--left">
-        <svg viewBox="0 0 120 180" fill="none"><path d="M60,170 Q10,120 15,70 Q20,20 60,5 Q100,20 105,70 Q110,120 60,170Z" fill="#E8197D" opacity="0.06"/></svg>
+      <div class="srnote fi">
+        <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#7AB648" stroke-width="1.5"/><path d="M10,6 L10,11" stroke="#7AB648" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14" r="1" fill="#7AB648"/></svg>
+        <p>Toutes les consultations peuvent se faire <strong>en cabinet ou en visioconférence</strong>. Un devis personnalisé vous sera proposé lors du premier contact.</p>
       </div>
-      <div class="temoignages__deco-leaf temoignages__deco-leaf--right">
-        <svg viewBox="0 0 120 180" fill="none"><path d="M60,170 Q10,120 15,70 Q20,20 60,5 Q100,20 105,70 Q110,120 60,170Z" fill="#7AB648" opacity="0.07"/></svg>
+    </div>
+  </section>
+
+  <section class="proc sec">
+    <div class="ctr">
+      <div class="sh fi"><div class="ey wt">Comment ça marche</div><h2 class="ttl wt">Un accompagnement en <span>4 étapes</span></h2><p class="sub wt">Un processus clair, bienveillant et entièrement centré sur vous.</p></div>
+      <div class="prgrd">
+        <div class="prs fi"><div class="prn n1">1</div><h3 class="prt">Premier contact</h3><p class="prtx">Vous m'écrivez ou m'appelez. On échange brièvement pour comprendre votre situation et vos attentes.</p></div>
+        <div class="prs fi d1"><div class="prn n2">2</div><h3 class="prt">Bilan complet</h3><p class="prtx">Consultation de 90 min pour analyser votre alimentation, symptômes, antécédents et objectifs.</p></div>
+        <div class="prs fi d2"><div class="prn n3">3</div><h3 class="prt">Protocole sur-mesure</h3><p class="prtx">Je construis votre plan nutritionnel personnalisé avec menus, compléments et recommandations ciblées.</p></div>
+        <div class="prs fi d3"><div class="prn n4">4</div><h3 class="prt">Suivi & ajustements</h3><p class="prtx">On se retrouve régulièrement pour ajuster le protocole selon vos progrès et vos ressentis.</p></div>
       </div>
+    </div>
+  </section>
 
-      <div class="container">
-        <div class="section__header fade-in">
-          <span class="section__eyebrow">Témoignages</span>
-          <h2 class="section__title">Ils ont transformé leur <span>santé</span></h2>
-          <p class="section__subtitle">Découvrez les expériences de patients qui ont repris leur santé en main.</p>
+  <section class="faqsec">
+    <div class="ctr">
+      <div class="sh fi"><div class="ey">FAQ</div><h2 class="ttl">Questions <span>fréquentes</span></h2></div>
+      <div class="faql">
+        <div class="faqi"><div class="faqq">Combien coûte une consultation ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div class="faqa">Les tarifs varient selon le type de prestation. Un devis personnalisé vous est envoyé lors du premier contact. Je m'adapte à chaque situation et chaque budget.</div></div>
+        <div class="faqi"><div class="faqq">La première consultation est-elle remboursée ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div class="faqa">Certaines assurances complémentaires suisses remboursent les consultations de nutrithérapie. Renseignez-vous auprès de votre caisse maladie avant votre premier rendez-vous.</div></div>
+        <div class="faqi"><div class="faqq">Combien de temps dure un suivi ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div class="faqa">Je propose des suivis de 3, 6 ou 12 mois selon vos objectifs. La plupart de mes patients constatent des résultats dès le premier mois de suivi.</div></div>
+        <div class="faqi"><div class="faqq">Je n'habite pas en Suisse, puis-je être suivi(e) ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div class="faqa">Absolument ! Mon programme de coaching en ligne est disponible depuis n'importe où dans le monde. J'ai déjà des patients en France et en Belgique.</div></div>
+        <div class="faqi"><div class="faqq">La nutrithérapie remplace-t-elle un traitement médical ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div class="faqa">Non. La nutrithérapie est complémentaire à votre suivi médical. Je travaille en coordination avec votre médecin traitant si nécessaire.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ctab">
+    <div class="ctr ctabi fi">
+      <div class="ctap">Prêt(e) à commencer ?</div>
+      <h2>Choisissez votre formule</h2>
+      <p>Contactez-moi pour discuter de la formule qui correspond le mieux à vos besoins et votre budget.</p>
+      <div class="ctaa">
+        <button class="btn wh lg" onclick="go('contact')">📩 Me contacter</button>
+        <a href="tel:+41797822737" class="btn outline lg">📞 079 / 782.27.37</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE TÉMOIGNAGES ══ -->
+<div id="pg-testi" class="pg">
+  <div class="phero">
+    <div class="phero-blob a"></div><div class="phero-blob b"></div>
+    <div class="ctr" style="position:relative;z-index:2">
+      <div class="phero-pill">Ce qu'ils disent</div>
+      <h1 class="phero-ttl">Ils ont transformé leur <span>santé</span></h1>
+      <p class="phero-sub">Des patients qui ont repris leur santé en main grâce à un accompagnement nutritionnel personnalisé.</p>
+    </div>
+  </div>
+
+  <div class="trst">
+    <div class="ctr">
+      <div class="trgrd">
+        <div class="tri fi"><div class="num">+200</div><div class="lbl">Patients accompagnés</div></div>
+        <div class="tri fi d1"><div class="num">98%</div><div class="lbl">Taux de satisfaction</div></div>
+        <div class="tri fi d2"><div class="num" style="font-size:1.8rem">⭐⭐⭐⭐⭐</div><div class="lbl">Note moyenne</div></div>
+        <div class="tri fi d3"><div class="num">8 ans</div><div class="lbl">D'expérience</div></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="tsec sec">
+    <div class="ctr">
+      <div class="tgrd">
+        <div class="tc fi"><div class="tcst">⭐⭐⭐⭐⭐</div><blockquote class="tcq">"Après 3 ans de fibromyalgie et d'épuisement total, j'avais perdu espoir. En 4 mois avec Sophie, ma fatigue a diminué de 60 % et mes douleurs sont beaucoup plus supportables. Je recommande à 100 %."</blockquote><div class="tca"><div class="tcav ap">M</div><div><strong>Marie, 43 ans</strong><span>Fibromyalgie & fatigue chronique</span></div></div><span class="tctg p">🏥 Maladie chronique</span></div>
+        <div class="tc dk fi d1"><div class="tcst">⭐⭐⭐⭐⭐</div><blockquote class="tcq">"En tant que crossfiteur compétiteur, Sophie a analysé mes carences et revu toute mon alimentation. Résultat : +15 % de performance en 3 mois et une récupération deux fois plus rapide."</blockquote><div class="tca"><div class="tcav ac">T</div><div><strong>Thomas, 29 ans</strong><span>CrossFit compétiteur</span></div></div><span class="tctg c">⚡ Performance sportive</span></div>
+        <div class="tc fi d2"><div class="tcst">⭐⭐⭐⭐⭐</div><blockquote class="tcq">"J'avais des troubles digestifs sévères depuis des années. Sophie a identifié des intolérances et une dysbiose intestinale. En 6 mois, ma vie a complètement changé. Je mange enfin sans souffrir !"</blockquote><div class="tca"><div class="tcav ag">I</div><div><strong>Isabelle, 56 ans</strong><span>Intestin irritable & hypothyroïdie</span></div></div><span class="tctg g">🌿 Santé digestive</span></div>
+        <div class="tc gn fi"><div class="tcst">⭐⭐⭐⭐⭐</div><blockquote class="tcq">"Je souffrais d'une hypothyroïdie depuis 5 ans. Sophie a complètement revu mon alimentation et j'ai retrouvé une vitalité que je n'avais pas connue depuis des années. Merci du fond du cœur."</blockquote><div class="tca"><div class="tcav ag">C</div><div><strong>Claire, 51 ans</strong><span>Hypothyroïdie & fatigue</span></div></div><span class="tctg g">🌿 Maladie chronique</span></div>
+        <div class="tc fi d1"><div class="tcst">⭐⭐⭐⭐⭐</div><blockquote class="tcq">"En tant que triathlète amateur, Sophie a rendu la nutrition simple et efficace. Ma récupération est nettement meilleure et je bats mes records personnels !"</blockquote><div class="tca"><div class="tcav ab">L</div><div><strong>Lucas, 34 ans</strong><span>Triathlète amateur</span></div></div><span class="tctg b">⚡ Sport & performance</span></div>
+        <div class="tc fi d2"><div class="tcst">⭐⭐⭐⭐⭐</div><blockquote class="tcq">"Sophie ne m'a pas proposé un régime, elle m'a appris à manger pour mon corps. En 3 mois, j'ai perdu 8 kg sans frustration et je me sens enfin bien dans ma peau."</blockquote><div class="tca"><div class="tcav ap">A</div><div><strong>Amina, 38 ans</strong><span>Rééquilibrage alimentaire</span></div></div><span class="tctg p">✨ Bien-être général</span></div>
+      </div>
+      <div style="text-align:center;margin-top:44px"><button class="btn primary lg" onclick="go('contact')">Commencer mon accompagnement</button></div>
+    </div>
+  </section>
+
+  <section class="ctab">
+    <div class="ctr ctabi fi">
+      <div class="ctap">Votre tour</div>
+      <h2>Prête à écrire votre propre histoire ?</h2>
+      <p>Rejoignez les +200 patients qui ont transformé leur santé grâce à la micronutrition.</p>
+      <div class="ctaa">
+        <button class="btn wh lg" onclick="go('contact')">📩 Prendre rendez-vous</button>
+        <button class="btn outline lg" onclick="go('services')">Voir mes services</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE CONTACT ══ -->
+<div id="pg-contact" class="pg">
+  <div class="phero">
+    <div class="phero-blob a"></div><div class="phero-blob b"></div>
+    <div class="ctr" style="position:relative;z-index:2">
+      <div class="phero-pill">Parlons</div>
+      <h1 class="phero-ttl">Parlons de votre <span>santé</span></h1>
+      <p class="phero-sub">Que ce soit pour une question ou pour prendre rendez-vous, je réponds à chaque message avec attention.</p>
+    </div>
+  </div>
+
+  <section class="ctsec sec">
+    <div class="ctr ctctr">
+      <div class="fi">
+        <div class="ey">Coordonnées</div>
+        <h2 class="ttl" style="font-size:1.75rem">On se retrouve <span>ici</span></h2>
+        <p class="ctin">N'hésitez pas à me contacter par email, téléphone ou via le formulaire. Je vous répondrai dans les 24h ouvrables.</p>
+        <div class="hcard">
+          <h4>🕐 Disponibilités</h4>
+          <div class="hrow"><span>Lundi – Vendredi</span><span>9h00 – 19h00</span></div>
+          <div class="hrow"><span>Samedi</span><span>9h00 – 13h00</span></div>
+          <div class="hrow"><span>Dimanche</span><span>Fermé</span></div>
         </div>
-
-        <div class="temoignages__grid">
-
-          <div class="temoignage-card fade-in" data-delay="0">
-            <div class="temoignage-card__ribbon"></div>
-            <div class="temoignage-card__stars">⭐⭐⭐⭐⭐</div>
-            <blockquote class="temoignage-card__quote">
-              "Après 3 ans de fibromyalgie et d'épuisement total, j'avais perdu espoir.
-              En 4 mois avec Sophie, ma fatigue a diminué de 60 % et mes douleurs sont
-              beaucoup plus supportables. Son approche a vraiment changé ma vie."
-            </blockquote>
-            <div class="temoignage-card__author">
-              <div class="temoignage-card__avatar temoignage-card__avatar--pink">M</div>
-              <div>
-                <strong>Marie, 43 ans</strong>
-                <span>Fibromyalgie & fatigue chronique</span>
-              </div>
-            </div>
-            <span class="temoignage-card__tag temoignage-card__tag--pink">🏥 Maladie chronique</span>
-          </div>
-
-          <div class="temoignage-card temoignage-card--featured fade-in" data-delay="150">
-            <div class="temoignage-card__stars">⭐⭐⭐⭐⭐</div>
-            <blockquote class="temoignage-card__quote">
-              "En tant que crossfiteur compétiteur, je cherchais à franchir un palier.
-              Sophie a analysé mes carences et revu toute mon alimentation.
-              Résultat : +15 % de performance en 3 mois et une récupération deux fois plus rapide."
-            </blockquote>
-            <div class="temoignage-card__author">
-              <div class="temoignage-card__avatar temoignage-card__avatar--coral">T</div>
-              <div>
-                <strong>Thomas, 29 ans</strong>
-                <span>Sportif de haut niveau – CrossFit</span>
-              </div>
-            </div>
-            <span class="temoignage-card__tag temoignage-card__tag--coral">⚡ Performance sportive</span>
-          </div>
-
-          <div class="temoignage-card fade-in" data-delay="300">
-            <div class="temoignage-card__ribbon"></div>
-            <div class="temoignage-card__stars">⭐⭐⭐⭐⭐</div>
-            <blockquote class="temoignage-card__quote">
-              "J'avais des troubles digestifs sévères depuis des années. Sophie a
-              identifié des intolérances et une dysbiose intestinale. En 6 mois,
-              ma vie a complètement changé. Je mange enfin sans souffrir !"
-            </blockquote>
-            <div class="temoignage-card__author">
-              <div class="temoignage-card__avatar temoignage-card__avatar--green">I</div>
-              <div>
-                <strong>Isabelle, 56 ans</strong>
-                <span>Intestin irritable & hypothyroïdie</span>
-              </div>
-            </div>
-            <span class="temoignage-card__tag temoignage-card__tag--green">🌿 Santé digestive</span>
-          </div>
-
+        <div class="cdets">
+          <div class="cdi"><div class="cdii"><svg viewBox="0 0 24 24" fill="none"><path d="M4,4 L20,4 Q21,4 21,5 L21,16 Q21,17 20,17 L7,17 L4,20 L4,5 Q4,4 5,4Z" stroke="#E8197D" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div class="cdib"><span class="cdil">Email</span><span class="cdiv"><a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a></span></div></div>
+          <div class="cdi"><div class="cdii"><svg viewBox="0 0 24 24" fill="none"><path d="M5,4 Q5,3 7,3 L9,3 L11,8 L9.5,9.5 Q11,13 15,14.5 L16.5,13 L21,15 L21,17 Q21,19 19,19 Q8,18 5,6 Q4.5,4.5 5,4Z" stroke="#E8197D" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div class="cdib"><span class="cdil">Téléphone</span><span class="cdiv"><a href="tel:+41797822737">079 / 782.27.37</a></span></div></div>
+          <div class="cdi"><div class="cdii"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#E8197D" stroke-width="1.8"/><path d="M3,10 L21,10M8,3 L8,7M16,3 L16,7" stroke="#E8197D" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="cdib"><span class="cdil">Consultation</span><span class="cdiv">En cabinet ou en visioconférence</span></div></div>
         </div>
-
-        <div class="temoignages__cta fade-in">
-          <p>Prête à écrire votre propre histoire de santé ?</p>
-          <a href="#contact" class="btn btn--primary btn--lg">Commencer maintenant</a>
+        <p class="csocttl">Me suivre</p>
+        <div class="csoc">
+          <a href="#" class="csb"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>Instagram</a>
+          <a href="#" class="csb"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M14,8 L12.5,8 Q11,8 11,10 L11,12 L14,12 L13.5,15 L11,15 L11,20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Facebook</a>
         </div>
       </div>
-
-      <div class="section__wave">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C720,70 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff"/></svg>
-      </div>
-    </section>
-
-    <!-- ===== CTA BAND ===== -->
-    <section class="cta-band">
-      <div class="container cta-band__inner fade-in">
-        <div class="cta-band__eyebrow">Disponible en cabinet & en ligne</div>
-        <h2 class="cta-band__title">Prête à retrouver votre énergie ?</h2>
-        <p class="cta-band__text">
-          Prenez rendez-vous dès aujourd'hui. Je réponds à chaque message sous 24h.
-        </p>
-        <div class="cta-band__actions">
-          <a href="#contact" class="btn btn--ghost btn--lg">📩 Envoyer un message</a>
-          <a href="tel:+41797822737" class="btn btn--outline btn--lg">📞 079 / 782.27.37</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="contact section" id="contact">
-      <div class="container contact__container">
-        <div class="contact__info fade-in">
-          <span class="section__eyebrow">Contact</span>
-          <h2 class="section__title">Parlons de votre <span>santé</span></h2>
-          <p class="contact__intro">
-            Vous avez des questions, souhaitez prendre rendez-vous ou simplement
-            en savoir plus ? Je réponds à chaque message avec attention.
-          </p>
-
-          <div class="contact__details">
-            <div class="contact__detail-item">
-              <div class="contact__detail-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M4,4 L20,4 Q21,4 21,5 L21,16 Q21,17 20,17 L7,17 L4,20 L4,5 Q4,4 5,4 Z" stroke="#E8197D" stroke-width="1.8" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>Email</strong>
-                <a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a>
-              </div>
+      <div class="fi d1">
+        <div class="fwrap">
+          <h3>Prendre rendez-vous</h3>
+          <p class="fsub">Réponse garantie sous 24h ouvrables ✅</p>
+          <form class="frm" id="cf">
+            <div class="frow">
+              <div class="fg"><label>Nom complet *</label><input type="text" placeholder="Marie Dupont" required/></div>
+              <div class="fg"><label>Email *</label><input type="email" placeholder="votre@email.com" required/></div>
             </div>
-            <div class="contact__detail-item">
-              <div class="contact__detail-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M5,4 Q5,3 7,3 L9,3 L11,8 L9.5,9.5 Q11,13 15,14.5 L16.5,13 L21,15 L21,17 Q21,19 19,19 Q8,18 5,6 Q4.5,4.5 5,4Z" stroke="#E8197D" stroke-width="1.8" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>Téléphone</strong>
-                <a href="tel:+41797822737">079 / 782.27.37</a>
-              </div>
-            </div>
-            <div class="contact__detail-item">
-              <div class="contact__detail-icon">
-                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#E8197D" stroke-width="1.8"/><path d="M12,7 L12,12 L16,14" stroke="#E8197D" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <strong>Disponibilités</strong>
-                <span>Lun – Ven : 9h00 – 19h00</span>
-                <span>Sam : 9h00 – 13h00</span>
-              </div>
-            </div>
-            <div class="contact__detail-item">
-              <div class="contact__detail-icon">
-                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#E8197D" stroke-width="1.8"/><path d="M3,10 L21,10" stroke="#E8197D" stroke-width="1.8"/><path d="M8,3 L8,7 M16,3 L16,7" stroke="#E8197D" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <strong>Consultation</strong>
-                <span>En cabinet ou en visioconférence</span>
-              </div>
-            </div>
-          </div>
-
-          <p class="contact__social-title">Suivez-moi</p>
-          <div class="contact__social">
-            <a href="#" class="contact__social-btn">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
-              Instagram
-            </a>
-            <a href="#" class="contact__social-btn">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M14,8 L12.5,8 Q11,8 11,10 L11,12 L14,12 L13.5,15 L11,15 L11,20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              Facebook
-            </a>
-          </div>
-        </div>
-
-        <div class="contact__form-wrap fade-in fade-in--delay">
-          <h3 class="contact__form-title">Prendre rendez-vous</h3>
-          <p class="contact__form-sub">Réponse garantie sous 24h ouvrables ✅</p>
-          <form class="contact__form" id="contactForm">
-            <div class="form__row">
-              <div class="form__group">
-                <label for="nom">Nom complet *</label>
-                <input type="text" id="nom" name="nom" placeholder="Marie Dupont" required />
-              </div>
-              <div class="form__group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" placeholder="votre@email.com" required />
-              </div>
-            </div>
-            <div class="form__group">
-              <label for="telephone">Téléphone</label>
-              <input type="tel" id="telephone" name="telephone" placeholder="079 000 00 00" />
-            </div>
-            <div class="form__group">
-              <label for="sujet">Sujet de votre demande *</label>
-              <select id="sujet" name="sujet" required>
-                <option value="" disabled selected>Choisissez un sujet…</option>
-                <option value="consultation">Consultation individuelle</option>
-                <option value="plan">Plan alimentaire personnalisé</option>
-                <option value="coaching">Coaching en ligne</option>
-                <option value="renseignement">Renseignement général</option>
-                <option value="sport">Nutrition sportive</option>
-                <option value="chronique">Maladie chronique</option>
-              </select>
-            </div>
-            <div class="form__group">
-              <label for="message">Votre message *</label>
-              <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement votre situation ou vos objectifs de santé…" required></textarea>
-            </div>
-            <div class="form__group form__group--checkbox">
-              <input type="checkbox" id="rgpd" name="rgpd" required />
-              <label for="rgpd">J'accepte que mes données soient utilisées pour répondre à ma demande *</label>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full btn--lg">
-              <svg viewBox="0 0 20 20" fill="none"><path d="M3,10 L17,10 M12,5 L17,10 L12,15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div class="fg"><label>Téléphone</label><input type="tel" placeholder="079 000 00 00"/></div>
+            <div class="fg"><label>Sujet *</label><select required><option value="" disabled selected>Choisissez un sujet…</option><option>Consultation individuelle</option><option>Plan alimentaire personnalisé</option><option>Coaching en ligne</option><option>Nutrition sportive</option><option>Maladie chronique</option><option>Renseignement général</option></select></div>
+            <div class="fg"><label>Votre message *</label><textarea rows="5" placeholder="Décrivez brièvement votre situation ou vos objectifs de santé…" required></textarea></div>
+            <div class="fg cb"><input type="checkbox" required/><label>J'accepte que mes données soient utilisées pour répondre à ma demande *</label></div>
+            <button type="submit" class="btn primary fw lg">
+              <svg viewBox="0 0 20 20" fill="none" style="width:17px;height:17px"><path d="M3,10 L17,10 M12,5 L17,10 L12,15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               Envoyer ma demande
             </button>
-            <p class="form__notice">* Champs obligatoires — Réponse sous 24h ouvrables</p>
+            <p class="fnote">* Champs obligatoires — Réponse sous 24h ouvrables</p>
           </form>
-          <div class="form__success" id="formSuccess">
-            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" fill="#7AB648" opacity="0.15"/><path d="M18,30 L26,38 L42,22" stroke="#7AB648" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <h3>Message envoyé !</h3>
+          <div class="fsuccess" id="fs">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" fill="#7AB648" opacity=".15"/><path d="M18,30 L26,38 L42,22" stroke="#7AB648" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Message envoyé ! 🎉</h3>
             <p>Merci pour votre message. Je vous répondrai dans les 24h ouvrables. À très bientôt ! 🌿</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer__container">
-      <div class="footer__brand">
-        <a href="#accueil" class="nav__logo footer__logo">
-          <svg class="nav__logo-icon" viewBox="0 0 44 44" fill="none">
-            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity="0.85" transform="rotate(0 22 22)"/>
-            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity="0.75" transform="rotate(60 22 22)"/>
-            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#7AB648" opacity="0.75" transform="rotate(120 22 22)"/>
-            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity="0.6" transform="rotate(180 22 22)"/>
-            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#A8D4E6" opacity="0.75" transform="rotate(240 22 22)"/>
-            <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity="0.6" transform="rotate(300 22 22)"/>
-            <circle cx="22" cy="22" r="6" fill="white" opacity="0.3"/>
-            <circle cx="22" cy="22" r="3.5" fill="#E8197D"/>
-          </svg>
-          <span>NutriSophie</span>
-        </a>
-        <p class="footer__tagline">Biologie nutritionnelle & micronutrition<br/>pour retrouver votre équilibre de santé.</p>
-      </div>
-      <div class="footer__links">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#apropos">À propos</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#temoignages">Témoignages</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer__links">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">Consultations individuelles</a></li>
-          <li><a href="#services">Plans alimentaires</a></li>
-          <li><a href="#services">Coaching en ligne</a></li>
-          <li><a href="#services">Nutrition sportive</a></li>
-        </ul>
-      </div>
-      <div class="footer__contact">
-        <h4>Contact</h4>
-        <a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a>
-        <a href="tel:+41797822737">079 / 782.27.37</a>
-        <div class="footer__social">
-          <a href="#" class="footer__social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
-          </a>
-          <a href="#" class="footer__social-link" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M14,8 L12.5,8 Q11,8 11,10 L11,12 L14,12 L13.5,15 L11,15 L11,20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </a>
-        </div>
+  <section class="qfaq">
+    <div class="ctr">
+      <div class="sh fi"><div class="ey">Avant de nous contacter</div><h2 class="ttl">Quelques <span>réponses rapides</span></h2></div>
+      <div class="qfgrd">
+        <div class="qfc fi"><div class="q">Sous quel délai répondez-vous ?</div><p class="a">Je réponds à tous les messages sous 24h ouvrables, du lundi au vendredi. Pour les urgences, appelez directement.</p></div>
+        <div class="qfc fi d1"><div class="q">Comment se passe la 1ère consultation ?</div><p class="a">La première séance dure 90 minutes. On fait un bilan complet de votre santé, alimentation et objectifs avant de construire votre protocole.</p></div>
+        <div class="qfc fi d2"><div class="q">Puis-je annuler ou reporter un RDV ?</div><p class="a">Oui, toute annulation est possible jusqu'à 48h avant la séance sans frais. Au-delà, 50% de la consultation est facturée.</p></div>
       </div>
     </div>
-    <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2026 NutriSophie – Tous droits réservés</p>
-        <p>Fait avec ❤️ pour votre santé</p>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="ftr">
+  <div class="ftrgrd">
+    <div>
+      <button class="flogo" onclick="go('home')">
+        <svg viewBox="0 0 44 44" fill="none" style="width:34px;height:34px">
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity=".85" transform="rotate(0 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity=".75" transform="rotate(60 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#7AB648" opacity=".75" transform="rotate(120 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#E8197D" opacity=".6" transform="rotate(180 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#A8D4E6" opacity=".75" transform="rotate(240 22 22)"/>
+          <ellipse cx="22" cy="10" rx="5" ry="9" fill="#F07850" opacity=".6" transform="rotate(300 22 22)"/>
+          <circle cx="22" cy="22" r="6" fill="white" opacity=".3"/><circle cx="22" cy="22" r="3.5" fill="#E8197D"/>
+        </svg>NutriSophie
+      </button>
+      <p class="ftag">Biologie nutritionnelle & micronutrition<br/>pour retrouver votre équilibre de santé.<br/>Basée en Suisse · Coaching international</p>
+    </div>
+    <div class="fcol"><h4>Navigation</h4><ul><li><button onclick="go('home')">Accueil</button></li><li><button onclick="go('about')">À propos</button></li><li><button onclick="go('services')">Services</button></li><li><button onclick="go('testi')">Témoignages</button></li><li><button onclick="go('contact')">Contact</button></li></ul></div>
+    <div class="fcol"><h4>Services</h4><ul><li><button onclick="go('services')">Consultations individuelles</button></li><li><button onclick="go('services')">Plans alimentaires</button></li><li><button onclick="go('services')">Coaching en ligne</button></li><li><button onclick="go('services')">Nutrition sportive</button></li></ul></div>
+    <div class="fcol"><h4>Contact</h4>
+      <div class="fctl"><a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a><a href="tel:+41797822737">079 / 782.27.37</a></div>
+      <div class="fsocs">
+        <a href="#" class="fsoc"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+        <a href="#" class="fsoc"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M14,8 L12.5,8 Q11,8 11,10 L11,12 L14,12 L13.5,15 L11,15 L11,20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
       </div>
     </div>
-  </footer>
+  </div>
+  <div class="fbot"><div class="fbot-in"><p>© 2026 NutriSophie – Tous droits réservés</p><p>Fait avec ❤️ pour votre santé</p></div></div>
+</footer>
 
-  <a href="#accueil" class="scroll-top" id="scrollTop" aria-label="Retour en haut">
-    <svg viewBox="0 0 24 24" fill="none"><path d="M12,19 L12,5 M6,11 L12,5 L18,11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
+<button class="stbtn" id="stb" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12,19 L12,5 M6,11 L12,5 L18,11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
-  <script>// Nav scroll effect
-const header = document.getElementById('header');
-const scrollTop = document.getElementById('scrollTop');
-
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 20);
-  scrollTop.classList.toggle('visible', window.scrollY > 400);
-
-  // Active nav link
-  const sections = document.querySelectorAll('section[id]');
-  const scrollPos = window.scrollY + 100;
-  sections.forEach(s => {
-    const link = document.querySelector(`.nav__link[href="#${s.id}"]`);
-    if (!link) return;
-    const inView = scrollPos >= s.offsetTop <script src="script.js"></script><script src="script.js"></script> scrollPos < s.offsetTop + s.offsetHeight;
-    link.classList.toggle('active', inView);
-  });
+<script>
+const pages=['home','about','services','testi','contact'];
+function go(id){
+  pages.forEach(p=>{const el=document.getElementById('pg-'+p);if(el)el.classList.remove('on')});
+  const pg=document.getElementById('pg-'+id);
+  if(pg){pg.classList.add('on');window.scrollTo({top:0,behavior:'smooth'})}
+  document.querySelectorAll('.nlk').forEach(l=>l.classList.remove('on'));
+  const al=document.querySelector(`.nlk[data-pg="${id}"]`);if(al)al.classList.add('on');
+  document.getElementById('nm').classList.remove('open');
+  location.hash=id;
+  setTimeout(()=>{
+    if(pg){pg.querySelectorAll('.fi').forEach(el=>{el.classList.remove('v');void el.offsetWidth})}
+    observe();
+  },60);
+}
+function observe(){
+  const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.1});
+  document.querySelectorAll('.fi:not(.v)').forEach(el=>io.observe(el));
+}
+observe();
+window.addEventListener('scroll',()=>{
+  document.getElementById('hdr').classList.toggle('sc',scrollY>20);
+  document.getElementById('stb').classList.toggle('v',scrollY>400);
 });
-
-// Fade-in observer
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const delay = e.target.dataset.delay ? parseInt(e.target.dataset.delay) : 0;
-      setTimeout(() => e.target.classList.add('visible'), delay);
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Mobile menu
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-
-navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
-document.querySelectorAll('.nav__link').forEach(link => {
-  link.addEventListener('click', () => navMenu.classList.remove('open'));
+document.getElementById('ntog').addEventListener('click',()=>document.getElementById('nm').classList.toggle('open'));
+document.querySelectorAll('.faqi').forEach(i=>{
+  i.querySelector('.faqq').addEventListener('click',()=>{const o=i.classList.contains('op');document.querySelectorAll('.faqi').forEach(x=>x.classList.remove('op'));if(!o)i.classList.add('op')});
 });
-
-// Contact form
-const form = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
-
-if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    form.style.display = 'none';
-    formSuccess.style.display = 'flex';
-  });
-}</script>
+const cf=document.getElementById('cf'),fs=document.getElementById('fs');
+if(cf)cf.addEventListener('submit',e=>{e.preventDefault();cf.style.display='none';fs.style.display='flex'});
+const h=location.hash.replace('#','');
+if(pages.includes(h))go(h);else{document.querySelector('.nlk[data-pg="home"]').classList.add('on')}
+</script>
 </body>
 </html>

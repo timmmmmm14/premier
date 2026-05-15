@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NutriSophie — Nutrithérapeute | Biologie Nutritionnelle & Micronutrition</title>
+<meta name="description" content="Sophie, nutrithérapeute certifiée en Suisse. Spécialiste en biologie nutritionnelle et micronutrition pour retrouver énergie, vitalité et équilibre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pk:#E8197D;--pk2:#f0429a;--pk-light:#FFF0F7;
+  --gr:#7AB648;--gr-light:#F0F7EB;
+  --co:#F07850;--co-light:#FFF5F0;
+  --bl:#A8D4E6;--bl-light:#EDF6FB;
+  --dark:#1A1A2E;--mid:#4B5563;--soft:#9CA3AF;
+  --bg:#FFFFFF;--bg2:#FAFAFA;--bg3:#FFF8F5;
+  --border:#F0E8EC;
+  --radius:16px;--radius-sm:10px;--radius-lg:24px;
+  --shadow:0 4px 24px rgba(232,25,125,.08);
+  --shadow-md:0 8px 40px rgba(26,26,46,.10);
+  --shadow-lg:0 20px 60px rgba(26,26,46,.14);
+  --transition:.3s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--bg);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.pg{display:none}.pg.on{display:block;animation:pgIn .4s ease}
+@keyframes pgIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.fi{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fi.v{opacity:1;transform:none}
+/* ── NAV ── */
+#hdr{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:var(--transition)}
+#hdr.sc{border-color:var(--border);box-shadow:0 2px 20px rgba(232,25,125,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px;height:72px}
+.nlogo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--dark)}
+.nlogo svg{flex-shrink:0}
+.nlinks{display:flex;align-items:center;gap:4px}
+.nlk{padding:8px 16px;border-radius:50px;font-size:.9rem;font-weight:500;color:var(--mid);transition:var(--transition);cursor:pointer}
+.nlk:hover,.nlk.on{color:var(--pk);background:var(--pk-light)}
+.nrdv{padding:10px 24px;background:var(--pk);color:#fff;border-radius:50px;font-size:.9rem;font-weight:600;transition:var(--transition)}
+.nrdv:hover{background:var(--pk2);transform:translateY(-1px);box-shadow:0 4px 16px rgba(232,25,125,.35)}
+.ntog{display:none;flex-direction:column;gap:5px;background:none;padding:4px}
+.ntog span{width:24px;height:2px;background:var(--dark);border-radius:2px;transition:var(--transition)}
+/* ── BTN ── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:600;font-size:.95rem;transition:var(--transition)}
+.btn-pk{background:var(--pk);color:#fff}
+.btn-pk:hover{background:var(--pk2);transform:translateY(-2px);box-shadow:0 6px 24px rgba(232,25,125,.35)}
+.btn-out{background:transparent;color:var(--pk);border:2px solid var(--pk)}
+.btn-out:hover{background:var(--pk);color:#fff;transform:translateY(-2px)}
+.btn-gr{background:var(--gr);color:#fff}
+.btn-gr:hover{background:#6da040;transform:translateY(-2px);box-shadow:0 6px 24px rgba(122,182,72,.3)}
+.btn-wh{background:#fff;color:var(--pk)}
+.btn-wh:hover{background:var(--pk-light);transform:translateY(-2px)}
+/* ── SECTIONS ── */
+.sec{padding:96px 24px;max-width:1200px;margin:0 auto}
+.sec-full{padding:96px 24px}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:50px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.tag-pk{background:var(--pk-light);color:var(--pk)}
+.tag-gr{background:var(--gr-light);color:var(--gr)}
+.tag-co{background:var(--co-light);color:var(--co)}
+.tag-bl{background:var(--bl-light);color:#2a7fa0}
+.sec-title{font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);margin-bottom:16px}
+.sec-title span{color:var(--pk)}
+.sec-sub{font-size:1.05rem;color:var(--mid);max-width:560px;line-height:1.7}
+.sec-head{margin-bottom:56px}
+.sec-head.center{text-align:center}.sec-head.center .sec-sub{margin:0 auto}
+/* ── HERO HOME ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:72px;background:linear-gradient(135deg,#FFF8F5 0%,#FFF0F7 50%,#EDF6FB 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(232,25,125,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-150px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(122,182,72,.07) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-in{max-width:1200px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:#fff;border:1px solid var(--border);border-radius:50px;font-size:.82rem;font-weight:500;color:var(--mid);margin-bottom:28px;box-shadow:var(--shadow)}
+.hero-badge::before{content:'';width:8px;height:8px;background:var(--gr);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-size:clamp(2.4rem,5vw,3.6rem);color:var(--dark);margin-bottom:24px;line-height:1.15}
+.hero-h1 em{font-style:italic;color:var(--pk)}
+.hero-p{font-size:1.1rem;color:var(--mid);line-height:1.75;margin-bottom:36px;max-width:480px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.hero-proof{display:flex;align-items:center;gap:20px}
+.hero-avatars{display:flex}
+.hero-avatars span{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--pk),var(--co));border:2px solid #fff;margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:#fff;font-weight:700}
+.hero-avatars span:first-child{margin-left:0}
+.hero-proof-txt{font-size:.85rem;color:var(--mid)}
+.hero-proof-txt strong{color:var(--dark);display:block;font-size:.95rem}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-card-main{width:340px;height:420px;background:#fff;border-radius:32px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-card-main::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--pk),var(--co),var(--gr))}
+.hero-sophie-ill{width:200px;height:220px}
+.hero-float{position:absolute;background:#fff;border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px}
+.hf1{top:-20px;right:-40px;animation:float1 4s ease-in-out infinite}
+.hf2{bottom:40px;left:-50px;animation:float2 5s ease-in-out infinite}
+.hf3{bottom:-20px;right:10px;animation:float1 3.5s ease-in-out infinite .5s}
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hf-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.hf-icon.pk{background:var(--pk-light)}
+.hf-icon.gr{background:var(--gr-light)}
+.hf-icon.co{background:var(--co-light)}
+.hf-txt small{display:block;font-size:.7rem;color:var(--soft);font-weight:500}
+.hf-txt strong{font-size:.9rem;color:var(--dark)}
+/* ── TRUST BAR ── */
+.trust{background:var(--dark);padding:32px 24px}
+.trust-in{max-width:1200px;margin:0 auto;display:flex;justify-content:center;gap:0;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:14px;padding:16px 40px;border-right:1px solid rgba(255,255,255,.1)}
+.trust-item:last-child{border-right:none}
+.trust-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--pk)}
+.trust-l{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.3}
+.trust-l strong{display:block;color:#fff;font-size:.92rem}
+/* ── ABOUT PREVIEW ── */
+.about-prev{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,var(--pk-light),var(--bl-light));border-radius:32px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.about-img::before{content:'';position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;background:linear-gradient(135deg,rgba(232,25,125,.12),rgba(122,182,72,.12));border-radius:32px;z-index:-1}
+.cert-badge{position:absolute;bottom:24px;left:24px;background:#fff;border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px}
+.cert-icon{width:44px;height:44px;background:var(--pk-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.cert-txt small{font-size:.7rem;color:var(--soft);font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.cert-txt strong{display:block;font-size:.9rem;color:var(--dark)}
+.about-pills{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+.pill{padding:8px 20px;border-radius:50px;font-size:.82rem;font-weight:500}
+.pill-pk{background:var(--pk-light);color:var(--pk)}
+.pill-gr{background:var(--gr-light);color:var(--gr)}
+.pill-bl{background:var(--bl-light);color:#2a7fa0}
+.pill-co{background:var(--co-light);color:var(--co)}
+/* ── METHOD ── */
+.method-bg{background:linear-gradient(135deg,var(--gr-light),var(--bl-light))}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px}
+.step{background:#fff;border-radius:var(--radius-lg);padding:36px 28px;position:relative;box-shadow:var(--shadow)}
+.step-n{width:48px;height:48px;background:linear-gradient(135deg,var(--pk),var(--co));border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:24px}
+.step h3{font-size:1.2rem;margin-bottom:12px}
+.step p{font-size:.92rem;color:var(--mid);line-height:1.65}
+.step-connector{position:absolute;top:60px;right:-16px;width:32px;height:2px;background:linear-gradient(90deg,var(--pk),var(--co));z-index:1}
+/* ── SERVICES ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc-card{border-radius:var(--radius-lg);padding:36px;background:#fff;border:1.5px solid var(--border);transition:var(--transition);position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;transition:var(--transition)}
+.svc-card.pk::before{background:linear-gradient(90deg,var(--pk),var(--co))}
+.svc-card.gr::before{background:linear-gradient(90deg,var(--gr),var(--bl))}
+.svc-card.co::before{background:linear-gradient(90deg,var(--co),var(--pk))}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.svc-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:24px}
+.svc-icon.pk{background:var(--pk-light)}
+.svc-icon.gr{background:var(--gr-light)}
+.svc-icon.co{background:var(--co-light)}
+.svc-card h3{font-size:1.2rem;margin-bottom:10px}
+.svc-card p{font-size:.9rem;color:var(--mid);line-height:1.65;margin-bottom:20px}
+.svc-list{list-style:none;margin-bottom:28px}
+.svc-list li{font-size:.85rem;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.svc-list li::before{content:'✓';color:var(--gr);font-weight:700;flex-shrink:0}
+.svc-price{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark);margin-bottom:4px}
+.svc-price span{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--soft);font-weight:400}
+.svc-link{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--pk);margin-top:20px}
+.svc-link svg{transition:transform .2s}
+.svc-link:hover svg{transform:translateX(4px)}
+/* ── RESULTS ── */
+.results{background:var(--dark);padding:96px 24px;position:relative;overflow:hidden}
+.results::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(232,25,125,.08) 0%,transparent 60%);border-radius:50%}
+.results-in{max-width:1200px;margin:0 auto}
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+.result-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:32px;transition:var(--transition)}
+.result-card:hover{background:rgba(255,255,255,.09)}
+.result-cond{font-size:.8rem;font-weight:600;color:var(--pk);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.result-txt{font-size:1rem;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:20px;font-style:italic}
+.result-meta{display:flex;align-items:center;gap:12px}
+.result-ava{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--pk),var(--co));display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff}
+.result-name{font-size:.85rem;color:rgba(255,255,255,.7)}
+.result-name strong{display:block;color:#fff}
+/* ── TESTI PREVIEW ── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:var(--transition)}
+.testi-card:hover{border-color:rgba(232,25,125,.25);box-shadow:var(--shadow)}
+.stars{color:#f59e0b;font-size:.9rem;margin-bottom:16px;letter-spacing:2px}
+.testi-q{font-size:.92rem;color:var(--mid);line-height:1.7;margin-bottom:20px;font-style:italic}
+.testi-meta{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
+.testi-ava{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0}
+.testi-name{font-weight:600;font-size:.9rem;color:var(--dark)}
+.testi-label{font-size:.78rem;color:var(--soft)}
+/* ── CTA BAND ── */
+.cta-band{background:linear-gradient(135deg,var(--pk),var(--co));padding:80px 24px;text-align:center}
+.cta-band h2{font-size:clamp(1.8rem,4vw,2.6rem);color:#fff;margin-bottom:16px}
+.cta-band p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:36px}
+/* ── FOOTER ── */
+footer{background:var(--dark);padding:64px 24px 32px;color:rgba(255,255,255,.7)}
+.foot-in{max-width:1200px;margin:0 auto}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.foot-brand p{font-size:.88rem;line-height:1.7;margin:16px 0}
+.foot-social{display:flex;gap:12px}
+.foot-soc{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:var(--transition)}
+.foot-soc:hover{background:var(--pk);color:#fff}
+.foot-col h4{font-size:.9rem;font-weight:600;color:#fff;margin-bottom:20px}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:10px}
+.foot-col a{font-size:.85rem;transition:color .2s;cursor:pointer}
+.foot-col a:hover{color:#fff}
+.foot-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
+.foot-bot p{font-size:.8rem}
+/* ── PAGE HERO ── */
+.pg-hero{padding:160px 24px 96px;background:linear-gradient(135deg,var(--dark) 0%,#2d1f3d 100%);position:relative;overflow:hidden;text-align:center}
+.pg-hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(232,25,125,.12) 0%,transparent 60%);border-radius:50%}
+.pg-hero .tag{margin:0 auto 20px}
+.pg-hero h1{font-size:clamp(2rem,5vw,3.2rem);color:#fff;margin-bottom:16px;position:relative}
+.pg-hero h1 span{color:var(--pk)}
+.pg-hero p{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;position:relative}
+/* ── ABOUT PAGE ── */
+.about-story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.about-story-img{position:sticky;top:100px}
+.about-story-body h2{font-size:1.8rem;margin:0 0 16px}
+.about-story-body p{font-size:.95rem;color:var(--mid);line-height:1.75;margin-bottom:20px}
+.timeline{margin:48px 0}
+.tl-item{display:flex;gap:24px;margin-bottom:32px;position:relative}
+.tl-item::before{content:'';position:absolute;left:19px;top:40px;bottom:-32px;width:2px;background:linear-gradient(180deg,var(--pk),transparent)}
+.tl-item:last-child::before{display:none}
+.tl-dot{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--pk),var(--co));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700;flex-shrink:0;box-shadow:0 0 0 4px var(--pk-light)}
+.tl-body{padding-top:6px}
+.tl-year{font-size:.78rem;font-weight:600;color:var(--pk);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.tl-title{font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:4px}
+.tl-desc{font-size:.88rem;color:var(--mid);line-height:1.6}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.val-card{background:var(--bg3);border-radius:var(--radius-lg);padding:32px 24px;text-align:center}
+.val-icon{font-size:2rem;margin-bottom:16px}
+.val-card h3{font-size:1rem;margin-bottom:10px}
+.val-card p{font-size:.85rem;color:var(--mid);line-height:1.6}
+.specs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.spec-item{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;gap:16px}
+.spec-icon{font-size:1.3rem;flex-shrink:0}
+.spec-txt{font-size:.88rem;color:var(--mid);line-height:1.5}
+.spec-txt strong{display:block;color:var(--dark);font-size:.95rem;margin-bottom:2px}
+/* ── SERVICES PAGE ── */
+.svc-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:80px}
+.svc-det{border-radius:var(--radius-lg);overflow:hidden;border:1.5px solid var(--border);transition:var(--transition)}
+.svc-det:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.svc-det-head{padding:36px;position:relative}
+.svc-det-head.pk{background:linear-gradient(135deg,#FFF0F7,#FFE4F2)}
+.svc-det-head.gr{background:linear-gradient(135deg,var(--gr-light),#DCF0C8)}
+.svc-det-head.co{background:linear-gradient(135deg,var(--co-light),#FFE8DC)}
+.svc-det-pop{position:absolute;top:16px;right:16px;padding:4px 14px;background:var(--pk);color:#fff;border-radius:50px;font-size:.72rem;font-weight:700}
+.svc-det-body{padding:28px 36px 36px;background:#fff}
+.svc-det-price{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--dark);margin-bottom:4px}
+.svc-det-period{font-size:.82rem;color:var(--soft)}
+.svc-det-list{list-style:none;margin:20px 0 28px}
+.svc-det-list li{padding:9px 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--mid);display:flex;align-items:flex-start;gap:10px}
+.svc-det-list li::before{content:'✓';color:var(--gr);font-weight:700;flex-shrink:0;margin-top:1px}
+.process{background:var(--dark);border-radius:var(--radius-lg);padding:56px;margin-bottom:80px}
+.process h2{color:#fff;font-size:1.8rem;margin-bottom:8px}
+.process .sec-sub{color:rgba(255,255,255,.6);margin-bottom:40px}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.proc-step{text-align:center}
+.proc-n{width:56px;height:56px;border-radius:50%;border:2px solid var(--pk);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--pk);margin:0 auto 16px;position:relative}
+.proc-n::after{content:'';position:absolute;top:50%;left:100%;width:calc(100% + 24px - 56px);height:1px;background:rgba(255,255,255,.15)}
+.proc-step:last-child .proc-n::after{display:none}
+.proc-step h4{font-size:.95rem;color:#fff;margin-bottom:8px}
+.proc-step p{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.6}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border:1.5px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:rgba(232,25,125,.3)}
+.faq-q{padding:22px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px}
+.faq-q span{font-weight:600;font-size:.95rem;color:var(--dark)}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--pk-light);display:flex;align-items:center;justify-content:center;color:var(--pk);font-size:1rem;flex-shrink:0;transition:var(--transition)}
+.faq-item.open .faq-icon{background:var(--pk);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding:0 24px 22px;font-size:.9rem;color:var(--mid);line-height:1.7}
+/* ── TESTI PAGE ── */
+.testi-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:64px}
+.ts-card{text-align:center;padding:32px;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg)}
+.ts-n{font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--pk);font-weight:700}
+.ts-l{font-size:.85rem;color:var(--mid);margin-top:4px}
+.testi-full-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tc-feat{grid-column:span 1;background:linear-gradient(135deg,var(--pk),var(--co));border:none}
+.tc-feat .stars{color:rgba(255,255,255,.7)}
+.tc-feat .testi-q{color:rgba(255,255,255,.9)}
+.tc-feat .testi-meta{border-color:rgba(255,255,255,.2)}
+.tc-feat .testi-name{color:#fff}
+.tc-feat .testi-label{color:rgba(255,255,255,.7)}
+/* ── CONTACT PAGE ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.contact-info h2{font-size:1.8rem;margin-bottom:16px}
+.contact-info p{font-size:.92rem;color:var(--mid);line-height:1.7;margin-bottom:32px}
+.contact-detail{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px}
+.cd-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.cd-icon.pk{background:var(--pk-light)}
+.cd-icon.gr{background:var(--gr-light)}
+.cd-icon.bl{background:var(--bl-light)}
+.cd-lbl{font-size:.78rem;color:var(--soft);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.cd-val{font-size:.95rem;color:var(--dark);font-weight:500;margin-top:2px}
+.hours-card{background:var(--bg3);border-radius:var(--radius-lg);padding:28px;margin-top:32px}
+.hours-card h3{font-size:1rem;margin-bottom:16px}
+.hour-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:.88rem}
+.hour-row:last-child{border:none}
+.hour-row .day{color:var(--mid)}
+.hour-row .time{font-weight:600;color:var(--dark)}
+.hour-row .closed{color:var(--soft)}
+.contact-form-wrap{background:#fff;border-radius:var(--radius-lg);padding:44px;box-shadow:var(--shadow-md);border:1.5px solid var(--border)}
+.form-title{font-size:1.4rem;margin-bottom:6px}
+.form-sub{font-size:.88rem;color:var(--soft);margin-bottom:28px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--dark);margin-bottom:8px}
+.form-group label span{color:var(--pk)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:.9rem;color:var(--dark);background:#fff;transition:border-color .2s,box-shadow .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--pk);box-shadow:0 0 0 3px rgba(232,25,125,.1)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-note{font-size:.78rem;color:var(--soft);margin-top:16px;text-align:center}
+#fs{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px;gap:16px}
+#fs .fs-icon{width:64px;height:64px;background:var(--gr-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:8px}
+#fs h3{font-size:1.4rem}
+#fs p{color:var(--mid);font-size:.9rem}
+/* ── SCROLL TOP ── */
+#stb{position:fixed;bottom:28px;right:28px;width:48px;height:48px;background:var(--pk);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(20px);transition:var(--transition);box-shadow:0 4px 20px rgba(232,25,125,.4);z-index:999}
+#stb.v{opacity:1;transform:translateY(0)}
+#stb:hover{background:var(--pk2);transform:translateY(-2px)}
+/* ── MOBILE ── */
+@media(max-width:1024px){
+  .hero-in{grid-template-columns:1fr;gap:48px;text-align:center}
+  .hero-visual{display:none}
+  .hero-btns,.hero-proof{justify-content:center}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .proc-steps{grid-template-columns:repeat(2,1fr)}
+  .proc-step:nth-child(2) .proc-n::after{display:none}
+}
+@media(max-width:768px){
+  .sec{padding:64px 20px}
+  .sec-full{padding:64px 20px}
+  .steps{grid-template-columns:1fr}
+  .step-connector{display:none}
+  .svc-grid,.svc-detail-grid,.testi-grid,.testi-full-grid,.values-grid{grid-template-columns:1fr}
+  .tc-feat{grid-column:span 1}
+  .results-grid{grid-template-columns:1fr}
+  .about-prev,.about-story,.contact-grid{grid-template-columns:1fr}
+  .about-story-img{display:none}
+  .testi-stats{grid-template-columns:repeat(2,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .trust-in{flex-direction:column;align-items:center}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);width:100%;justify-content:center}
+  .trust-item:last-child{border:none}
+  .nlinks,.nrdv{display:none}
+  .ntog{display:flex}
+  #nm{position:fixed;top:72px;left:0;right:0;background:#fff;padding:20px;border-bottom:1px solid var(--border);flex-direction:column;display:none;box-shadow:var(--shadow-md)}
+  #nm.open{display:flex}
+  #nm .nlk{padding:14px 20px;border-radius:var(--radius-sm);font-size:1rem}
+  #nm .nrdv{display:inline-flex;margin-top:8px;justify-content:center}
+  .foot-grid{grid-template-columns:1fr}
+  .process{padding:36px 24px}
+  .proc-steps{grid-template-columns:1fr 1fr}
+  .specs-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero-in{padding:60px 20px}
+  .testi-stats{grid-template-columns:1fr 1fr}
+  .contact-form-wrap{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="hdr">
+  <nav class="nav">
+    <div class="nlogo">
+      <svg width="34" height="34" viewBox="0 0 34 34">
+        <circle cx="17" cy="17" r="17" fill="#FFF0F7"/>
+        <ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9"/>
+        <ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(60 17 17)"/>
+        <ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(120 17 17)"/>
+        <ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(180 17 17)"/>
+        <ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(240 17 17)"/>
+        <ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(300 17 17)"/>
+        <circle cx="17" cy="17" r="4" fill="#7AB648"/>
+      </svg>
+      NutriSophie
+    </div>
+    <div id="nm" class="nlinks">
+      <span class="nlk on" data-pg="home" onclick="go('home')">Accueil</span>
+      <span class="nlk" data-pg="about" onclick="go('about')">À propos</span>
+      <span class="nlk" data-pg="services" onclick="go('services')">Services</span>
+      <span class="nlk" data-pg="testi" onclick="go('testi')">Témoignages</span>
+      <span class="nlk" data-pg="contact" onclick="go('contact')">Contact</span>
+      <span class="nrdv nlk btn btn-pk" onclick="go('contact')">Prendre RDV</span>
+    </div>
+    <button class="ntog" id="ntog" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ═══════════════════════ HOME ═══════════════════════ -->
+<div id="pg-home" class="pg on">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-in">
+      <div class="hero-text">
+        <div class="hero-badge">🌿 Nutrithérapeute certifiée · Suisse</div>
+        <h1 class="hero-h1">
+          Retrouvez votre<br>
+          <em>énergie naturelle</em><br>
+          par la nutrition
+        </h1>
+        <p class="hero-p">
+          Biologie nutritionnelle & micronutrition personnalisée. Je vous aide à retrouver l'équilibre entre votre alimentation et votre corps — durablement.
+        </p>
+        <div class="hero-btns">
+          <span class="btn btn-pk" onclick="go('contact')">Prendre rendez-vous</span>
+          <span class="btn btn-out" onclick="go('about')">Découvrir mon approche</span>
+        </div>
+        <div class="hero-proof">
+          <div class="hero-avatars">
+            <span>SL</span><span>MR</span><span>AC</span><span>JB</span>
+          </div>
+          <div class="hero-proof-txt">
+            <strong>+200 patients accompagnés</strong>
+            98% de satisfaction · 8 ans d'expérience
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <svg class="hero-sophie-ill" viewBox="0 0 200 220" fill="none">
+            <circle cx="100" cy="80" r="48" fill="#FFF0F7"/>
+            <circle cx="100" cy="75" r="32" fill="#F5C5DC"/>
+            <ellipse cx="100" cy="72" rx="22" ry="24" fill="#E8A0B8"/>
+            <ellipse cx="91" cy="70" rx="4" ry="5" fill="#6B3A5A"/>
+            <ellipse cx="109" cy="70" rx="4" ry="5" fill="#6B3A5A"/>
+            <ellipse cx="100" cy="80" rx="6" ry="3" fill="#C9697F"/>
+            <ellipse cx="100" cy="145" rx="38" ry="42" fill="#E8197D" opacity=".15"/>
+            <rect x="68" y="120" width="64" height="70" rx="20" fill="#FFF0F7"/>
+            <rect x="68" y="120" width="64" height="36" rx="20" fill="#E8197D" opacity=".2"/>
+            <text x="100" y="148" text-anchor="middle" font-size="11" fill="#E8197D" font-weight="600">NutriSophie</text>
+            <circle cx="56" cy="145" r="14" fill="#A8D4E6" opacity=".5"/>
+            <circle cx="144" cy="145" r="14" fill="#7AB648" opacity=".5"/>
+            <ellipse cx="78" cy="68" rx="3" ry="2" fill="#F5C5DC" opacity=".8"/>
+            <ellipse cx="122" cy="68" rx="3" ry="2" fill="#F5C5DC" opacity=".8"/>
+          </svg>
+          <p style="font-size:.8rem;color:var(--soft);margin-top:8px">Sophie, Nutrithérapeute</p>
+        </div>
+        <div class="hero-float hf1">
+          <div class="hf-icon pk">🌱</div>
+          <div class="hf-txt"><small>Résultat client</small><strong>+40% d'énergie</strong></div>
+        </div>
+        <div class="hero-float hf2">
+          <div class="hf-icon gr">⭐</div>
+          <div class="hf-txt"><small>Note moyenne</small><strong>4.9 / 5</strong></div>
+        </div>
+        <div class="hero-float hf3">
+          <div class="hf-icon co">💊</div>
+          <div class="hf-txt"><small>Approche</small><strong>100% naturelle</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust">
+    <div class="trust-in">
+      <div class="trust-item">
+        <span class="trust-n">+200</span>
+        <div class="trust-l"><strong>Patients</strong>accompagnés</div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-n">98%</span>
+        <div class="trust-l"><strong>Taux</strong>de satisfaction</div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-n">8 ans</span>
+        <div class="trust-l"><strong>D'expérience</strong>clinique</div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-n">100%</span>
+        <div class="trust-l"><strong>Approche</strong>naturelle</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="sec">
+    <div class="about-prev">
+      <div class="about-img-wrap fi">
+        <div class="about-img">
+          <img src="sophie.jpg" alt="Sophie, Nutrithérapeute" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:32px;"/>
+          <div class="cert-badge">
+            <div class="cert-icon">🎓</div>
+            <div class="cert-txt"><small>Certifiée</small><strong>Biologie Nutritionnelle</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="fi" style="transition-delay:.15s">
+        <div class="tag tag-pk">Mon histoire</div>
+        <h2 class="sec-title">Une approche <span>personnalisée</span> pour chaque patient</h2>
+        <p style="color:var(--mid);line-height:1.75;margin-bottom:20px">Nutrithérapeute spécialisée en biologie nutritionnelle & micronutrition, je vous accompagne avec une approche individualisée, fondée sur l'analyse de vos besoins réels.</p>
+        <p style="color:var(--mid);line-height:1.75;margin-bottom:28px">Après avoir moi-même souffert de fatigue chronique et de troubles digestifs, j'ai découvert le pouvoir transformateur d'une nutrition adaptée. Aujourd'hui, ma mission est de partager cette clé avec vous.</p>
+        <div class="about-pills">
+          <span class="pill pill-pk">🌿 Micronutrition</span>
+          <span class="pill pill-gr">🧬 Biologie nutritionnelle</span>
+          <span class="pill pill-bl">💧 Hydratation cellulaire</span>
+          <span class="pill pill-co">🦠 Microbiote intestinal</span>
+          <span class="pill pill-pk">⚡ Gestion du stress</span>
+          <span class="pill pill-gr">😴 Sommeil réparateur</span>
+        </div>
+        <span class="btn btn-pk" onclick="go('about')">En savoir plus sur Sophie</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODE -->
+  <div class="sec-full method-bg" style="padding:96px 24px">
+    <div style="max-width:1200px;margin:0 auto">
+      <div class="sec-head center fi">
+        <div class="tag tag-gr">Ma méthode</div>
+        <h2 class="sec-title">Trois étapes vers <span>votre équilibre</span></h2>
+        <p class="sec-sub">Un accompagnement structuré, scientifiquement fondé, pour des résultats durables.</p>
+      </div>
+      <div class="steps">
+        <div class="step fi" style="transition-delay:.1s">
+          <div class="step-n">1</div>
+          <h3>Bilan complet</h3>
+          <p>Analyse approfondie de votre alimentation, votre mode de vie, vos antécédents et vos objectifs. On part de vous, pas d'un protocole générique.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step fi" style="transition-delay:.2s">
+          <div class="step-n">2</div>
+          <h3>Plan sur-mesure</h3>
+          <p>Élaboration d'un programme nutritionnel et de micronutrition adapté à votre profil biologique unique, progressif et réaliste.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step fi" style="transition-delay:.3s">
+          <div class="step-n">3</div>
+          <h3>Suivi & ajustement</h3>
+          <p>Accompagnement régulier pour ajuster le plan selon vos résultats, répondre à vos questions et célébrer chaque progrès.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="sec">
+    <div class="sec-head center fi">
+      <div class="tag tag-co">Mes services</div>
+      <h2 class="sec-title">Comment puis-je vous <span>aider ?</span></h2>
+      <p class="sec-sub">Des prestations conçues pour répondre à vos besoins spécifiques, à votre rythme.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card pk fi" style="transition-delay:.1s">
+        <div class="svc-icon pk">🌱</div>
+        <h3>Consultations individuelles</h3>
+        <p>Un bilan nutritionnel complet de 60 à 90 minutes, suivi de recommandations personnalisées.</p>
+        <ul class="svc-list">
+          <li>Bilan alimentaire & mode de vie</li>
+          <li>Analyse micronutritionnelle</li>
+          <li>Plan alimentaire adapté</li>
+          <li>Compléments ciblés</li>
+        </ul>
+        <div class="svc-price">CHF 120 <span>/ séance</span></div>
+        <a class="svc-link" onclick="go('services')">Voir les détails <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="svc-card gr fi" style="transition-delay:.2s">
+        <div class="svc-icon gr">📋</div>
+        <h3>Plans alimentaires personnalisés</h3>
+        <p>Des plans nutritionnels complets avec recettes, listes de courses et guide de micronutrition.</p>
+        <ul class="svc-list">
+          <li>Menus sur 4 semaines</li>
+          <li>Recettes adaptées</li>
+          <li>Liste de courses optimisée</li>
+          <li>Guide des compléments</li>
+        </ul>
+        <div class="svc-price">CHF 180 <span>/ plan mensuel</span></div>
+        <a class="svc-link" onclick="go('services')">Voir les détails <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="svc-card co fi" style="transition-delay:.3s">
+        <div class="svc-icon co">💬</div>
+        <h3>Coaching en ligne</h3>
+        <p>Un suivi continu par messagerie et visioconférence pour rester motivé(e) et ajuster votre parcours.</p>
+        <ul class="svc-list">
+          <li>Séances visio hebdomadaires</li>
+          <li>Messagerie illimitée</li>
+          <li>Ajustements en temps réel</li>
+          <li>Support psycho-nutritionnel</li>
+        </ul>
+        <div class="svc-price">CHF 290 <span>/ mois</span></div>
+        <a class="svc-link" onclick="go('services')">Voir les détails <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <div class="results">
+    <div class="results-in">
+      <div class="sec-head fi" style="text-align:center">
+        <div class="tag" style="background:rgba(232,25,125,.15);color:var(--pk);margin:0 auto 20px">Transformations</div>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);color:#fff;margin-bottom:12px">Des résultats <span style="color:var(--pk)">concrets</span> et mesurables</h2>
+        <p style="color:rgba(255,255,255,.6);max-width:520px;margin:0 auto">Chaque parcours est unique. Voici quelques transformations vécues par mes patients.</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card fi" style="transition-delay:.1s">
+          <div class="result-cond">Fatigue chronique</div>
+          <p class="result-txt">"Après 4 mois avec Sophie, ma fatigue a diminué de 70%. J'ai retrouvé une énergie que je n'avais plus depuis des années. Son approche micronutritionnelle a tout changé."</p>
+          <div class="result-meta"><div class="result-ava">ML</div><div class="result-name"><strong>Marie-Laure, 42 ans</strong>Genève</div></div>
+        </div>
+        <div class="result-card fi" style="transition-delay:.2s">
+          <div class="result-cond">Troubles digestifs</div>
+          <p class="result-txt">"En 3 mois, mes ballonnements ont pratiquement disparu. Sophie a identifié des intolérances que je ne soupçonnais pas et a reconstruit mon microbiote."</p>
+          <div class="result-meta"><div class="result-ava">PD</div><div class="result-name"><strong>Pierre D., 35 ans</strong>Lausanne</div></div>
+        </div>
+        <div class="result-card fi" style="transition-delay:.3s">
+          <div class="result-cond">Prise de poids / hormones</div>
+          <p class="result-txt">"J'avais essayé tout ce qu'on peut imaginer. Avec NutriSophie, j'ai enfin compris mon corps. -8 kg en 5 mois, durablement et sans frustration."</p>
+          <div class="result-meta"><div class="result-ava">SC</div><div class="result-name"><strong>Sandra C., 38 ans</strong>Zurich</div></div>
+        </div>
+        <div class="result-card fi" style="transition-delay:.4s">
+          <div class="result-cond">Sport & performance</div>
+          <p class="result-txt">"En tant que crossfiteur, Sophie a analysé mes carences et adapté ma nutrition. Résultat : +15% de performance en 3 mois et une récupération deux fois plus rapide."</p>
+          <div class="result-meta"><div class="result-ava">TR</div><div class="result-name"><strong>Thomas R., 28 ans</strong>Berne</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTI PREVIEW -->
+  <section class="sec">
+    <div class="sec-head center fi">
+      <div class="tag tag-bl">Témoignages</div>
+      <h2 class="sec-title">Ils ont transformé <span>leur santé</span></h2>
+      <p class="sec-sub">Des patients qui ont repris leur santé en main grâce à un accompagnement nutritionnel personnalisé.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fi" style="transition-delay:.1s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"Après 3 ans de fibromyalgie, j'avais perdu espoir. En 4 mois avec Sophie, ma fatigue a diminué de 60% et mes douleurs sont beaucoup plus supportables."</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:linear-gradient(135deg,#E8197D,#F07850)">CF</div><div><div class="testi-name">Christine F.</div><div class="testi-label">Fibromyalgie · Genève</div></div></div>
+      </div>
+      <div class="testi-card fi" style="transition-delay:.2s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"J'avais des troubles digestifs sévères depuis des années. Sophie a identifié les intolérances et en 6 mois, ma vie a complètement changé. Je mange enfin sans souffrir."</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:linear-gradient(135deg,#7AB648,#A8D4E6)">EB</div><div><div class="testi-name">Élodie B.</div><div class="testi-label">Troubles digestifs · Lausanne</div></div></div>
+      </div>
+      <div class="testi-card fi" style="transition-delay:.3s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"Sophie m'a aidée à retrouver mon poids de forme après ma grossesse. Son approche bienveillante et ses conseils pratiques ont tout changé dans mon quotidien."</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:linear-gradient(135deg,#F07850,#E8197D)">NM</div><div><div class="testi-name">Nathalie M.</div><div class="testi-label">Post-grossesse · Zurich</div></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <span class="btn btn-out" onclick="go('testi')">Voir tous les témoignages</span>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="tag" style="background:rgba(255,255,255,.2);color:#fff;margin:0 auto 20px">Prêt(e) à commencer ?</div>
+    <h2>Votre transformation commence <br>par une conversation</h2>
+    <p>Prenez rendez-vous pour une première consultation gratuite de 20 minutes.</p>
+    <span class="btn btn-wh" onclick="go('contact')">Réserver ma consultation gratuite →</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-in">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="nlogo" style="margin-bottom:16px">
+            <svg width="30" height="30" viewBox="0 0 34 34"><circle cx="17" cy="17" r="17" fill="rgba(232,25,125,.15)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(60 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(120 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(180 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(240 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(300 17 17)"/><circle cx="17" cy="17" r="4" fill="#7AB648"/></svg>
+            <span style="color:#fff">NutriSophie</span>
+          </div>
+          <p>Nutrithérapeute certifiée en biologie nutritionnelle & micronutrition. Basée en Suisse, disponible en présentiel et en ligne.</p>
+          <div class="foot-social">
+            <a class="foot-soc" href="#" aria-label="Instagram">📸</a>
+            <a class="foot-soc" href="#" aria-label="Facebook">📘</a>
+            <a class="foot-soc" href="#" aria-label="LinkedIn">💼</a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a onclick="go('home')">Accueil</a></li>
+            <li><a onclick="go('about')">À propos</a></li>
+            <li><a onclick="go('services')">Services</a></li>
+            <li><a onclick="go('testi')">Témoignages</a></li>
+            <li><a onclick="go('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a onclick="go('services')">Consultations</a></li>
+            <li><a onclick="go('services')">Plans alimentaires</a></li>
+            <li><a onclick="go('services')">Coaching en ligne</a></li>
+            <li><a onclick="go('services')">Bilan micronutritionnel</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a></li>
+            <li><a href="tel:0797822737">079 782 27 37</a></li>
+            <li style="color:rgba(255,255,255,.4)">Suisse · En ligne</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <p>© 2026 NutriSophie · Tous droits réservés</p>
+        <p>Fait avec 💚 pour votre santé</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════ À PROPOS ═══════════════════════ -->
+<div id="pg-about" class="pg">
+  <div class="pg-hero">
+    <div class="tag tag-pk">Mon histoire</div>
+    <h1>Bonjour, je suis <span>Sophie</span> 👋</h1>
+    <p>Nutrithérapeute spécialisée en biologie nutritionnelle & micronutrition, basée en Suisse.</p>
+  </div>
+
+  <section class="sec">
+    <div class="about-story">
+      <div class="about-story-img fi">
+        <div class="about-img" style="min-height:480px">
+          <img src="sophie.jpg" alt="Sophie, Nutrithérapeute" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:32px;"/>
+          <div class="cert-badge">
+            <div class="cert-icon">🎓</div>
+            <div class="cert-txt"><small>Certifiée depuis 2016</small><strong>Biologie Nutritionnelle</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-story-body fi" style="transition-delay:.15s">
+        <div class="tag tag-pk">Ma vocation</div>
+        <h2 class="sec-title">Une vocation née d'une <span>expérience personnelle</span></h2>
+        <p>Mon parcours vers la nutrithérapie n'était pas prévu. Pendant des années, j'ai souffert d'une fatigue chronique inexpliquée, de troubles digestifs persistants et d'une prise de poids difficile à contrôler malgré une alimentation que je pensais équilibrée.</p>
+        <p>C'est en découvrant la biologie nutritionnelle que tout a changé. En comprenant les besoins réels de <em>mon</em> corps — et non un régime universel — j'ai retrouvé une énergie et un équilibre que je n'espérais plus.</p>
+        <p>Cette transformation personnelle profonde est devenue ma mission : aider chaque patient à trouver <em>sa</em> clé nutritionnelle, celle qui correspond à sa biologie unique, ses contraintes et ses objectifs.</p>
+
+        <div class="timeline">
+          <div class="tl-item fi" style="transition-delay:.2s">
+            <div class="tl-dot">16</div>
+            <div class="tl-body">
+              <div class="tl-year">2016</div>
+              <div class="tl-title">Certification en Biologie Nutritionnelle</div>
+              <div class="tl-desc">Formation complète en nutrition cellulaire et micronutrition — 2 ans de formation intensive.</div>
+            </div>
+          </div>
+          <div class="tl-item fi" style="transition-delay:.25s">
+            <div class="tl-dot">18</div>
+            <div class="tl-body">
+              <div class="tl-year">2018</div>
+              <div class="tl-title">Ouverture du cabinet NutriSophie</div>
+              <div class="tl-desc">Premier cabinet à Genève. Premiers patients, premiers résultats. La passion devient métier.</div>
+            </div>
+          </div>
+          <div class="tl-item fi" style="transition-delay:.3s">
+            <div class="tl-dot">20</div>
+            <div class="tl-body">
+              <div class="tl-year">2020</div>
+              <div class="tl-title">Spécialisation microbiote & immunité</div>
+              <div class="tl-desc">Formation avancée sur le microbiote intestinal, l'immunonutrition et la psycho-nutrition.</div>
+            </div>
+          </div>
+          <div class="tl-item fi" style="transition-delay:.35s">
+            <div class="tl-dot">22</div>
+            <div class="tl-body">
+              <div class="tl-year">2022</div>
+              <div class="tl-title">Lancement du coaching en ligne</div>
+              <div class="tl-desc">Extension des consultations à toute la Suisse et la France, en visioconférence.</div>
+            </div>
+          </div>
+          <div class="tl-item fi" style="transition-delay:.4s">
+            <div class="tl-dot">26</div>
+            <div class="tl-body">
+              <div class="tl-year">2026</div>
+              <div class="tl-title">+200 patients accompagnés</div>
+              <div class="tl-desc">Une communauté grandissante de patients qui ont retrouvé énergie, vitalité et équilibre.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sec-full" style="background:var(--bg3);padding:96px 24px">
+    <div style="max-width:1200px;margin:0 auto">
+      <div class="sec-head center fi">
+        <div class="tag tag-gr">Mes valeurs</div>
+        <h2 class="sec-title">Ce qui guide <span>ma pratique</span></h2>
+      </div>
+      <div class="values-grid">
+        <div class="val-card fi" style="transition-delay:.1s">
+          <div class="val-icon">🎯</div>
+          <h3>Personnalisation</h3>
+          <p>Chaque personne est unique. Je construis chaque protocole sur mesure, en partant de votre biologie, pas d'un modèle standard.</p>
+        </div>
+        <div class="val-card fi" style="transition-delay:.2s">
+          <div class="val-icon">🔬</div>
+          <h3>Rigueur scientifique</h3>
+          <p>Mon approche est fondée sur des données probantes en biologie nutritionnelle et micronutrition. Pas de tendances, pas de miracles.</p>
+        </div>
+        <div class="val-card fi" style="transition-delay:.3s">
+          <div class="val-icon">💚</div>
+          <h3>Bienveillance</h3>
+          <p>Votre parcours mérite du respect et de la douceur. Je vous accompagne sans jugement, à votre rythme et selon vos possibilités.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head center fi">
+      <div class="tag tag-bl">Spécialités</div>
+      <h2 class="sec-title">Mes domaines <span>d'expertise</span></h2>
+      <p class="sec-sub">Des problématiques que j'accompagne au quotidien avec des résultats mesurables.</p>
+    </div>
+    <div class="specs-grid fi" style="transition-delay:.1s">
+      <div class="spec-item"><div class="spec-icon">⚡</div><div class="spec-txt"><strong>Fatigue chronique</strong>Identification des carences et rééquilibrage énergétique cellulaire</div></div>
+      <div class="spec-item"><div class="spec-icon">🦠</div><div class="spec-txt"><strong>Troubles digestifs</strong>Dysbiose, SII, intolérances, perméabilité intestinale</div></div>
+      <div class="spec-item"><div class="spec-icon">⚖️</div><div class="spec-txt"><strong>Gestion du poids</strong>Perte de poids durable, rééquilibrage hormonal, compulsions</div></div>
+      <div class="spec-item"><div class="spec-icon">😴</div><div class="spec-txt"><strong>Troubles du sommeil</strong>Optimisation des neurotransmetteurs et du rythme circadien</div></div>
+      <div class="spec-item"><div class="spec-icon">🧠</div><div class="spec-txt"><strong>Stress & anxiété</strong>Psycho-nutrition, gestion du cortisol, adaptogènes</div></div>
+      <div class="spec-item"><div class="spec-icon">🏃</div><div class="spec-txt"><strong>Performance sportive</strong>Nutrition de performance, récupération, micronutrition du sportif</div></div>
+      <div class="spec-item"><div class="spec-icon">🤱</div><div class="spec-txt"><strong>Grossesse & post-partum</strong>Nutrition prénatale, allaitement, récupération post-grossesse</div></div>
+      <div class="spec-item"><div class="spec-icon">🔥</div><div class="spec-txt"><strong>Inflammation chronique</strong>Anti-inflammation par l'alimentation, oméga-3, antioxydants</div></div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <span class="btn btn-pk" onclick="go('contact')">Discutons de votre situation</span>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Prête à vous accompagner vers <span style="font-style:italic">votre</span> équilibre</h2>
+    <p>Première consultation de 20 minutes offerte — sans engagement.</p>
+    <span class="btn btn-wh" onclick="go('contact')">Prendre rendez-vous →</span>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="nlogo" style="margin-bottom:16px"><svg width="30" height="30" viewBox="0 0 34 34"><circle cx="17" cy="17" r="17" fill="rgba(232,25,125,.15)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(60 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(120 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(180 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(240 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(300 17 17)"/><circle cx="17" cy="17" r="4" fill="#7AB648"/></svg><span style="color:#fff">NutriSophie</span></div>
+          <p>Nutrithérapeute certifiée · Suisse</p>
+          <div class="foot-social"><a class="foot-soc" href="#">📸</a><a class="foot-soc" href="#">📘</a><a class="foot-soc" href="#">💼</a></div>
+        </div>
+        <div class="foot-col"><h4>Navigation</h4><ul><li><a onclick="go('home')">Accueil</a></li><li><a onclick="go('about')">À propos</a></li><li><a onclick="go('services')">Services</a></li><li><a onclick="go('testi')">Témoignages</a></li><li><a onclick="go('contact')">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Services</h4><ul><li><a onclick="go('services')">Consultations</a></li><li><a onclick="go('services')">Plans alimentaires</a></li><li><a onclick="go('services')">Coaching en ligne</a></li></ul></div>
+        <div class="foot-col"><h4>Contact</h4><ul><li><a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a></li><li><a href="tel:0797822737">079 782 27 37</a></li></ul></div>
+      </div>
+      <div class="foot-bot"><p>© 2026 NutriSophie · Tous droits réservés</p><p>Fait avec 💚 pour votre santé</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+<div id="pg-services" class="pg">
+  <div class="pg-hero">
+    <div class="tag tag-co">Mes services</div>
+    <h1>Comment puis-je vous <span>aider ?</span></h1>
+    <p>Chaque accompagnement est unique, adapté à vos symptômes, vos objectifs et votre rythme de vie.</p>
+  </div>
+
+  <section class="sec">
+    <div class="svc-detail-grid">
+      <div class="svc-det fi" style="transition-delay:.1s">
+        <div class="svc-det-head pk">
+          <div class="svc-icon pk" style="margin-bottom:16px">🌱</div>
+          <h3 style="font-size:1.3rem;margin-bottom:8px">Consultation individuelle</h3>
+          <p style="font-size:.88rem;color:var(--mid)">La base de tout accompagnement réussi</p>
+        </div>
+        <div class="svc-det-body">
+          <div class="svc-det-price">CHF 120</div>
+          <div class="svc-det-period">par séance de 60–90 minutes</div>
+          <ul class="svc-det-list">
+            <li>Bilan alimentaire & mode de vie complet</li>
+            <li>Analyse micronutritionnelle personnalisée</li>
+            <li>Plan d'action immédiat</li>
+            <li>Recommandations en compléments ciblés</li>
+            <li>Compte-rendu écrit détaillé</li>
+            <li>Support email 48h après la séance</li>
+          </ul>
+          <span class="btn btn-pk" style="width:100%;justify-content:center" onclick="go('contact')">Réserver une consultation</span>
+        </div>
+      </div>
+      <div class="svc-det fi" style="transition-delay:.2s">
+        <div class="svc-det-head gr">
+          <div class="svc-det-pop">Populaire</div>
+          <div class="svc-icon gr" style="margin-bottom:16px">📋</div>
+          <h3 style="font-size:1.3rem;margin-bottom:8px">Plan alimentaire mensuel</h3>
+          <p style="font-size:.88rem;color:var(--mid)">Un programme complet sur 4 semaines</p>
+        </div>
+        <div class="svc-det-body">
+          <div class="svc-det-price">CHF 180</div>
+          <div class="svc-det-period">par mois · renouvellement possible</div>
+          <ul class="svc-det-list">
+            <li>Menus personnalisés sur 4 semaines</li>
+            <li>+40 recettes adaptées à vos goûts</li>
+            <li>Liste de courses optimisée</li>
+            <li>Guide des compléments alimentaires</li>
+            <li>Tableau de suivi des symptômes</li>
+            <li>1 consultation de suivi incluse</li>
+            <li>Ajustements en cours de programme</li>
+          </ul>
+          <span class="btn btn-gr" style="width:100%;justify-content:center" onclick="go('contact')">Démarrer mon programme</span>
+        </div>
+      </div>
+      <div class="svc-det fi" style="transition-delay:.3s">
+        <div class="svc-det-head co">
+          <div class="svc-icon co" style="margin-bottom:16px">💬</div>
+          <h3 style="font-size:1.3rem;margin-bottom:8px">Coaching intensif</h3>
+          <p style="font-size:.88rem;color:var(--mid)">Le suivi le plus complet et personnalisé</p>
+        </div>
+        <div class="svc-det-body">
+          <div class="svc-det-price">CHF 290</div>
+          <div class="svc-det-period">par mois · engagement 3 mois minimum</div>
+          <ul class="svc-det-list">
+            <li>2 séances visio / mois (45 min)</li>
+            <li>Messagerie illimitée (réponse sous 24h)</li>
+            <li>Plan alimentaire mis à jour chaque mois</li>
+            <li>Suivi des analyses biologiques</li>
+            <li>Protocole de micronutrition évolutif</li>
+            <li>Accès à ma bibliothèque de ressources</li>
+            <li>Support psycho-nutritionnel inclus</li>
+          </ul>
+          <span class="btn btn-pk" style="width:100%;justify-content:center" onclick="go('contact')">Commencer le coaching</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process fi">
+      <div class="sec-head center">
+        <div class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8)">Comment ça marche</div>
+        <h2 style="color:#fff;font-size:1.8rem;margin-bottom:8px">Le processus en 4 étapes</h2>
+        <p class="sec-sub" style="margin:0 auto">Simple, clair, efficace — du premier contact aux résultats.</p>
+      </div>
+      <div class="proc-steps">
+        <div class="proc-step"><div class="proc-n">1</div><h4>Prise de contact</h4><p>Envoyez-moi un message ou appelez-moi. On échange brièvement sur votre situation.</p></div>
+        <div class="proc-step"><div class="proc-n">2</div><h4>Bilan initial</h4><p>Première consultation approfondie pour comprendre votre biologie et vos objectifs.</p></div>
+        <div class="proc-step"><div class="proc-n">3</div><h4>Plan personnalisé</h4><p>Élaboration de votre programme nutritionnel sur mesure sous 48–72h.</p></div>
+        <div class="proc-step"><div class="proc-n">4</div><h4>Suivi & résultats</h4><p>Accompagnement régulier, ajustements et célébration de chaque progrès.</p></div>
+      </div>
+    </div>
+
+    <div class="sec-head center fi">
+      <div class="tag tag-bl">FAQ</div>
+      <h2 class="sec-title">Questions <span>fréquentes</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item fi" style="transition-delay:.1s">
+        <div class="faq-q"><span>Quelle est la différence entre un nutritionniste et une nutrithérapeute ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Le nutritionniste (médecin ou diététicien) travaille principalement sur les apports caloriques et macronutriments. La nutrithérapeute s'intéresse aux micronutriments (vitamines, minéraux, acides gras) et à la biologie cellulaire pour identifier les carences et déséquilibres spécifiques à chaque individu. Mon approche est complémentaire à la médecine conventionnelle.</p></div>
+      </div>
+      <div class="faq-item fi" style="transition-delay:.15s">
+        <div class="faq-q"><span>Combien de temps avant de voir des résultats ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Les premiers effets (énergie, digestion, sommeil) se font souvent sentir dans les 3 à 6 semaines. Des transformations plus profondes (poids, inflammations chroniques) demandent généralement 3 à 6 mois. Tout dépend de votre situation de départ et de votre implication dans le programme.</p></div>
+      </div>
+      <div class="faq-item fi" style="transition-delay:.2s">
+        <div class="faq-q"><span>Les consultations sont-elles remboursées par l'assurance ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Certaines assurances complémentaires (LCA) remboursent les consultations en nutrithérapie. Je vous fournis une facture détaillée que vous pouvez soumettre à votre caisse. Je vous conseille de vérifier votre contrat d'assurance ou de me contacter pour plus d'informations.</p></div>
+      </div>
+      <div class="faq-item fi" style="transition-delay:.25s">
+        <div class="faq-q"><span>Proposez-vous des consultations en ligne ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Oui, absolument ! Les consultations en visioconférence sont aussi efficaces qu'en présentiel. J'accompagne des clients dans toute la Suisse, en France et dans les pays francophones. La plateforme utilisée est simple et sécurisée.</p></div>
+      </div>
+      <div class="faq-item fi" style="transition-delay:.3s">
+        <div class="faq-q"><span>Faut-il arrêter ses médicaments pour suivre votre programme ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Non, jamais ! Mon approche est strictement complémentaire à votre traitement médical. Je travaille en synergie avec votre médecin traitant. Certains compléments peuvent interagir avec des médicaments, c'est pourquoi je demande toujours la liste de vos traitements en cours.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Vous ne savez pas quel service choisir ?</h2>
+    <p>Contactez-moi pour une consultation gratuite de 20 minutes — on trouvera ensemble la formule idéale.</p>
+    <span class="btn btn-wh" onclick="go('contact')">Consultation gratuite →</span>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <div class="foot-grid">
+        <div class="foot-brand"><div class="nlogo" style="margin-bottom:16px"><svg width="30" height="30" viewBox="0 0 34 34"><circle cx="17" cy="17" r="17" fill="rgba(232,25,125,.15)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(60 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(120 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(180 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(240 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(300 17 17)"/><circle cx="17" cy="17" r="4" fill="#7AB648"/></svg><span style="color:#fff">NutriSophie</span></div><p>Nutrithérapeute certifiée · Suisse</p><div class="foot-social"><a class="foot-soc" href="#">📸</a><a class="foot-soc" href="#">📘</a><a class="foot-soc" href="#">💼</a></div></div>
+        <div class="foot-col"><h4>Navigation</h4><ul><li><a onclick="go('home')">Accueil</a></li><li><a onclick="go('about')">À propos</a></li><li><a onclick="go('services')">Services</a></li><li><a onclick="go('testi')">Témoignages</a></li><li><a onclick="go('contact')">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Services</h4><ul><li><a onclick="go('services')">Consultations</a></li><li><a onclick="go('services')">Plans alimentaires</a></li><li><a onclick="go('services')">Coaching en ligne</a></li></ul></div>
+        <div class="foot-col"><h4>Contact</h4><ul><li><a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a></li><li><a href="tel:0797822737">079 782 27 37</a></li></ul></div>
+      </div>
+      <div class="foot-bot"><p>© 2026 NutriSophie · Tous droits réservés</p><p>Fait avec 💚 pour votre santé</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════ TÉMOIGNAGES ═══════════════════════ -->
+<div id="pg-testi" class="pg">
+  <div class="pg-hero">
+    <div class="tag tag-bl">Témoignages</div>
+    <h1>Ils ont transformé <span>leur santé</span></h1>
+    <p>Des patients qui ont repris leur santé en main grâce à un accompagnement nutritionnel personnalisé.</p>
+  </div>
+
+  <section class="sec">
+    <div class="testi-stats">
+      <div class="ts-card fi" style="transition-delay:.1s"><div class="ts-n">+200</div><div class="ts-l">Patients accompagnés</div></div>
+      <div class="ts-card fi" style="transition-delay:.2s"><div class="ts-n">98%</div><div class="ts-l">Taux de satisfaction</div></div>
+      <div class="ts-card fi" style="transition-delay:.3s"><div class="ts-n">★ 4.9</div><div class="ts-l">Note moyenne</div></div>
+      <div class="ts-card fi" style="transition-delay:.4s"><div class="ts-n">8 ans</div><div class="ts-l">D'expérience</div></div>
+    </div>
+
+    <div class="testi-full-grid">
+      <div class="testi-card tc-feat fi" style="transition-delay:.1s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"En tant que crossfiteur, Sophie a analysé mes carences et revu toute mon alimentation. Résultat : +15% de performance en 3 mois et une récupération deux fois plus rapide. Je recommande à tous les sportifs."</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:rgba(255,255,255,.3)">TR</div><div><div class="testi-name">Thomas R.</div><div class="testi-label">Sportif · Berne</div></div></div>
+      </div>
+      <div class="testi-card fi" style="transition-delay:.2s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"Après 3 ans de fibromyalgie et d'épuisement total, j'avais perdu espoir. En 4 mois avec Sophie, ma fatigue a diminué de 60% et mes douleurs sont beaucoup plus supportables. Je recommande à 100%."</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:linear-gradient(135deg,#E8197D,#F07850)">CF</div><div><div class="testi-name">Christine F.</div><div class="testi-label">Fibromyalgie · Genève</div></div></div>
+      </div>
+      <div class="testi-card fi" style="transition-delay:.3s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"J'avais des troubles digestifs sévères depuis des années. Sophie a identifié les intolérances et en 6 mois, ma vie a complètement changé. Je mange enfin sans souffrir !"</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:linear-gradient(135deg,#7AB648,#A8D4E6)">EB</div><div><div class="testi-name">Élodie B.</div><div class="testi-label">Troubles digestifs · Lausanne</div></div></div>
+      </div>
+      <div class="testi-card fi" style="transition-delay:.4s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"Sophie m'a aidée à retrouver mon poids de forme après ma grossesse. Son approche bienveillante et ses conseils pratiques ont tout changé dans mon quotidien. Merci du fond du cœur."</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:linear-gradient(135deg,#F07850,#E8197D)">NM</div><div><div class="testi-name">Nathalie M.</div><div class="testi-label">Post-grossesse · Zurich</div></div></div>
+      </div>
+      <div class="testi-card fi" style="transition-delay:.5s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"Mon sommeil était catastrophique depuis des années. En 2 mois, Sophie a identifié des carences en magnésium et des déséquilibres hormonaux. Je dors enfin comme un bébé !"</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:linear-gradient(135deg,#A8D4E6,#7AB648)">ML</div><div><div class="testi-name">Marie-Laure P.</div><div class="testi-label">Troubles du sommeil · Fribourg</div></div></div>
+      </div>
+      <div class="testi-card fi" style="transition-delay:.6s">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"J'étais sceptique au départ, mais les résultats m'ont convaincu. -12 kg en 6 mois, sans régime strict, juste en comprenant mon métabolisme. Une vraie révélation."</p>
+        <div class="testi-meta"><div class="testi-ava" style="background:linear-gradient(135deg,#1A1A2E,#4B5563)">PD</div><div><div class="testi-name">Pierre D.</div><div class="testi-label">Perte de poids · Bâle</div></div></div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg3);border-radius:var(--radius-lg);padding:48px;text-align:center;margin-top:64px" class="fi">
+      <div class="tag tag-gr" style="margin:0 auto 20px">Votre tour</div>
+      <h2 class="sec-title">Prêt(e) à écrire <span>votre histoire ?</span></h2>
+      <p style="color:var(--mid);max-width:480px;margin:0 auto 32px">Ces transformations ne sont pas des exceptions. Elles sont le résultat d'un accompagnement personnalisé et d'une nutrition adaptée à votre biologie.</p>
+      <span class="btn btn-pk" onclick="go('contact')">Commencer mon parcours</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-in">
+      <div class="foot-grid">
+        <div class="foot-brand"><div class="nlogo" style="margin-bottom:16px"><svg width="30" height="30" viewBox="0 0 34 34"><circle cx="17" cy="17" r="17" fill="rgba(232,25,125,.15)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(60 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(120 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(180 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(240 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(300 17 17)"/><circle cx="17" cy="17" r="4" fill="#7AB648"/></svg><span style="color:#fff">NutriSophie</span></div><p>Nutrithérapeute certifiée · Suisse</p><div class="foot-social"><a class="foot-soc" href="#">📸</a><a class="foot-soc" href="#">📘</a><a class="foot-soc" href="#">💼</a></div></div>
+        <div class="foot-col"><h4>Navigation</h4><ul><li><a onclick="go('home')">Accueil</a></li><li><a onclick="go('about')">À propos</a></li><li><a onclick="go('services')">Services</a></li><li><a onclick="go('testi')">Témoignages</a></li><li><a onclick="go('contact')">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Contact</h4><ul><li><a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a></li><li><a href="tel:0797822737">079 782 27 37</a></li></ul></div>
+        <div class="foot-col"><h4>Services</h4><ul><li><a onclick="go('services')">Consultations</a></li><li><a onclick="go('services')">Plans alimentaires</a></li><li><a onclick="go('services')">Coaching</a></li></ul></div>
+      </div>
+      <div class="foot-bot"><p>© 2026 NutriSophie · Tous droits réservés</p><p>Fait avec 💚</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<div id="pg-contact" class="pg">
+  <div class="pg-hero">
+    <div class="tag tag-pk">Parlons</div>
+    <h1>Parlons de votre <span>santé</span></h1>
+    <p>Que ce soit pour une question ou pour prendre rendez-vous, je réponds à chaque message avec attention.</p>
+  </div>
+
+  <section class="sec">
+    <div class="contact-grid">
+      <div class="fi">
+        <div class="tag tag-pk">Coordonnées</div>
+        <h2 class="contact-info">On se retrouve <span style="color:var(--pk)">ici</span></h2>
+        <p style="color:var(--mid);line-height:1.75;margin:12px 0 32px">N'hésitez pas à me contacter par email, téléphone ou via le formulaire. Je vous répondrai dans les 24h ouvrables.</p>
+
+        <div class="contact-detail">
+          <div class="cd-icon pk">📧</div>
+          <div><div class="cd-lbl">Email</div><div class="cd-val"><a href="mailto:nutrisophie2@gmail.com" style="color:var(--pk)">nutrisophie2@gmail.com</a></div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon gr">📱</div>
+          <div><div class="cd-lbl">Téléphone / WhatsApp</div><div class="cd-val"><a href="tel:0797822737" style="color:var(--dark)">079 782 27 37</a></div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon bl">📍</div>
+          <div><div class="cd-lbl">Consultations</div><div class="cd-val">En cabinet (Suisse) & en ligne</div></div>
+        </div>
+
+        <div class="hours-card">
+          <h3>🕐 Disponibilités</h3>
+          <div class="hour-row"><span class="day">Lundi – Vendredi</span><span class="time">9h00 – 19h00</span></div>
+          <div class="hour-row"><span class="day">Samedi</span><span class="time">9h00 – 13h00</span></div>
+          <div class="hour-row"><span class="day">Dimanche</span><span class="closed">Fermé</span></div>
+        </div>
+
+        <div style="margin-top:28px">
+          <p style="font-size:.85rem;color:var(--soft);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Retrouvez-moi sur</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="#" class="btn btn-out" style="padding:10px 20px;font-size:.85rem">📸 Instagram</a>
+            <a href="#" class="btn" style="background:var(--bl-light);color:#2a7fa0;padding:10px 20px;font-size:.85rem">📘 Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap fi" style="transition-delay:.15s">
+        <div id="cf-wrap">
+          <div class="form-title">Prendre rendez-vous</div>
+          <div class="form-sub">Réponse garantie sous 24h ouvrables ✅</div>
+          <form id="cf" novalidate>
+            <div class="form-row">
+              <div class="form-group"><label>Nom complet <span>*</span></label><input type="text" placeholder="Marie Dupont" required></div>
+              <div class="form-group"><label>Email <span>*</span></label><input type="email" placeholder="votre@email.com" required></div>
+            </div>
+            <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="079 000 00 00"></div>
+            <div class="form-group">
+              <label>Sujet <span>*</span></label>
+              <select required>
+                <option value="">Choisissez un sujet…</option>
+                <option>Première consultation</option>
+                <option>Plan alimentaire</option>
+                <option>Coaching mensuel</option>
+                <option>Question générale</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Décrivez votre situation <span>*</span></label>
+              <textarea placeholder="Dites-moi en quelques mots ce qui vous amène : vos symptômes, vos objectifs, vos questions…" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>Comment avez-vous entendu parler de moi ?</label>
+              <select>
+                <option value="">Choisissez…</option>
+                <option>Recommandation d'un proche</option>
+                <option>Google / recherche internet</option>
+                <option>Instagram ou réseaux sociaux</option>
+                <option>Médecin traitant</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-pk" style="width:100%;justify-content:center;padding:16px">Envoyer ma demande →</button>
+            <p class="form-note">🔒 Vos informations sont strictement confidentielles et ne seront jamais partagées.</p>
+          </form>
+          <div id="fs">
+            <div class="fs-icon">✅</div>
+            <h3>Message envoyé !</h3>
+            <p>Merci pour votre message. Je vous réponds dans les 24h ouvrables.<br>À très bientôt 🌿</p>
+            <span class="btn btn-pk" onclick="go('home')">Retour à l'accueil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg3);border-radius:var(--radius-lg);padding:48px;margin-top:64px" class="fi">
+      <div class="sec-head center" style="margin-bottom:32px">
+        <div class="tag tag-gr">FAQ rapide</div>
+        <h2 class="sec-title">Avant de me <span>contacter</span></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" class="svc-grid-faq">
+        <div style="background:#fff;border-radius:var(--radius);padding:24px;border:1.5px solid var(--border)">
+          <div style="font-size:1.5rem;margin-bottom:12px">⚡</div>
+          <h4 style="margin-bottom:8px;font-size:.95rem">Délai de réponse</h4>
+          <p style="font-size:.85rem;color:var(--mid)">Je réponds à tous les messages dans les 24h ouvrables. Urgences : appelez-moi directement.</p>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius);padding:24px;border:1.5px solid var(--border)">
+          <div style="font-size:1.5rem;margin-bottom:12px">🌍</div>
+          <h4 style="margin-bottom:8px;font-size:.95rem">À distance</h4>
+          <p style="font-size:.85rem;color:var(--mid)">Je consulte en visioconférence pour toute la Suisse, la France et les pays francophones.</p>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius);padding:24px;border:1.5px solid var(--border)">
+          <div style="font-size:1.5rem;margin-bottom:12px">🎁</div>
+          <h4 style="margin-bottom:8px;font-size:.95rem">Appel découverte</h4>
+          <p style="font-size:.85rem;color:var(--mid)">20 minutes gratuites pour faire connaissance et voir si mon approche est adaptée à votre situation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-in">
+      <div class="foot-grid">
+        <div class="foot-brand"><div class="nlogo" style="margin-bottom:16px"><svg width="30" height="30" viewBox="0 0 34 34"><circle cx="17" cy="17" r="17" fill="rgba(232,25,125,.15)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(60 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#E8197D" opacity=".9" transform="rotate(120 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(180 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(240 17 17)"/><ellipse cx="17" cy="11" rx="4" ry="6.5" fill="#F07850" opacity=".6" transform="rotate(300 17 17)"/><circle cx="17" cy="17" r="4" fill="#7AB648"/></svg><span style="color:#fff">NutriSophie</span></div><p>Nutrithérapeute certifiée · Suisse</p><div class="foot-social"><a class="foot-soc" href="#">📸</a><a class="foot-soc" href="#">📘</a><a class="foot-soc" href="#">💼</a></div></div>
+        <div class="foot-col"><h4>Navigation</h4><ul><li><a onclick="go('home')">Accueil</a></li><li><a onclick="go('about')">À propos</a></li><li><a onclick="go('services')">Services</a></li><li><a onclick="go('testi')">Témoignages</a></li><li><a onclick="go('contact')">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Contact</h4><ul><li><a href="mailto:nutrisophie2@gmail.com">nutrisophie2@gmail.com</a></li><li><a href="tel:0797822737">079 782 27 37</a></li></ul></div>
+        <div class="foot-col"><h4>Services</h4><ul><li><a onclick="go('services')">Consultations</a></li><li><a onclick="go('services')">Plans alimentaires</a></li><li><a onclick="go('services')">Coaching</a></li></ul></div>
+      </div>
+      <div class="foot-bot"><p>© 2026 NutriSophie · Tous droits réservés</p><p>Fait avec 💚</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- SCROLL TOP -->
+<button id="stb" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+
+<script>
+const pages=['home','about','services','testi','contact'];
+function go(id){
+  pages.forEach(p=>{const el=document.getElementById('pg-'+p);if(el)el.classList.remove('on')});
+  const pg=document.getElementById('pg-'+id);
+  if(pg){pg.classList.add('on');window.scrollTo({top:0,behavior:'smooth'})}
+  document.querySelectorAll('.nlk').forEach(l=>l.classList.remove('on'));
+  const al=document.querySelector(`.nlk[data-pg="${id}"]`);if(al)al.classList.add('on');
+  document.getElementById('ntog').parentElement.querySelector('#nm')?.classList.remove('open');
+  location.hash=id;
+  setTimeout(()=>{if(pg){pg.querySelectorAll('.fi').forEach(el=>{el.classList.remove('v');void el.offsetWidth})}observe();},60);
+}
+function observe(){
+  const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.1});
+  document.querySelectorAll('.fi:not(.v)').forEach(el=>io.observe(el));
+}
+observe();
+window.addEventListener('scroll',()=>{
+  document.getElementById('hdr').classList.toggle('sc',scrollY>20);
+  document.getElementById('stb').classList.toggle('v',scrollY>400);
+});
+document.getElementById('ntog').addEventListener('click',()=>document.getElementById('nm').classList.toggle('open'));
+document.querySelectorAll('.faq-item').forEach(i=>{
+  i.querySelector('.faq-q').addEventListener('click',()=>{const o=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')});
+});
+const cf=document.getElementById('cf'),fs=document.getElementById('fs');
+if(cf)cf.addEventListener('submit',e=>{e.preventDefault();cf.style.display='none';fs.style.display='flex'});
+const h=location.hash.replace('#','');
+if(pages.includes(h))go(h);else{document.querySelector('.nlk[data-pg="home"]').classList.add('on')}
+</script>
+</body>
+</html>

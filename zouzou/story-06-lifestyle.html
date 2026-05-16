@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<title>MZK Story — c'est vous</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700;900&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { background:#111; }
+body { overflow:hidden; background:#111; }
+#frame { position:relative; overflow:hidden; background:#000; }
+.bg {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+.overlay {
+  position:absolute; inset:0;
+  background: linear-gradient(to top,
+    rgba(0,0,0,.75) 0%,
+    rgba(0,0,0,.28) 38%,
+    rgba(0,0,0,.04) 62%,
+    transparent 80%);
+}
+.script  { font-family:'Great Vibes',cursive; color:#fff; }
+.display { font-family:'Playfair Display',serif; color:#fff; font-weight:900; text-transform:uppercase; line-height:.9; }
+.sub     { font-family:'Montserrat',sans-serif; color:rgba(255,255,255,.68); font-weight:300; letter-spacing:.18em; text-transform:uppercase; }
+.logo    { font-family:'Montserrat',sans-serif; font-weight:200; letter-spacing:.42em; text-transform:uppercase; }
+.gold    { color:#C9A84C; }
+
+#frame { width:1080px; height:1920px; }
+.top  { position:absolute; top:60px; left:0; right:0; text-align:center; }
+.body { position:absolute; bottom:160px; left:64px; right:64px; }
+.swipe{ position:absolute; bottom:64px; left:0; right:0; text-align:center; }
+</style>
+<style>.overlay{background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.38) 30%,rgba(0,0,0,.04) 56%,transparent 72%);}</style>
+<script>var W=1080,H=1920;</script>
+
+<script>
+function scale() {
+  var s = Math.min(window.innerWidth / W, window.innerHeight / H);
+  var f = document.getElementById('frame');
+  f.style.transform = 'scale(' + s + ')';
+  f.style.transformOrigin = 'top left';
+  document.body.style.width  = Math.round(W * s) + 'px';
+  document.body.style.height = Math.round(H * s) + 'px';
+}
+window.addEventListener('load',   scale);
+window.addEventListener('resize', scale);
+</script>
+
+</head>
+<body>
+<div id="frame">
+  <img class="bg" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1080&h=1920&fit=crop&q=95" alt=""/>
+  <div class="overlay"></div>
+
+  <div class="top">
+    <p class="logo" style="font-size:13px;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(201,168,76,.4);display:inline-block;padding-bottom:10px;">MZK Swiss Group</p>
+  </div>
+
+  <div class="body">
+    <p class="script" style="font-size:70px;line-height:1.1;margin-bottom:4px;">Le vrai luxe</p>
+    <h1 class="display" style="font-size:126px;margin-bottom:26px;">
+      c'est vous <span class="gold">→</span>
+    </h1>
+    <p class="sub" style="font-size:14px;margin-bottom:40px;">Chaque détail compte · Chaque client est unique</p>
+    <div style="display:inline-block;border:1px solid rgba(201,168,76,.65);padding:18px 52px;">
+      <p class="sub gold" style="font-size:13px;letter-spacing:.26em;">Nous contacter</p>
+    </div>
+  </div>
+
+  <div class="swipe">
+    <p class="sub" style="font-size:11px;color:rgba(255,255,255,.38);">↑ &nbsp; mzkswissgroup.ch</p>
+  </div>
+</div>
+</body>
+</html>

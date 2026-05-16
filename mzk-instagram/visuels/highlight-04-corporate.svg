@@ -1,0 +1,25 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#0A0A0A"/>
+  <circle cx="200" cy="200" r="192" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.25"/>
+  <circle cx="200" cy="200" r="182" fill="none" stroke="#C9A84C" stroke-width="1"   opacity="0.55"/>
+  <!-- corner marks -->
+  <line x1="20"  y1="20"  x2="48"  y2="20"  stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <line x1="20"  y1="20"  x2="20"  y2="48"  stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <line x1="380" y1="20"  x2="352" y2="20"  stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <line x1="380" y1="20"  x2="380" y2="48"  stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <line x1="20"  y1="380" x2="48"  y2="380" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <line x1="20"  y1="380" x2="20"  y2="352" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <line x1="380" y1="380" x2="352" y2="380" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <line x1="380" y1="380" x2="380" y2="352" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <g transform="translate(200,183)">
+  <rect x="-48" y="-32" width="96" height="76" rx="6" fill="none" stroke="#C9A84C" stroke-width="2"/>
+  <path d="M -20,-32 L -20,-46 Q -20,-52 -12,-52 L 12,-52 Q 20,-52 20,-46 L 20,-32"
+        fill="none" stroke="#C9A84C" stroke-width="2"/>
+  <line x1="-48" y1="4" x2="48" y2="4" stroke="#C9A84C" stroke-width="1.5" opacity="0.6"/>
+  <rect x="-8" y="-4" width="16" height="16" rx="2" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+</g>
+  <line x1="155" y1="306" x2="245" y2="306" stroke="#C9A84C" stroke-width="0.7" opacity="0.5"/>
+  <text x="200" y="328" text-anchor="middle" font-family="Georgia,serif" font-size="15"
+        fill="#C9A84C" letter-spacing="5">CORPORATE</text>
+  <line x1="155" y1="338" x2="245" y2="338" stroke="#C9A84C" stroke-width="0.7" opacity="0.5"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  
+  <rect width="1080" height="1080" fill="#0A0A0A"/>
+  <defs>
+    <radialGradient id="g4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#1a1400" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#g4)"/>
+  <!-- Outer frame -->
+  <rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.45"/>
+  <!-- Center diamond motif -->
+  <polygon points="540,100 980,540 540,980 100,540" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.15"/>
+  <polygon points="540,200 880,540 540,880 200,540" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.12"/>
+  <!-- Text centered -->
+  <text x="540" y="320" text-anchor="middle" font-family="Georgia,serif" font-size="20"
+        fill="#C9A84C" letter-spacing="8" opacity="0.6">ACCÈS EXCLUSIF</text>
+  <line x1="280" y1="345" x2="800" y2="345" stroke="#C9A84C" stroke-width="0.8" opacity="0.35"/>
+  <text x="540" y="450" text-anchor="middle" font-family="Georgia,serif" font-size="62" fill="#F5F0EB" font-style="italic">Le luxe véritable</text>
+  <text x="540" y="530" text-anchor="middle" font-family="Georgia,serif" font-size="62" fill="#F5F0EB" font-style="italic">n'est pas visible.</text>
+  <text x="540" y="640" text-anchor="middle" font-family="Georgia,serif" font-size="62" fill="#C9A84C" font-style="italic">Il se ressent.</text>
+  <line x1="280" y1="680" x2="800" y2="680" stroke="#C9A84C" stroke-width="0.8" opacity="0.35"/>
+  <text x="540" y="760" text-anchor="middle" font-family="Georgia,serif" font-size="26"
+        fill="#F5F0EB" opacity="0.6">Pas de liste d'attente.</text>
+  <text x="540" y="800" text-anchor="middle" font-family="Georgia,serif" font-size="26"
+        fill="#F5F0EB" opacity="0.6">Pas de compromis. Pas de "non".</text>
+  <!-- Center diamond small -->
+  <polygon points="540,878 558,900 540,922 522,900" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.6"/>
+  <text x="540" y="975" text-anchor="middle" font-family="Georgia,serif" font-size="18"
+        fill="#C9A84C" letter-spacing="5" opacity="0.55">MZK SWISS GROUP</text>
+
+</svg>

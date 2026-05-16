@@ -1,0 +1,35 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  
+  <rect width="1080" height="1080" fill="#0A0A0A"/>
+  <defs>
+    <radialGradient id="g3" cx="30%" cy="70%" r="70%">
+      <stop offset="0%"   stop-color="#C9A84C" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#g3)"/>
+  <rect x="40"  y="40"  width="1000" height="1000" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.35"/>
+  <rect x="100" y="100" width="880"  height="880"  fill="none" stroke="#C9A84C" stroke-width="0.4" opacity="0.15"/>
+  <!-- Big quote mark -->
+  <text x="90" y="440" font-family="Georgia,serif" font-size="380" fill="#C9A84C" opacity="0.07">“</text>
+  <!-- Quote text -->
+  <text x="540" y="340" text-anchor="middle" font-family="Georgia,serif" font-size="18"
+        fill="#C9A84C" letter-spacing="6" opacity="0.6">— MZK SWISS GROUP</text>
+  <line x1="200" y1="365" x2="880" y2="365" stroke="#C9A84C" stroke-width="0.6" opacity="0.35"/>
+  <text x="540" y="460" text-anchor="middle" font-family="Georgia,serif" font-size="56"
+        fill="#F5F0EB" font-style="italic">"Le vrai luxe,</text>
+  <text x="540" y="540" text-anchor="middle" font-family="Georgia,serif" font-size="56"
+        fill="#F5F0EB" font-style="italic">c'est de ne jamais</text>
+  <text x="540" y="620" text-anchor="middle" font-family="Georgia,serif" font-size="56"
+        fill="#F5F0EB" font-style="italic">avoir à expliquer</text>
+  <text x="540" y="700" text-anchor="middle" font-family="Georgia,serif" font-size="56"
+        fill="#C9A84C" font-style="italic">ce que l'on veut."</text>
+  <line x1="200" y1="748" x2="880" y2="748" stroke="#C9A84C" stroke-width="0.6" opacity="0.35"/>
+  <!-- Bottom -->
+  <polygon points="540,810 555,832 540,854 525,832" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+  <text x="540" y="930" text-anchor="middle" font-family="Georgia,serif" font-size="22"
+        fill="#C9A84C" letter-spacing="5" opacity="0.65">CONCIERGERIE PRIVÉE D'EXCEPTION</text>
+  <text x="540" y="970" text-anchor="middle" font-family="Georgia,serif" font-size="16"
+        fill="#F5F0EB" letter-spacing="3" opacity="0.4">Suisse · Mondial · mzkswissgroup.ch</text>
+
+</svg>

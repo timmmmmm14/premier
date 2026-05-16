@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<title>MZK Story</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { overflow:hidden; background:#000; }
+.frame { position:relative; overflow:hidden; }
+.bg {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+.overlay {
+  position:absolute; inset:0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.30) 38%,
+    rgba(0,0,0,0.05) 62%,
+    transparent 80%
+  );
+}
+.script  { font-family:'Great Vibes', cursive; color:#fff; font-weight:400; }
+.display { font-family:'Playfair Display', serif; color:#fff; font-weight:900; text-transform:uppercase; line-height:.92; }
+.sub     { font-family:'Montserrat', sans-serif; color:rgba(255,255,255,0.72); font-weight:300; letter-spacing:.18em; text-transform:uppercase; }
+.logo    { font-family:'Montserrat', sans-serif; color:#fff; font-weight:200; letter-spacing:.45em; text-transform:uppercase; }
+.gold    { color:#C9A84C; }
+.arrow   { color:#C9A84C; }
+
+html,body { width:1080px; height:1920px; }
+.frame { width:1080px; height:1920px; }
+.overlay {
+  position:absolute; inset:0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.80) 0%,
+    rgba(0,0,0,0.40) 30%,
+    rgba(0,0,0,0.05) 55%,
+    transparent 72%
+  );
+}
+.top-bar {
+  position:absolute; top:60px; left:0; right:0;
+  display:flex; justify-content:center;
+}
+.top-logo {
+  font-family:'Montserrat',sans-serif; font-weight:200;
+  font-size:14px; letter-spacing:.45em; color:rgba(255,255,255,.8);
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(201,168,76,.4);
+  padding-bottom:10px;
+}
+.text-block {
+  position:absolute; bottom:160px; left:64px; right:64px;
+}
+.script-line { font-size:68px; line-height:1.1; margin-bottom:6px; }
+.display-line { font-size:128px; line-height:.88; margin-bottom:28px; }
+.sub-line { font-size:15px; margin-bottom:40px; }
+.cta {
+  display:inline-block;
+  border:1px solid rgba(201,168,76,.7);
+  padding:18px 48px;
+  font-family:'Montserrat',sans-serif;
+  font-weight:300; font-size:14px;
+  letter-spacing:.28em; text-transform:uppercase;
+  color:#C9A84C;
+}
+.swipe {
+  position:absolute; bottom:68px; left:0; right:0; text-align:center;
+  font-family:'Montserrat',sans-serif; font-weight:200;
+  font-size:12px; letter-spacing:.3em; color:rgba(255,255,255,.45);
+  text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  <img class="bg" src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=1080&h=1920&fit=crop&q=95" alt=""/>
+  <div class="overlay"></div>
+  <div class="top-bar"><div class="top-logo">MZK Swiss Group</div></div>
+  <div class="text-block">
+    <p class="script script-line">Découvrez</p>
+    <h1 class="display display-line">Patek Philippe <span class="arrow">→</span></h1>
+    <p class="sub sub-line">Séries limitées · Acquisitions privées</p>
+    <div class="cta">Accès privé sur demande</div>
+  </div>
+  <div class="swipe">↑ mzkswissgroup.ch</div>
+</div>
+</body>
+</html>

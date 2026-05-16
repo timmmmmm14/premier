@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1080"/>
+  <title>MZK Swiss Group</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+  
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body {
+      width:1080px; height:1080px;
+      overflow:hidden; background:#000;
+      font-family:'Cormorant Garamond', Georgia, serif;
+    }
+    .frame {
+      width:1080px; height:1080px;
+      position:relative; overflow:hidden;
+    }
+    .bg {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover; object-position:center;
+    }
+    .overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(
+        160deg,
+        rgba(5,18,45,0.75) 0%,
+        rgba(2,8,20,0.60) 40%,
+        rgba(10,25,55,0.80) 100%
+      );
+    }
+    .gold-line { background:#C9A84C; }
+    .gold { color:#C9A84C; }
+    .white { color:#FFFFFF; }
+    .cream { color:#EDE8DF; }
+    .caps {
+      font-family:'Montserrat', sans-serif;
+      letter-spacing:.22em; text-transform:uppercase; font-weight:400;
+    }
+    .logo-wrap {
+      display:flex; align-items:center; gap:12px;
+    }
+    .diamond {
+      width:28px; height:28px;
+      border:1.5px solid #C9A84C;
+      transform:rotate(45deg);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .diamond-inner {
+      width:14px; height:14px;
+      background:#C9A84C;
+      transform:rotate(0deg);
+    }
+    .border-frame {
+      position:absolute;
+      border:1px solid rgba(201,168,76,0.35);
+    }
+
+  .content {
+    position:absolute; inset:0;
+    display:flex; flex-direction:column;
+    padding:64px;
+  }
+  
+  </style>
+</head>
+<body>
+<div class="frame">
+  <img class="bg" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1080&h=1080&fit=crop&q=90" alt=""/>
+  <div class="overlay"></div>
+  <div class="border-frame" style="inset:32px;"></div>
+  <div class="border-frame" style="inset:40px; border-color:rgba(201,168,76,0.15);"></div>
+  <div class="content">
+  <div class="logo-wrap">
+    <div class="diamond"><div class="diamond-inner"></div></div>
+    <span class="caps gold" style="font-size:13px; letter-spacing:.3em;">MZK Swiss Group</span>
+  </div>
+
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:20px;">
+    <p class="caps gold" style="font-size:10px; opacity:.7; letter-spacing:.3em;">— Horlogerie de Prestige</p>
+    <div style="width:40px; height:1px;" class="gold-line"></div>
+    <h1 class="white" style="font-size:68px; font-weight:300; line-height:1.1;">
+      Une montre n'indique<br/>pas seulement l'heure.
+    </h1>
+    <h2 style="font-size:54px; font-weight:300; font-style:italic; color:#C9A84C; line-height:1.15;">
+      Elle indique<br/>qui vous êtes.
+    </h2>
+    <div style="width:40px; height:1px; margin-top:8px;" class="gold-line"></div>
+    <p class="cream" style="font-size:18px; font-weight:300; opacity:.7; line-height:1.7; margin-top:4px;">
+      Rolex · Patek Philippe · Audemars Piguet<br/>
+      Richard Mille · Séries limitées · Acquisitions privées
+    </p>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; align-items:center; padding-top:24px; border-top:1px solid rgba(201,168,76,0.3);">
+    <p class="caps gold" style="font-size:10px; opacity:.6; letter-spacing:.2em;">mzkswissgroup.ch</p>
+    <p class="caps cream" style="font-size:10px; opacity:.35; letter-spacing:.15em;">Accès privé sur demande</p>
+  </div>
+</div>
+</div>
+</body>
+</html>

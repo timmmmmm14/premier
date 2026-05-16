@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1080"/>
+  <title>MZK Swiss Group</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+  
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body {
+      width:1080px; height:1080px;
+      overflow:hidden; background:#000;
+      font-family:'Cormorant Garamond', Georgia, serif;
+    }
+    .frame {
+      width:1080px; height:1080px;
+      position:relative; overflow:hidden;
+    }
+    .bg {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover; object-position:center;
+    }
+    .overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(
+        160deg,
+        rgba(5,18,45,0.75) 0%,
+        rgba(2,8,20,0.60) 40%,
+        rgba(10,25,55,0.80) 100%
+      );
+    }
+    .gold-line { background:#C9A84C; }
+    .gold { color:#C9A84C; }
+    .white { color:#FFFFFF; }
+    .cream { color:#EDE8DF; }
+    .caps {
+      font-family:'Montserrat', sans-serif;
+      letter-spacing:.22em; text-transform:uppercase; font-weight:400;
+    }
+    .logo-wrap {
+      display:flex; align-items:center; gap:12px;
+    }
+    .diamond {
+      width:28px; height:28px;
+      border:1.5px solid #C9A84C;
+      transform:rotate(45deg);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .diamond-inner {
+      width:14px; height:14px;
+      background:#C9A84C;
+      transform:rotate(0deg);
+    }
+    .border-frame {
+      position:absolute;
+      border:1px solid rgba(201,168,76,0.35);
+    }
+
+  .content {
+    position:absolute; inset:0;
+    display:flex; flex-direction:column;
+    padding:64px;
+  }
+  
+  </style>
+</head>
+<body>
+<div class="frame">
+  <img class="bg" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1080&h=1080&fit=crop&q=90" alt=""/>
+  <div class="overlay"></div>
+  <div class="border-frame" style="inset:32px;"></div>
+  <div class="border-frame" style="inset:40px; border-color:rgba(201,168,76,0.15);"></div>
+  <div class="content">
+  <div class="logo-wrap">
+    <div class="diamond"><div class="diamond-inner"></div></div>
+    <span class="caps gold" style="font-size:13px; letter-spacing:.3em;">MZK Swiss Group</span>
+  </div>
+
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:16px;">
+    <p class="caps gold" style="font-size:11px; opacity:.65; letter-spacing:.28em;">Il est</p>
+    <h1 class="white" style="font-size:140px; font-weight:300; line-height:.9; letter-spacing:-4px;">
+      02<span style="color:#C9A84C; opacity:.7;">:</span>37
+    </h1>
+    <div style="width:60px; height:1px; margin:8px 0;" class="gold-line"></div>
+    <p class="cream" style="font-size:30px; font-weight:300; line-height:1.5; max-width:680px;">
+      Vous avez besoin d'un jet<br/>pour New York dans 4 heures.
+    </p>
+    <p style="font-size:52px; font-style:italic; font-weight:300; color:#C9A84C; margin-top:12px;">
+      Nous décrachons.
+    </p>
+    <div style="width:60px; height:1px; margin-top:16px;" class="gold-line"></div>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; align-items:center; padding-top:24px; border-top:1px solid rgba(201,168,76,0.3);">
+    <p class="caps gold" style="font-size:10px; opacity:.6; letter-spacing:.2em;">mzkswissgroup.ch</p>
+    <div style="border:1px solid rgba(201,168,76,0.5); padding:8px 20px;">
+      <p class="caps gold" style="font-size:10px; letter-spacing:.2em;">24H · 7J · 365J</p>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

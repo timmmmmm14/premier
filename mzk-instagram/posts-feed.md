@@ -32,6 +32,8 @@
 >
 > Parce que le temps d'un client MZK n'a pas de prix.
 >
+> 💡 **Conseil :** Pour obtenir les meilleurs prix et disponibilités, réservez votre vol **4 semaines à l'avance**. Nous négocions pour vous.
+>
 > ✈️ Disponible 24h/7j — En message direct pour toute demande.
 
 **Hashtags :**

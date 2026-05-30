@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1080"/>
+  <title>Post — 4 Semaines à l'Avance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { width:1080px; height:1080px; overflow:hidden; background:#000; font-family:'Cormorant Garamond', serif; }
+    .frame { width:1080px; height:1080px; position:relative; overflow:hidden; }
+    .bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .overlay { position:absolute; inset:0; background:linear-gradient(160deg,rgba(5,18,45,0.78) 0%,rgba(2,8,20,0.60) 40%,rgba(10,25,55,0.88) 100%); }
+    .border-frame { position:absolute; border:1px solid rgba(201,168,76,0.35); }
+    .gold { color:#C9A84C; } .white { color:#fff; } .cream { color:#EDE8DF; }
+    .caps { font-family:'Montserrat',sans-serif; letter-spacing:.22em; text-transform:uppercase; font-weight:400; }
+    .gold-line { background:#C9A84C; }
+    .content { position:absolute; inset:0; display:flex; flex-direction:column; padding:64px; }
+    .logo-wrap { display:flex; align-items:center; gap:12px; }
+    .diamond { width:28px; height:28px; border:1.5px solid #C9A84C; transform:rotate(45deg); display:flex; align-items:center; justify-content:center; }
+    .diamond-inner { width:14px; height:14px; background:#C9A84C; }
+    .tip-box {
+      border:1px solid rgba(201,168,76,0.5);
+      padding:28px 36px;
+      background:rgba(201,168,76,0.06);
+      margin-top:24px;
+    }
+  </style>
+</head>
+<body>
+<div class="frame">
+  <img class="bg" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1080&h=1080&fit=crop&q=90" alt=""/>
+  <div class="overlay"></div>
+  <div class="border-frame" style="inset:32px;"></div>
+  <div class="border-frame" style="inset:40px;border-color:rgba(201,168,76,0.12);"></div>
+  <div class="content">
+    <div class="logo-wrap">
+      <div class="diamond"><div class="diamond-inner"></div></div>
+      <span class="caps gold" style="font-size:13px;letter-spacing:.3em;">MZK Swiss Group</span>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <p class="caps gold" style="font-size:10px;opacity:.7;letter-spacing:.3em;margin-bottom:20px;">— Conseil MZK</p>
+      <h1 class="white" style="font-size:72px;font-weight:300;line-height:1.05;">
+        Le secret<br/>du meilleur<br/>prix.
+      </h1>
+      <div style="width:60px;height:1px;margin:28px 0;" class="gold-line"></div>
+      <div class="tip-box">
+        <p class="gold" style="font-size:52px;font-weight:300;line-height:1.1;margin-bottom:16px;">
+          4 semaines
+        </p>
+        <p class="caps cream" style="font-size:13px;opacity:.7;letter-spacing:.15em;">à l'avance · Vol privé</p>
+      </div>
+      <p class="cream" style="font-size:20px;font-weight:300;opacity:.7;line-height:1.65;margin-top:28px;max-width:560px;">
+        Réservez votre vol privé 4 semaines à l'avance et laissez-nous négocier les meilleures disponibilités et tarifs pour vous.
+      </p>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(201,168,76,0.3);">
+      <p class="caps gold" style="font-size:10px;opacity:.6;letter-spacing:.2em;">mzkswissgroup.ch</p>
+      <p class="caps cream" style="font-size:10px;opacity:.35;">✈ JETS PRIVÉS · CONSEIL</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
